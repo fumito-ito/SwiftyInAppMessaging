@@ -81,28 +81,6 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 
 ## Installation
 
-### Cocoapods
-
-If you're using Cocoapods, just add this line to your `Podfile`:
-
-```
-pod 'SwiftyRemoteConfig`, `~> 0.0.1`
-```
-
-Install by running this command in your terminal:
-
-```
-$ pod install
-```
-
-
-Then import the library in all files where you use it:
-
-```
-import SwiftyInAppMessaging
-```
-
-
 ### Carthage
 
 Just add your `Cartfile`
