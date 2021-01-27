@@ -19,6 +19,7 @@ final class InAppDefaultBannerMessageView: UIView {
 
     private var hidingForAnimation: Bool
     private var hiddenBannerConstraint: NSLayoutConstraint?
+    private var autoDimissTimer: Timer?
 
     lazy var titleLabel: UILabel = {
         let view = UILabel()
@@ -166,6 +167,13 @@ final class InAppDefaultBannerMessageView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         self.showBannerIfNeeded()
+        self.autoDimissTimer = Timer.scheduledTimer(withTimeInterval: 12.0,
+                                                    repeats: false,
+                                                    block: { [weak self] _ in
+                                                        self?.hideBannerIfNeeded(completion: { _ in
+                                                            self?.eventDetector.messageDismissed(dismissType: .typeAuto)
+                                                        })
+                                                    })
     }
 
     private func showBannerIfNeeded(completion: ((Bool) -> Void)? = nil) {
