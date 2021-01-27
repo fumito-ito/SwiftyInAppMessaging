@@ -35,6 +35,8 @@
 		0A3830DE25AD80A100BBEA44 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C525AD80A100BBEA44 /* nanopb.framework */; };
 		0A3830E025AD80A100BBEA44 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C625AD80A100BBEA44 /* GoogleDataTransport.framework */; };
 		0A3830E225AD80A100BBEA44 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C725AD80A100BBEA44 /* PromisesObjC.framework */; };
+		0A65623725B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65623625B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift */; };
+		0A65623D25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65623C25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift */; };
 		OBJ_713 /* InAppDefaultCardMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* InAppDefaultCardMessageHandler.swift */; };
 		OBJ_714 /* InAppDefaultCardMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* InAppDefaultCardMessageViewController.swift */; };
 		OBJ_715 /* DefaultInAppMessagingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* DefaultInAppMessagingConfiguration.swift */; };
@@ -90,6 +92,8 @@
 		0A3830C525AD80A100BBEA44 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		0A3830C625AD80A100BBEA44 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		0A3830C725AD80A100BBEA44 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
+		0A65623625B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultBannerMessageHandler.swift; sourceTree = "<group>"; };
+		0A65623C25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultBannerMessageView.swift; sourceTree = "<group>"; };
 		OBJ_106 /* FIRIAMAnalyticsEventLoggerImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMAnalyticsEventLoggerImpl.m; sourceTree = "<group>"; };
 		OBJ_107 /* FIRIAMClearcutHttpRequestSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClearcutHttpRequestSender.m; sourceTree = "<group>"; };
 		OBJ_108 /* FIRIAMClearcutLogStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClearcutLogStorage.m; sourceTree = "<group>"; };
@@ -384,6 +388,15 @@
 				0A3830C225AD80A100BBEA44 /* Protobuf.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A65623125B67C1D007FE6F2 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				0A65623625B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift */,
+				0A65623C25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Card */ = {
@@ -1472,6 +1485,7 @@
 		OBJ_9 /* Default */ = {
 			isa = PBXGroup;
 			children = (
+				0A65623125B67C1D007FE6F2 /* Banner */,
 				OBJ_10 /* Card */,
 				OBJ_13 /* DefaultInAppMessagingConfiguration.swift */,
 				OBJ_14 /* ImageOnly */,
@@ -1637,6 +1651,7 @@
 				OBJ_719 /* InAppDefaultModalMessageViewController.swift in Sources */,
 				OBJ_720 /* InAppMessageComponent.swift in Sources */,
 				OBJ_721 /* InAppMessageHandler.swift in Sources */,
+				0A65623D25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift in Sources */,
 				OBJ_722 /* SwiftyInAppMessaging.swift in Sources */,
 				OBJ_723 /* SwiftyInAppMessagingConfiguration.swift in Sources */,
 				OBJ_724 /* SwiftyInAppMessagingError.swift in Sources */,
@@ -1645,6 +1660,7 @@
 				OBJ_727 /* UIApplication+Extensions.swift in Sources */,
 				OBJ_728 /* UIColor+Extensions.swift in Sources */,
 				OBJ_729 /* UIImage+Extensions.swift in Sources */,
+				0A65623725B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
