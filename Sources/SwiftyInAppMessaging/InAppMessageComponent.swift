@@ -21,7 +21,8 @@ extension InAppMessageComponent {
         return [
             InAppDefaultModalMessageHandler.self,
             InAppDefaultImageOnlyMessageHandler.self,
-            InAppDefaultCardMessageHandler.self
+            InAppDefaultCardMessageHandler.self,
+            InAppDefaultBannerMessageHandler.self
         ]
     }
 }
