@@ -2,10 +2,6 @@
 
 The easiest way to coexist your customized view and InAppMessaging default view.  
 
-## HEADS UP!! This library is under construction
-
-SwiftyInAppMessaging is not supporting `Banner` type messaging. Please construct your original alert or contribute to me :heart: .
-
 ## Features
 
 There is only one step to start using SwiftyInAppMessaging.
