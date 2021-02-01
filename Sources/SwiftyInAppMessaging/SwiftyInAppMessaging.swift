@@ -1,5 +1,5 @@
 import Foundation
-import Firebase
+import FirebaseInAppMessaging
 
 public class SwiftyInAppMessaging: InAppMessageComponent {
     public let configuration: SwiftyInAppMessagingConfiguration

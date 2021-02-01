@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseInAppMessaging
 
 public protocol InAppMessageComponent: InAppMessagingDisplay {
     var configuration: SwiftyInAppMessagingConfiguration { get }

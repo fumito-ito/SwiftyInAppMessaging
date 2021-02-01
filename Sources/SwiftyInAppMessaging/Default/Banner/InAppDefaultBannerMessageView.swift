@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+import FirebaseInAppMessaging
 
 final class InAppDefaultBannerMessageView: UIView {
     let title: String

@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+import FirebaseInAppMessaging
 
 public protocol InAppDefaultImageOnlyViewDelegate {
     func imageDidTap()
