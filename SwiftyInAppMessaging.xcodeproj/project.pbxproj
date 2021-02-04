@@ -3,1584 +3,309 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		"SwiftyInAppMessaging::SwiftyInAppMessagingPackageTests::ProductTarget" /* SwiftyInAppMessagingPackageTests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_764 /* Build configuration list for PBXAggregateTarget "SwiftyInAppMessagingPackageTests" */;
-			buildPhases = (
-			);
-			dependencies = (
-				OBJ_767 /* PBXTargetDependency */,
-			);
-			name = SwiftyInAppMessagingPackageTests;
-			productName = SwiftyInAppMessagingPackageTests;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		0A3830C825AD80A100BBEA44 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830BA25AD80A100BBEA44 /* GoogleUtilities.framework */; };
-		0A3830CA25AD80A100BBEA44 /* FirebaseInAppMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830BB25AD80A100BBEA44 /* FirebaseInAppMessaging.framework */; };
-		0A3830CC25AD80A100BBEA44 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830BC25AD80A100BBEA44 /* FirebaseCoreDiagnostics.framework */; };
-		0A3830CE25AD80A100BBEA44 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830BD25AD80A100BBEA44 /* GoogleAppMeasurement.framework */; };
-		0A3830D025AD80A100BBEA44 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830BE25AD80A100BBEA44 /* FIRAnalyticsConnector.framework */; };
-		0A3830D225AD80A100BBEA44 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830BF25AD80A100BBEA44 /* FirebaseCore.framework */; };
-		0A3830D425AD80A100BBEA44 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C025AD80A100BBEA44 /* Firebase.framework */; };
-		0A3830D625AD80A100BBEA44 /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C125AD80A100BBEA44 /* FirebaseABTesting.framework */; };
-		0A3830D825AD80A100BBEA44 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C225AD80A100BBEA44 /* Protobuf.framework */; };
-		0A3830DA25AD80A100BBEA44 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C325AD80A100BBEA44 /* FirebaseInstallations.framework */; };
-		0A3830DC25AD80A100BBEA44 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C425AD80A100BBEA44 /* FirebaseAnalytics.framework */; };
-		0A3830DE25AD80A100BBEA44 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C525AD80A100BBEA44 /* nanopb.framework */; };
-		0A3830E025AD80A100BBEA44 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C625AD80A100BBEA44 /* GoogleDataTransport.framework */; };
-		0A3830E225AD80A100BBEA44 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3830C725AD80A100BBEA44 /* PromisesObjC.framework */; };
-		0A65623725B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65623625B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift */; };
-		0A65623D25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65623C25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift */; };
-		OBJ_713 /* InAppDefaultCardMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* InAppDefaultCardMessageHandler.swift */; };
-		OBJ_714 /* InAppDefaultCardMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* InAppDefaultCardMessageViewController.swift */; };
-		OBJ_715 /* DefaultInAppMessagingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* DefaultInAppMessagingConfiguration.swift */; };
-		OBJ_716 /* InAppDefaultImageOnlyMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* InAppDefaultImageOnlyMessageHandler.swift */; };
-		OBJ_717 /* InAppDefaultImageOnlyMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* InAppDefaultImageOnlyMessageViewController.swift */; };
-		OBJ_718 /* InAppDefaultModalMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* InAppDefaultModalMessageHandler.swift */; };
-		OBJ_719 /* InAppDefaultModalMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* InAppDefaultModalMessageViewController.swift */; };
-		OBJ_720 /* InAppMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* InAppMessageComponent.swift */; };
-		OBJ_721 /* InAppMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* InAppMessageHandler.swift */; };
-		OBJ_722 /* SwiftyInAppMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* SwiftyInAppMessaging.swift */; };
-		OBJ_723 /* SwiftyInAppMessagingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* SwiftyInAppMessagingConfiguration.swift */; };
-		OBJ_724 /* SwiftyInAppMessagingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* SwiftyInAppMessagingError.swift */; };
-		OBJ_725 /* InAppMessagingActionButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* InAppMessagingActionButton+Extensions.swift */; };
-		OBJ_726 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Log.swift */; };
-		OBJ_727 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* UIApplication+Extensions.swift */; };
-		OBJ_728 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* UIColor+Extensions.swift */; };
-		OBJ_729 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* UIImage+Extensions.swift */; };
-		OBJ_762 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_773 /* SwiftyInAppMessagingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* SwiftyInAppMessagingTests.swift */; };
-		OBJ_774 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* XCTestManifests.swift */; };
-		OBJ_776 /* SwiftyInAppMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftyInAppMessaging::SwiftyInAppMessaging::Product" /* SwiftyInAppMessaging.framework */; };
+		0A5129CE25C78D7B00BD5E7B /* SwiftyInAppMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5129C425C78D7B00BD5E7B /* SwiftyInAppMessaging.framework */; };
+		0A5129D325C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129D225C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift */; };
+		0A5129D525C78D7B00BD5E7B /* SwiftyInAppMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A5129C725C78D7B00BD5E7B /* SwiftyInAppMessaging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A512A0A25C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F125C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift */; };
+		0A512A0B25C78E5800BD5E7B /* SwiftyInAppMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F225C78E5800BD5E7B /* SwiftyInAppMessaging.swift */; };
+		0A512A0C25C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F425C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift */; };
+		0A512A0D25C78E5800BD5E7B /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F525C78E5800BD5E7B /* Log.swift */; };
+		0A512A0E25C78E5800BD5E7B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F625C78E5800BD5E7B /* UIColor+Extensions.swift */; };
+		0A512A0F25C78E5800BD5E7B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F725C78E5800BD5E7B /* UIImage+Extensions.swift */; };
+		0A512A1025C78E5800BD5E7B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F825C78E5800BD5E7B /* UIApplication+Extensions.swift */; };
+		0A512A1125C78E5800BD5E7B /* InAppDefaultCardMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129FB25C78E5800BD5E7B /* InAppDefaultCardMessageViewController.swift */; };
+		0A512A1225C78E5800BD5E7B /* InAppDefaultCardMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129FC25C78E5800BD5E7B /* InAppDefaultCardMessageHandler.swift */; };
+		0A512A1325C78E5800BD5E7B /* DefaultInAppMessagingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129FD25C78E5800BD5E7B /* DefaultInAppMessagingConfiguration.swift */; };
+		0A512A1425C78E5800BD5E7B /* InAppDefaultImageOnlyMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129FF25C78E5800BD5E7B /* InAppDefaultImageOnlyMessageHandler.swift */; };
+		0A512A1525C78E5800BD5E7B /* InAppDefaultImageOnlyMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0025C78E5800BD5E7B /* InAppDefaultImageOnlyMessageViewController.swift */; };
+		0A512A1625C78E5800BD5E7B /* InAppDefaultModalMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0225C78E5800BD5E7B /* InAppDefaultModalMessageHandler.swift */; };
+		0A512A1725C78E5800BD5E7B /* InAppDefaultModalMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0325C78E5800BD5E7B /* InAppDefaultModalMessageViewController.swift */; };
+		0A512A1825C78E5800BD5E7B /* InAppDefaultBannerMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0525C78E5800BD5E7B /* InAppDefaultBannerMessageHandler.swift */; };
+		0A512A1925C78E5800BD5E7B /* InAppDefaultBannerMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0625C78E5800BD5E7B /* InAppDefaultBannerMessageView.swift */; };
+		0A512A1A25C78E5800BD5E7B /* SwiftyInAppMessagingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0725C78E5800BD5E7B /* SwiftyInAppMessagingError.swift */; };
+		0A512A1B25C78E5800BD5E7B /* InAppMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0825C78E5800BD5E7B /* InAppMessageHandler.swift */; };
+		0A512A1C25C78E5800BD5E7B /* InAppMessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A0925C78E5800BD5E7B /* InAppMessageComponent.swift */; };
+		0A512A2125C78F4D00BD5E7B /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A512A1F25C78F4D00BD5E7B /* XCTestManifests.swift */; };
+		0A512A3625C78F6900BD5E7B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2825C78F6900BD5E7B /* GoogleUtilities.framework */; };
+		0A512A3825C78F6900BD5E7B /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2925C78F6900BD5E7B /* FirebaseABTesting.framework */; };
+		0A512A3A25C78F6900BD5E7B /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2A25C78F6900BD5E7B /* FirebaseCoreDiagnostics.framework */; };
+		0A512A3C25C78F6900BD5E7B /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2B25C78F6900BD5E7B /* FIRAnalyticsConnector.framework */; };
+		0A512A3E25C78F6A00BD5E7B /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2C25C78F6900BD5E7B /* FirebaseCore.framework */; };
+		0A512A4025C78F6A00BD5E7B /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2D25C78F6900BD5E7B /* PromisesObjC.framework */; };
+		0A512A4225C78F6A00BD5E7B /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2E25C78F6900BD5E7B /* FirebaseInstallations.framework */; };
+		0A512A4425C78F6A00BD5E7B /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A2F25C78F6900BD5E7B /* Protobuf.framework */; };
+		0A512A4825C78F6A00BD5E7B /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3125C78F6900BD5E7B /* nanopb.framework */; };
+		0A512A4A25C78F6A00BD5E7B /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3225C78F6900BD5E7B /* GoogleAppMeasurement.framework */; };
+		0A512A4C25C78F6A00BD5E7B /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3325C78F6900BD5E7B /* GoogleDataTransport.framework */; };
+		0A512A4E25C78F6A00BD5E7B /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3425C78F6900BD5E7B /* FirebaseAnalytics.framework */; };
+		0A512A5025C78F6A00BD5E7B /* FirebaseInAppMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3525C78F6900BD5E7B /* FirebaseInAppMessaging.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0A38948625AD6AE20033FDAE /* PBXContainerItemProxy */ = {
+		0A5129CF25C78D7B00BD5E7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
+			containerPortal = 0A5129BB25C78D7B00BD5E7B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "SwiftyInAppMessaging::SwiftyInAppMessaging";
+			remoteGlobalIDString = 0A5129C325C78D7B00BD5E7B;
 			remoteInfo = SwiftyInAppMessaging;
-		};
-		0A3894A625AD6AE40033FDAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "SwiftyInAppMessaging::SwiftyInAppMessagingTests";
-			remoteInfo = SwiftyInAppMessagingTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A3830BA25AD80A100BBEA44 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
-		0A3830BB25AD80A100BBEA44 /* FirebaseInAppMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInAppMessaging.framework; path = Carthage/Build/iOS/FirebaseInAppMessaging.framework; sourceTree = "<group>"; };
-		0A3830BC25AD80A100BBEA44 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		0A3830BD25AD80A100BBEA44 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
-		0A3830BE25AD80A100BBEA44 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
-		0A3830BF25AD80A100BBEA44 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
-		0A3830C025AD80A100BBEA44 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
-		0A3830C125AD80A100BBEA44 /* FirebaseABTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseABTesting.framework; path = Carthage/Build/iOS/FirebaseABTesting.framework; sourceTree = "<group>"; };
-		0A3830C225AD80A100BBEA44 /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Protobuf.framework; path = Carthage/Build/iOS/Protobuf.framework; sourceTree = "<group>"; };
-		0A3830C325AD80A100BBEA44 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
-		0A3830C425AD80A100BBEA44 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		0A3830C525AD80A100BBEA44 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
-		0A3830C625AD80A100BBEA44 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
-		0A3830C725AD80A100BBEA44 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
-		0A65623625B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultBannerMessageHandler.swift; sourceTree = "<group>"; };
-		0A65623C25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultBannerMessageView.swift; sourceTree = "<group>"; };
-		OBJ_106 /* FIRIAMAnalyticsEventLoggerImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMAnalyticsEventLoggerImpl.m; sourceTree = "<group>"; };
-		OBJ_107 /* FIRIAMClearcutHttpRequestSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClearcutHttpRequestSender.m; sourceTree = "<group>"; };
-		OBJ_108 /* FIRIAMClearcutLogStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClearcutLogStorage.m; sourceTree = "<group>"; };
-		OBJ_109 /* FIRIAMClearcutLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClearcutLogger.m; sourceTree = "<group>"; };
-		OBJ_11 /* InAppDefaultCardMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultCardMessageHandler.swift; sourceTree = "<group>"; };
-		OBJ_110 /* FIRIAMClearcutUploader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClearcutUploader.m; sourceTree = "<group>"; };
-		OBJ_113 /* fiam.nanopb.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fiam.nanopb.c; sourceTree = "<group>"; };
-		OBJ_115 /* FIRIAMFetchResponseParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMFetchResponseParser.m; sourceTree = "<group>"; };
-		OBJ_116 /* FIRIAMMessageContentDataWithImageURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMMessageContentDataWithImageURL.m; sourceTree = "<group>"; };
-		OBJ_117 /* FIRIAMMessageDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMMessageDefinition.m; sourceTree = "<group>"; };
-		OBJ_118 /* FIRIAMRenderingEffectSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMRenderingEffectSetting.m; sourceTree = "<group>"; };
-		OBJ_12 /* InAppDefaultCardMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultCardMessageViewController.swift; sourceTree = "<group>"; };
-		OBJ_121 /* FIRIAMBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMBannerViewController.m; sourceTree = "<group>"; };
-		OBJ_122 /* FIRIAMBannerViewUIWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMBannerViewUIWindow.m; sourceTree = "<group>"; };
-		OBJ_124 /* FIRIAMCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMCardViewController.m; sourceTree = "<group>"; };
-		OBJ_125 /* FIRCore+InAppMessagingDisplay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FIRCore+InAppMessagingDisplay.m"; sourceTree = "<group>"; };
-		OBJ_126 /* FIRIAMBaseRenderingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMBaseRenderingViewController.m; sourceTree = "<group>"; };
-		OBJ_127 /* FIRIAMDefaultDisplayImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDefaultDisplayImpl.m; sourceTree = "<group>"; };
-		OBJ_128 /* FIRIAMRenderingWindowHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMRenderingWindowHelper.m; sourceTree = "<group>"; };
-		OBJ_13 /* DefaultInAppMessagingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInAppMessagingConfiguration.swift; sourceTree = "<group>"; };
-		OBJ_130 /* FIRIAMImageOnlyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMImageOnlyViewController.m; sourceTree = "<group>"; };
-		OBJ_132 /* FIRIAMModalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMModalViewController.m; sourceTree = "<group>"; };
-		OBJ_134 /* FIRIAMDisplayTriggerDefinition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDisplayTriggerDefinition.m; sourceTree = "<group>"; };
-		OBJ_135 /* FIRCore+InAppMessaging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FIRCore+InAppMessaging.m"; sourceTree = "<group>"; };
-		OBJ_136 /* FIRInAppMessaging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInAppMessaging.m; sourceTree = "<group>"; };
-		OBJ_138 /* FIRIAMActivityLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMActivityLogger.m; sourceTree = "<group>"; };
-		OBJ_139 /* FIRIAMBookKeeper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMBookKeeper.m; sourceTree = "<group>"; };
-		OBJ_140 /* FIRIAMClientInfoFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMClientInfoFetcher.m; sourceTree = "<group>"; };
-		OBJ_141 /* FIRIAMDisplayCheckOnAnalyticEventsFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDisplayCheckOnAnalyticEventsFlow.m; sourceTree = "<group>"; };
-		OBJ_142 /* FIRIAMDisplayCheckOnAppForegroundFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDisplayCheckOnAppForegroundFlow.m; sourceTree = "<group>"; };
-		OBJ_143 /* FIRIAMDisplayCheckOnFetchDoneNotificationFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDisplayCheckOnFetchDoneNotificationFlow.m; sourceTree = "<group>"; };
-		OBJ_144 /* FIRIAMDisplayCheckTriggerFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDisplayCheckTriggerFlow.m; sourceTree = "<group>"; };
-		OBJ_145 /* FIRIAMDisplayExecutor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMDisplayExecutor.m; sourceTree = "<group>"; };
-		OBJ_146 /* FIRIAMFetchFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMFetchFlow.m; sourceTree = "<group>"; };
-		OBJ_147 /* FIRIAMFetchOnAppForegroundFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMFetchOnAppForegroundFlow.m; sourceTree = "<group>"; };
-		OBJ_148 /* FIRIAMMessageClientCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMMessageClientCache.m; sourceTree = "<group>"; };
-		OBJ_149 /* FIRIAMMsgFetcherUsingRestful.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMMsgFetcherUsingRestful.m; sourceTree = "<group>"; };
-		OBJ_15 /* InAppDefaultImageOnlyMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultImageOnlyMessageHandler.swift; sourceTree = "<group>"; };
-		OBJ_150 /* FIRIAMServerMsgFetchStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMServerMsgFetchStorage.m; sourceTree = "<group>"; };
-		OBJ_152 /* FIRInAppMessagingRenderingDataClasses.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInAppMessagingRenderingDataClasses.m; sourceTree = "<group>"; };
-		OBJ_154 /* FIRIAMActionURLFollower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMActionURLFollower.m; sourceTree = "<group>"; };
-		OBJ_155 /* FIRIAMRuntimeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMRuntimeManager.m; sourceTree = "<group>"; };
-		OBJ_156 /* FIRIAMSDKModeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMSDKModeManager.m; sourceTree = "<group>"; };
-		OBJ_157 /* FIRIAMSDKSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMSDKSettings.m; sourceTree = "<group>"; };
-		OBJ_158 /* FIRInAppMessaging+Bootstrap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FIRInAppMessaging+Bootstrap.m"; sourceTree = "<group>"; };
-		OBJ_16 /* InAppDefaultImageOnlyMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultImageOnlyMessageViewController.swift; sourceTree = "<group>"; };
-		OBJ_160 /* FIRIAMElapsedTimeTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMElapsedTimeTracker.m; sourceTree = "<group>"; };
-		OBJ_161 /* FIRIAMTimeFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRIAMTimeFetcher.m; sourceTree = "<group>"; };
-		OBJ_162 /* NSString+FIRInterlaceStrings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FIRInterlaceStrings.m"; sourceTree = "<group>"; };
-		OBJ_163 /* UIColor+FIRIAMHexString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FIRIAMHexString.m"; sourceTree = "<group>"; };
-		OBJ_166 /* FirebaseInAppMessaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseInAppMessaging.h; sourceTree = "<group>"; };
-		OBJ_167 /* FIRInAppMessagingRendering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRInAppMessagingRendering.h; sourceTree = "<group>"; };
-		OBJ_168 /* FIRInAppMessaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRInAppMessaging.h; sourceTree = "<group>"; };
-		OBJ_169 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_171 /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
-		OBJ_173 /* dummy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dummy.h; sourceTree = "<group>"; };
-		OBJ_174 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_177 /* FIRInstallationsErrorUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsErrorUtil.m; sourceTree = "<group>"; };
-		OBJ_178 /* FIRInstallationsHTTPError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsHTTPError.m; sourceTree = "<group>"; };
-		OBJ_179 /* FIRInstallations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallations.m; sourceTree = "<group>"; };
-		OBJ_18 /* InAppDefaultModalMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultModalMessageHandler.swift; sourceTree = "<group>"; };
-		OBJ_180 /* FIRInstallationsAuthTokenResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsAuthTokenResult.m; sourceTree = "<group>"; };
-		OBJ_181 /* FIRInstallationsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsItem.m; sourceTree = "<group>"; };
-		OBJ_182 /* FIRInstallationsLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsLogger.m; sourceTree = "<group>"; };
-		OBJ_184 /* FIRInstallationsIIDStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsIIDStore.m; sourceTree = "<group>"; };
-		OBJ_185 /* FIRInstallationsIIDTokenStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsIIDTokenStore.m; sourceTree = "<group>"; };
-		OBJ_187 /* FIRInstallationsAPIService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsAPIService.m; sourceTree = "<group>"; };
-		OBJ_188 /* FIRInstallationsItem+RegisterInstallationAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FIRInstallationsItem+RegisterInstallationAPI.m"; sourceTree = "<group>"; };
-		OBJ_19 /* InAppDefaultModalMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDefaultModalMessageViewController.swift; sourceTree = "<group>"; };
-		OBJ_190 /* FIRCurrentDateProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRCurrentDateProvider.m; sourceTree = "<group>"; };
-		OBJ_191 /* FIRInstallationsBackoffController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsBackoffController.m; sourceTree = "<group>"; };
-		OBJ_192 /* FIRInstallationsIDController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsIDController.m; sourceTree = "<group>"; };
-		OBJ_193 /* FIRInstallationsSingleOperationPromiseCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsSingleOperationPromiseCache.m; sourceTree = "<group>"; };
-		OBJ_195 /* FIRInstallationsStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsStore.m; sourceTree = "<group>"; };
-		OBJ_196 /* FIRInstallationsStoredAuthToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsStoredAuthToken.m; sourceTree = "<group>"; };
-		OBJ_197 /* FIRInstallationsStoredItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRInstallationsStoredItem.m; sourceTree = "<group>"; };
-		OBJ_20 /* InAppMessageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageComponent.swift; sourceTree = "<group>"; };
-		OBJ_200 /* FIRInstallationsErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRInstallationsErrors.h; sourceTree = "<group>"; };
-		OBJ_201 /* FirebaseInstallations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseInstallations.h; sourceTree = "<group>"; };
-		OBJ_202 /* FIRInstallations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRInstallations.h; sourceTree = "<group>"; };
-		OBJ_203 /* FIRInstallationsAuthTokenResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRInstallationsAuthTokenResult.h; sourceTree = "<group>"; };
-		OBJ_204 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_21 /* InAppMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageHandler.swift; sourceTree = "<group>"; };
-		OBJ_214 /* GDTCCTCompressionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCCTCompressionHelper.m; sourceTree = "<group>"; };
-		OBJ_215 /* GDTCCTNanopbHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCCTNanopbHelpers.m; sourceTree = "<group>"; };
-		OBJ_216 /* GDTCCTUploader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCCTUploader.m; sourceTree = "<group>"; };
-		OBJ_217 /* GDTCOREvent+GDTCCTSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GDTCOREvent+GDTCCTSupport.m"; sourceTree = "<group>"; };
-		OBJ_22 /* SwiftyInAppMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessaging.swift; sourceTree = "<group>"; };
-		OBJ_220 /* cct.nanopb.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cct.nanopb.c; sourceTree = "<group>"; };
-		OBJ_222 /* GDTCORAssert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORAssert.m; sourceTree = "<group>"; };
-		OBJ_223 /* GDTCORClock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORClock.m; sourceTree = "<group>"; };
-		OBJ_224 /* GDTCORConsoleLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORConsoleLogger.m; sourceTree = "<group>"; };
-		OBJ_225 /* GDTCORDirectorySizeTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORDirectorySizeTracker.m; sourceTree = "<group>"; };
-		OBJ_226 /* GDTCOREvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCOREvent.m; sourceTree = "<group>"; };
-		OBJ_227 /* GDTCORFlatFileStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORFlatFileStorage.m; sourceTree = "<group>"; };
-		OBJ_228 /* GDTCORLifecycle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORLifecycle.m; sourceTree = "<group>"; };
-		OBJ_229 /* GDTCORPlatform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORPlatform.m; sourceTree = "<group>"; };
-		OBJ_23 /* SwiftyInAppMessagingConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessagingConfiguration.swift; sourceTree = "<group>"; };
-		OBJ_230 /* GDTCORReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORReachability.m; sourceTree = "<group>"; };
-		OBJ_231 /* GDTCORRegistrar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORRegistrar.m; sourceTree = "<group>"; };
-		OBJ_232 /* GDTCORStorageEventSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORStorageEventSelector.m; sourceTree = "<group>"; };
-		OBJ_233 /* GDTCORTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORTransformer.m; sourceTree = "<group>"; };
-		OBJ_234 /* GDTCORTransport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORTransport.m; sourceTree = "<group>"; };
-		OBJ_235 /* GDTCORUploadCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTCORUploadCoordinator.m; sourceTree = "<group>"; };
-		OBJ_238 /* GDTCORClock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCORClock.h; sourceTree = "<group>"; };
-		OBJ_239 /* GDTCORTransport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCORTransport.h; sourceTree = "<group>"; };
-		OBJ_24 /* SwiftyInAppMessagingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessagingError.swift; sourceTree = "<group>"; };
-		OBJ_240 /* GDTCORConsoleLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCORConsoleLogger.h; sourceTree = "<group>"; };
-		OBJ_241 /* GDTCOREventTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCOREventTransformer.h; sourceTree = "<group>"; };
-		OBJ_242 /* GoogleDataTransport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleDataTransport.h; sourceTree = "<group>"; };
-		OBJ_243 /* GDTCORTargets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCORTargets.h; sourceTree = "<group>"; };
-		OBJ_244 /* GDTCOREvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCOREvent.h; sourceTree = "<group>"; };
-		OBJ_245 /* GDTCOREventDataObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTCOREventDataObject.h; sourceTree = "<group>"; };
-		OBJ_246 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_249 /* GULHeartbeatDateStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULHeartbeatDateStorage.m; sourceTree = "<group>"; };
-		OBJ_250 /* GULSecureCoding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULSecureCoding.m; sourceTree = "<group>"; };
-		OBJ_252 /* GULKeychainStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULKeychainStorage.m; sourceTree = "<group>"; };
-		OBJ_253 /* GULKeychainUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULKeychainUtils.m; sourceTree = "<group>"; };
-		OBJ_255 /* GULURLSessionDataResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULURLSessionDataResponse.m; sourceTree = "<group>"; };
-		OBJ_256 /* NSURLSession+GULPromises.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+GULPromises.m"; sourceTree = "<group>"; };
-		OBJ_258 /* GULAppEnvironmentUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULAppEnvironmentUtil.m; sourceTree = "<group>"; };
-		OBJ_26 /* InAppMessagingActionButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InAppMessagingActionButton+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_261 /* GULAppEnvironmentUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULAppEnvironmentUtil.h; sourceTree = "<group>"; };
-		OBJ_262 /* GULHeartbeatDateStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULHeartbeatDateStorage.h; sourceTree = "<group>"; };
-		OBJ_263 /* GULKeychainStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULKeychainStorage.h; sourceTree = "<group>"; };
-		OBJ_264 /* GULSecureCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULSecureCoding.h; sourceTree = "<group>"; };
-		OBJ_265 /* GULKeychainUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULKeychainUtils.h; sourceTree = "<group>"; };
-		OBJ_266 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_268 /* GULLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULLogger.m; sourceTree = "<group>"; };
-		OBJ_27 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		OBJ_271 /* GULLoggerLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULLoggerLevel.h; sourceTree = "<group>"; };
-		OBJ_272 /* GULLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULLogger.h; sourceTree = "<group>"; };
-		OBJ_273 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_279 /* GULUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GULUserDefaults.m; sourceTree = "<group>"; };
-		OBJ_28 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_282 /* GULUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GULUserDefaults.h; sourceTree = "<group>"; };
-		OBJ_283 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_284 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/.build/checkouts/firebase-ios-sdk/Package.swift"; sourceTree = "<group>"; };
-		OBJ_287 /* pb_common.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pb_common.c; sourceTree = "<group>"; };
-		OBJ_288 /* pb_decode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pb_decode.c; sourceTree = "<group>"; };
-		OBJ_289 /* pb_encode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pb_encode.c; sourceTree = "<group>"; };
-		OBJ_29 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_291 /* pb_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
-		OBJ_292 /* pb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
-		OBJ_293 /* pb_encode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
-		OBJ_294 /* pb_decode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
-		OBJ_296 /* pb_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
-		OBJ_297 /* pb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
-		OBJ_298 /* pb_encode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
-		OBJ_299 /* pb_decode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
-		OBJ_30 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_300 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_301 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/.build/checkouts/nanopb/Package.swift"; sourceTree = "<group>"; };
-		OBJ_304 /* FBLPromise+All.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+All.m"; sourceTree = "<group>"; };
-		OBJ_305 /* FBLPromise+Always.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Always.m"; sourceTree = "<group>"; };
-		OBJ_306 /* FBLPromise+Any.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Any.m"; sourceTree = "<group>"; };
-		OBJ_307 /* FBLPromise+Async.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Async.m"; sourceTree = "<group>"; };
-		OBJ_308 /* FBLPromise+Await.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Await.m"; sourceTree = "<group>"; };
-		OBJ_309 /* FBLPromise+Catch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Catch.m"; sourceTree = "<group>"; };
-		OBJ_310 /* FBLPromise+Delay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Delay.m"; sourceTree = "<group>"; };
-		OBJ_311 /* FBLPromise+Do.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Do.m"; sourceTree = "<group>"; };
-		OBJ_312 /* FBLPromise+Race.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Race.m"; sourceTree = "<group>"; };
-		OBJ_313 /* FBLPromise+Recover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Recover.m"; sourceTree = "<group>"; };
-		OBJ_314 /* FBLPromise+Reduce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Reduce.m"; sourceTree = "<group>"; };
-		OBJ_315 /* FBLPromise+Retry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Retry.m"; sourceTree = "<group>"; };
-		OBJ_316 /* FBLPromise+Testing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Testing.m"; sourceTree = "<group>"; };
-		OBJ_317 /* FBLPromise+Then.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Then.m"; sourceTree = "<group>"; };
-		OBJ_318 /* FBLPromise+Timeout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Timeout.m"; sourceTree = "<group>"; };
-		OBJ_319 /* FBLPromise+Validate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Validate.m"; sourceTree = "<group>"; };
-		OBJ_320 /* FBLPromise+Wrap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FBLPromise+Wrap.m"; sourceTree = "<group>"; };
-		OBJ_321 /* FBLPromise.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBLPromise.m; sourceTree = "<group>"; };
-		OBJ_322 /* FBLPromiseError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBLPromiseError.m; sourceTree = "<group>"; };
-		OBJ_324 /* FBLPromise+Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Testing.h"; sourceTree = "<group>"; };
-		OBJ_325 /* FBLPromise+Reduce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Reduce.h"; sourceTree = "<group>"; };
-		OBJ_326 /* FBLPromise+Catch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Catch.h"; sourceTree = "<group>"; };
-		OBJ_327 /* FBLPromise+Recover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Recover.h"; sourceTree = "<group>"; };
-		OBJ_328 /* FBLPromise+Validate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Validate.h"; sourceTree = "<group>"; };
-		OBJ_329 /* FBLPromise+All.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+All.h"; sourceTree = "<group>"; };
-		OBJ_33 /* SwiftyInAppMessagingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessagingTests.swift; sourceTree = "<group>"; };
-		OBJ_330 /* FBLPromise+Race.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Race.h"; sourceTree = "<group>"; };
-		OBJ_331 /* FBLPromise+Wrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Wrap.h"; sourceTree = "<group>"; };
-		OBJ_332 /* FBLPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBLPromise.h; sourceTree = "<group>"; };
-		OBJ_333 /* FBLPromises.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBLPromises.h; sourceTree = "<group>"; };
-		OBJ_334 /* FBLPromisePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBLPromisePrivate.h; sourceTree = "<group>"; };
-		OBJ_335 /* FBLPromise+Retry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Retry.h"; sourceTree = "<group>"; };
-		OBJ_336 /* FBLPromise+Await.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Await.h"; sourceTree = "<group>"; };
-		OBJ_337 /* FBLPromise+Delay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Delay.h"; sourceTree = "<group>"; };
-		OBJ_338 /* FBLPromise+Do.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Do.h"; sourceTree = "<group>"; };
-		OBJ_339 /* FBLPromise+Timeout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Timeout.h"; sourceTree = "<group>"; };
-		OBJ_34 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_340 /* FBLPromiseError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBLPromiseError.h; sourceTree = "<group>"; };
-		OBJ_341 /* FBLPromise+Then.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Then.h"; sourceTree = "<group>"; };
-		OBJ_342 /* FBLPromise+Async.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Async.h"; sourceTree = "<group>"; };
-		OBJ_343 /* FBLPromise+Always.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Always.h"; sourceTree = "<group>"; };
-		OBJ_344 /* FBLPromise+Any.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBLPromise+Any.h"; sourceTree = "<group>"; };
-		OBJ_345 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/.build/checkouts/promises/Sources/FBLPromises/include/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_349 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/.build/checkouts/promises/Package.swift"; sourceTree = "<group>"; };
-		OBJ_366 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		OBJ_38 /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
-		OBJ_39 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
-		OBJ_40 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_42 /* ABTConditionalUserPropertyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABTConditionalUserPropertyController.m; sourceTree = "<group>"; };
-		OBJ_43 /* ABTExperimentPayload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABTExperimentPayload.m; sourceTree = "<group>"; };
-		OBJ_44 /* FIRExperimentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRExperimentController.m; sourceTree = "<group>"; };
-		OBJ_45 /* FIRLifecycleEvents.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRLifecycleEvents.m; sourceTree = "<group>"; };
-		OBJ_48 /* FIRExperimentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRExperimentController.h; sourceTree = "<group>"; };
-		OBJ_49 /* FIRLifecycleEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRLifecycleEvents.h; sourceTree = "<group>"; };
-		OBJ_50 /* FirebaseABTesting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseABTesting.h; sourceTree = "<group>"; };
-		OBJ_51 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_59 /* FIRAnalyticsConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRAnalyticsConfiguration.m; sourceTree = "<group>"; };
-		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_60 /* FIRApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRApp.m; sourceTree = "<group>"; };
-		OBJ_61 /* FIRAppAssociationRegistration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRAppAssociationRegistration.m; sourceTree = "<group>"; };
-		OBJ_62 /* FIRBundleUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRBundleUtil.m; sourceTree = "<group>"; };
-		OBJ_63 /* FIRComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRComponent.m; sourceTree = "<group>"; };
-		OBJ_64 /* FIRComponentContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRComponentContainer.m; sourceTree = "<group>"; };
-		OBJ_65 /* FIRComponentType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRComponentType.m; sourceTree = "<group>"; };
-		OBJ_66 /* FIRConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRConfiguration.m; sourceTree = "<group>"; };
-		OBJ_67 /* FIRCoreDiagnosticsConnector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRCoreDiagnosticsConnector.m; sourceTree = "<group>"; };
-		OBJ_68 /* FIRDependency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRDependency.m; sourceTree = "<group>"; };
-		OBJ_69 /* FIRDiagnosticsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRDiagnosticsData.m; sourceTree = "<group>"; };
-		OBJ_70 /* FIRFirebaseUserAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRFirebaseUserAgent.m; sourceTree = "<group>"; };
-		OBJ_71 /* FIRHeartbeatInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRHeartbeatInfo.m; sourceTree = "<group>"; };
-		OBJ_72 /* FIRLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRLogger.m; sourceTree = "<group>"; };
-		OBJ_73 /* FIROptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIROptions.m; sourceTree = "<group>"; };
-		OBJ_74 /* FIRVersion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRVersion.m; sourceTree = "<group>"; };
-		OBJ_77 /* FIRConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRConfiguration.h; sourceTree = "<group>"; };
-		OBJ_78 /* FIROptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIROptions.h; sourceTree = "<group>"; };
-		OBJ_79 /* FIRApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRApp.h; sourceTree = "<group>"; };
-		OBJ_80 /* FIRLoggerLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRLoggerLevel.h; sourceTree = "<group>"; };
-		OBJ_81 /* FirebaseCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseCore.h; sourceTree = "<group>"; };
-		OBJ_82 /* FIRVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRVersion.h; sourceTree = "<group>"; };
-		OBJ_83 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore/module.modulemap"; sourceTree = "<group>"; };
-		OBJ_85 /* FIRCoreDiagnostics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRCoreDiagnostics.m; sourceTree = "<group>"; };
-		OBJ_88 /* firebasecore.nanopb.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = firebasecore.nanopb.c; sourceTree = "<group>"; };
-		OBJ_89 /* firebasecore.nanopb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = firebasecore.nanopb.h; sourceTree = "<group>"; };
-		OBJ_91 /* FIRCoreDiagnostics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRCoreDiagnostics.h; sourceTree = "<group>"; };
-		OBJ_92 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = "/Users/fumitoito/Projects/com/github/fumito-ito/SwiftyInAppMessaging/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics/module.modulemap"; sourceTree = "<group>"; };
-		"SwiftyInAppMessaging::SwiftyInAppMessaging::Product" /* SwiftyInAppMessaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyInAppMessaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"SwiftyInAppMessaging::SwiftyInAppMessagingTests::Product" /* SwiftyInAppMessagingTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SwiftyInAppMessagingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5129C425C78D7B00BD5E7B /* SwiftyInAppMessaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyInAppMessaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5129C725C78D7B00BD5E7B /* SwiftyInAppMessaging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyInAppMessaging.h; sourceTree = "<group>"; };
+		0A5129C825C78D7B00BD5E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5129CD25C78D7B00BD5E7B /* SwiftyInAppMessagingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyInAppMessagingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5129D225C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessagingTests.swift; sourceTree = "<group>"; };
+		0A5129D425C78D7B00BD5E7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5129E325C78E4100BD5E7B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0A5129E425C78E4100BD5E7B /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		0A5129E525C78E4100BD5E7B /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		0A5129E625C78E4100BD5E7B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A5129F125C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessagingConfiguration.swift; sourceTree = "<group>"; };
+		0A5129F225C78E5800BD5E7B /* SwiftyInAppMessaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessaging.swift; sourceTree = "<group>"; };
+		0A5129F425C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InAppMessagingActionButton+Extensions.swift"; sourceTree = "<group>"; };
+		0A5129F525C78E5800BD5E7B /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0A5129F625C78E5800BD5E7B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		0A5129F725C78E5800BD5E7B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		0A5129F825C78E5800BD5E7B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		0A5129FB25C78E5800BD5E7B /* InAppDefaultCardMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultCardMessageViewController.swift; sourceTree = "<group>"; };
+		0A5129FC25C78E5800BD5E7B /* InAppDefaultCardMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultCardMessageHandler.swift; sourceTree = "<group>"; };
+		0A5129FD25C78E5800BD5E7B /* DefaultInAppMessagingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultInAppMessagingConfiguration.swift; sourceTree = "<group>"; };
+		0A5129FF25C78E5800BD5E7B /* InAppDefaultImageOnlyMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultImageOnlyMessageHandler.swift; sourceTree = "<group>"; };
+		0A512A0025C78E5800BD5E7B /* InAppDefaultImageOnlyMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultImageOnlyMessageViewController.swift; sourceTree = "<group>"; };
+		0A512A0225C78E5800BD5E7B /* InAppDefaultModalMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultModalMessageHandler.swift; sourceTree = "<group>"; };
+		0A512A0325C78E5800BD5E7B /* InAppDefaultModalMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultModalMessageViewController.swift; sourceTree = "<group>"; };
+		0A512A0525C78E5800BD5E7B /* InAppDefaultBannerMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultBannerMessageHandler.swift; sourceTree = "<group>"; };
+		0A512A0625C78E5800BD5E7B /* InAppDefaultBannerMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppDefaultBannerMessageView.swift; sourceTree = "<group>"; };
+		0A512A0725C78E5800BD5E7B /* SwiftyInAppMessagingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyInAppMessagingError.swift; sourceTree = "<group>"; };
+		0A512A0825C78E5800BD5E7B /* InAppMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppMessageHandler.swift; sourceTree = "<group>"; };
+		0A512A0925C78E5800BD5E7B /* InAppMessageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppMessageComponent.swift; sourceTree = "<group>"; };
+		0A512A1F25C78F4D00BD5E7B /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		0A512A2825C78F6900BD5E7B /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
+		0A512A2925C78F6900BD5E7B /* FirebaseABTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseABTesting.framework; path = Carthage/Build/iOS/FirebaseABTesting.framework; sourceTree = "<group>"; };
+		0A512A2A25C78F6900BD5E7B /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		0A512A2B25C78F6900BD5E7B /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		0A512A2C25C78F6900BD5E7B /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
+		0A512A2D25C78F6900BD5E7B /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
+		0A512A2E25C78F6900BD5E7B /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
+		0A512A2F25C78F6900BD5E7B /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Protobuf.framework; path = Carthage/Build/iOS/Protobuf.framework; sourceTree = "<group>"; };
+		0A512A3025C78F6900BD5E7B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
+		0A512A3125C78F6900BD5E7B /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		0A512A3225C78F6900BD5E7B /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		0A512A3325C78F6900BD5E7B /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
+		0A512A3425C78F6900BD5E7B /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		0A512A3525C78F6900BD5E7B /* FirebaseInAppMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInAppMessaging.framework; path = Carthage/Build/iOS/FirebaseInAppMessaging.framework; sourceTree = "<group>"; };
+		0A91499125C7B011004AB4F5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0A91499525C7B021004AB4F5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_730 /* Frameworks */ = {
+		0A5129C125C78D7B00BD5E7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
+			buildActionMask = 2147483647;
 			files = (
-				0A3830CC25AD80A100BBEA44 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				0A3830DA25AD80A100BBEA44 /* FirebaseInstallations.framework in Frameworks */,
-				0A3830D625AD80A100BBEA44 /* FirebaseABTesting.framework in Frameworks */,
-				0A3830CA25AD80A100BBEA44 /* FirebaseInAppMessaging.framework in Frameworks */,
-				0A3830D225AD80A100BBEA44 /* FirebaseCore.framework in Frameworks */,
-				0A3830D425AD80A100BBEA44 /* Firebase.framework in Frameworks */,
-				0A3830E225AD80A100BBEA44 /* PromisesObjC.framework in Frameworks */,
-				0A3830CE25AD80A100BBEA44 /* GoogleAppMeasurement.framework in Frameworks */,
-				0A3830D025AD80A100BBEA44 /* FIRAnalyticsConnector.framework in Frameworks */,
-				0A3830DC25AD80A100BBEA44 /* FirebaseAnalytics.framework in Frameworks */,
-				0A3830C825AD80A100BBEA44 /* GoogleUtilities.framework in Frameworks */,
-				0A3830E025AD80A100BBEA44 /* GoogleDataTransport.framework in Frameworks */,
-				0A3830DE25AD80A100BBEA44 /* nanopb.framework in Frameworks */,
-				0A3830D825AD80A100BBEA44 /* Protobuf.framework in Frameworks */,
+				0A512A3A25C78F6900BD5E7B /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				0A512A4A25C78F6A00BD5E7B /* GoogleAppMeasurement.framework in Frameworks */,
+				0A512A4825C78F6A00BD5E7B /* nanopb.framework in Frameworks */,
+				0A512A3E25C78F6A00BD5E7B /* FirebaseCore.framework in Frameworks */,
+				0A512A4025C78F6A00BD5E7B /* PromisesObjC.framework in Frameworks */,
+				0A512A3625C78F6900BD5E7B /* GoogleUtilities.framework in Frameworks */,
+				0A512A3825C78F6900BD5E7B /* FirebaseABTesting.framework in Frameworks */,
+				0A512A3C25C78F6900BD5E7B /* FIRAnalyticsConnector.framework in Frameworks */,
+				0A512A4C25C78F6A00BD5E7B /* GoogleDataTransport.framework in Frameworks */,
+				0A512A4225C78F6A00BD5E7B /* FirebaseInstallations.framework in Frameworks */,
+				0A512A4425C78F6A00BD5E7B /* Protobuf.framework in Frameworks */,
+				0A512A5025C78F6A00BD5E7B /* FirebaseInAppMessaging.framework in Frameworks */,
+				0A512A4E25C78F6A00BD5E7B /* FirebaseAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_775 /* Frameworks */ = {
+		0A5129CA25C78D7B00BD5E7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
+			buildActionMask = 2147483647;
 			files = (
-				OBJ_776 /* SwiftyInAppMessaging.framework in Frameworks */,
+				0A5129CE25C78D7B00BD5E7B /* SwiftyInAppMessaging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A3830B925AD80A000BBEA44 /* Frameworks */ = {
+		0A0A572425C797EE0084F7EE /* SwiftyInAppMessagingTests */ = {
 			isa = PBXGroup;
 			children = (
-				0A3830BE25AD80A100BBEA44 /* FIRAnalyticsConnector.framework */,
-				0A3830C025AD80A100BBEA44 /* Firebase.framework */,
-				0A3830C125AD80A100BBEA44 /* FirebaseABTesting.framework */,
-				0A3830C425AD80A100BBEA44 /* FirebaseAnalytics.framework */,
-				0A3830BF25AD80A100BBEA44 /* FirebaseCore.framework */,
-				0A3830BC25AD80A100BBEA44 /* FirebaseCoreDiagnostics.framework */,
-				0A3830BB25AD80A100BBEA44 /* FirebaseInAppMessaging.framework */,
-				0A3830C325AD80A100BBEA44 /* FirebaseInstallations.framework */,
-				0A3830BD25AD80A100BBEA44 /* GoogleAppMeasurement.framework */,
-				0A3830C625AD80A100BBEA44 /* GoogleDataTransport.framework */,
-				0A3830BA25AD80A100BBEA44 /* GoogleUtilities.framework */,
-				0A3830C525AD80A100BBEA44 /* nanopb.framework */,
-				0A3830C725AD80A100BBEA44 /* PromisesObjC.framework */,
-				0A3830C225AD80A100BBEA44 /* Protobuf.framework */,
+				0A512A1F25C78F4D00BD5E7B /* XCTestManifests.swift */,
+				0A5129D225C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift */,
 			);
-			name = Frameworks;
+			path = SwiftyInAppMessagingTests;
 			sourceTree = "<group>";
 		};
-		0A65623125B67C1D007FE6F2 /* Banner */ = {
+		0A5129BA25C78D7B00BD5E7B = {
 			isa = PBXGroup;
 			children = (
-				0A65623625B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift */,
-				0A65623C25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift */,
+				0A5129E525C78E4100BD5E7B /* Cartfile */,
+				0A5129E425C78E4100BD5E7B /* Cartfile.resolved */,
+				0A5129E325C78E4100BD5E7B /* LICENSE */,
+				0A5129E625C78E4100BD5E7B /* README.md */,
+				0A5129C625C78D7B00BD5E7B /* Sources */,
+				0A5129D125C78D7B00BD5E7B /* Tests */,
+				0A5129C525C78D7B00BD5E7B /* Products */,
+				0A512A2725C78F6900BD5E7B /* Frameworks */,
 			);
-			path = Banner;
 			sourceTree = "<group>";
 		};
-		OBJ_10 /* Card */ = {
+		0A5129C525C78D7B00BD5E7B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* InAppDefaultCardMessageHandler.swift */,
-				OBJ_12 /* InAppDefaultCardMessageViewController.swift */,
+				0A5129C425C78D7B00BD5E7B /* SwiftyInAppMessaging.framework */,
+				0A5129CD25C78D7B00BD5E7B /* SwiftyInAppMessagingTests.xctest */,
 			);
-			path = Card;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		OBJ_100 /* FirebaseFirestoreSwiftTarget */ = {
+		0A5129C625C78D7B00BD5E7B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0A5129F025C78E5800BD5E7B /* SwiftyInAppMessaging */,
+				0A5129C725C78D7B00BD5E7B /* SwiftyInAppMessaging.h */,
+				0A5129C825C78D7B00BD5E7B /* Info.plist */,
 			);
-			name = FirebaseFirestoreSwiftTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseFirestoreSwiftWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_101 /* FirebaseFirestoreTarget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseFirestoreTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseFirestoreWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_102 /* FirebaseFunctions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseFunctions;
-			path = ".build/checkouts/firebase-ios-sdk/Functions/FirebaseFunctions";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_103 /* FirebaseFunctionsTarget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseFunctionsTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseFunctionsWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_104 /* FirebaseInAppMessaging */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_105 /* Analytics */,
-				OBJ_114 /* Data */,
-				OBJ_119 /* DefaultUI */,
-				OBJ_133 /* DisplayTrigger */,
-				OBJ_135 /* FIRCore+InAppMessaging.m */,
-				OBJ_136 /* FIRInAppMessaging.m */,
-				OBJ_137 /* Flows */,
-				OBJ_151 /* RenderingObjects */,
-				OBJ_153 /* Runtime */,
-				OBJ_159 /* Util */,
-				OBJ_164 /* Public */,
-			);
-			name = FirebaseInAppMessaging;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseInAppMessaging/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_105 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_106 /* FIRIAMAnalyticsEventLoggerImpl.m */,
-				OBJ_107 /* FIRIAMClearcutHttpRequestSender.m */,
-				OBJ_108 /* FIRIAMClearcutLogStorage.m */,
-				OBJ_109 /* FIRIAMClearcutLogger.m */,
-				OBJ_110 /* FIRIAMClearcutUploader.m */,
-				OBJ_111 /* Protogen */,
-			);
-			path = Analytics;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		OBJ_111 /* Protogen */ = {
+		0A5129D125C78D7B00BD5E7B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_112 /* nanopb */,
+				0A0A572425C797EE0084F7EE /* SwiftyInAppMessagingTests */,
+				0A5129D425C78D7B00BD5E7B /* Info.plist */,
 			);
-			path = Protogen;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		OBJ_112 /* nanopb */ = {
+		0A5129F025C78E5800BD5E7B /* SwiftyInAppMessaging */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_113 /* fiam.nanopb.c */,
+				0A5129F125C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift */,
+				0A5129F225C78E5800BD5E7B /* SwiftyInAppMessaging.swift */,
+				0A5129F325C78E5800BD5E7B /* Uitilities */,
+				0A5129F925C78E5800BD5E7B /* Default */,
+				0A512A0725C78E5800BD5E7B /* SwiftyInAppMessagingError.swift */,
+				0A512A0825C78E5800BD5E7B /* InAppMessageHandler.swift */,
+				0A512A0925C78E5800BD5E7B /* InAppMessageComponent.swift */,
 			);
-			path = nanopb;
+			path = SwiftyInAppMessaging;
 			sourceTree = "<group>";
 		};
-		OBJ_114 /* Data */ = {
+		0A5129F325C78E5800BD5E7B /* Uitilities */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_115 /* FIRIAMFetchResponseParser.m */,
-				OBJ_116 /* FIRIAMMessageContentDataWithImageURL.m */,
-				OBJ_117 /* FIRIAMMessageDefinition.m */,
-				OBJ_118 /* FIRIAMRenderingEffectSetting.m */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		OBJ_119 /* DefaultUI */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_120 /* Banner */,
-				OBJ_123 /* Card */,
-				OBJ_125 /* FIRCore+InAppMessagingDisplay.m */,
-				OBJ_126 /* FIRIAMBaseRenderingViewController.m */,
-				OBJ_127 /* FIRIAMDefaultDisplayImpl.m */,
-				OBJ_128 /* FIRIAMRenderingWindowHelper.m */,
-				OBJ_129 /* ImageOnly */,
-				OBJ_131 /* Modal */,
-			);
-			path = DefaultUI;
-			sourceTree = "<group>";
-		};
-		OBJ_120 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_121 /* FIRIAMBannerViewController.m */,
-				OBJ_122 /* FIRIAMBannerViewUIWindow.m */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
-		OBJ_123 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_124 /* FIRIAMCardViewController.m */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
-		OBJ_129 /* ImageOnly */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_130 /* FIRIAMImageOnlyViewController.m */,
-			);
-			path = ImageOnly;
-			sourceTree = "<group>";
-		};
-		OBJ_131 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_132 /* FIRIAMModalViewController.m */,
-			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
-		OBJ_133 /* DisplayTrigger */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_134 /* FIRIAMDisplayTriggerDefinition.m */,
-			);
-			path = DisplayTrigger;
-			sourceTree = "<group>";
-		};
-		OBJ_137 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_138 /* FIRIAMActivityLogger.m */,
-				OBJ_139 /* FIRIAMBookKeeper.m */,
-				OBJ_140 /* FIRIAMClientInfoFetcher.m */,
-				OBJ_141 /* FIRIAMDisplayCheckOnAnalyticEventsFlow.m */,
-				OBJ_142 /* FIRIAMDisplayCheckOnAppForegroundFlow.m */,
-				OBJ_143 /* FIRIAMDisplayCheckOnFetchDoneNotificationFlow.m */,
-				OBJ_144 /* FIRIAMDisplayCheckTriggerFlow.m */,
-				OBJ_145 /* FIRIAMDisplayExecutor.m */,
-				OBJ_146 /* FIRIAMFetchFlow.m */,
-				OBJ_147 /* FIRIAMFetchOnAppForegroundFlow.m */,
-				OBJ_148 /* FIRIAMMessageClientCache.m */,
-				OBJ_149 /* FIRIAMMsgFetcherUsingRestful.m */,
-				OBJ_150 /* FIRIAMServerMsgFetchStorage.m */,
-			);
-			path = Flows;
-			sourceTree = "<group>";
-		};
-		OBJ_14 /* ImageOnly */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_15 /* InAppDefaultImageOnlyMessageHandler.swift */,
-				OBJ_16 /* InAppDefaultImageOnlyMessageViewController.swift */,
-			);
-			path = ImageOnly;
-			sourceTree = "<group>";
-		};
-		OBJ_151 /* RenderingObjects */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_152 /* FIRInAppMessagingRenderingDataClasses.m */,
-			);
-			path = RenderingObjects;
-			sourceTree = "<group>";
-		};
-		OBJ_153 /* Runtime */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_154 /* FIRIAMActionURLFollower.m */,
-				OBJ_155 /* FIRIAMRuntimeManager.m */,
-				OBJ_156 /* FIRIAMSDKModeManager.m */,
-				OBJ_157 /* FIRIAMSDKSettings.m */,
-				OBJ_158 /* FIRInAppMessaging+Bootstrap.m */,
-			);
-			path = Runtime;
-			sourceTree = "<group>";
-		};
-		OBJ_159 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_160 /* FIRIAMElapsedTimeTracker.m */,
-				OBJ_161 /* FIRIAMTimeFetcher.m */,
-				OBJ_162 /* NSString+FIRInterlaceStrings.m */,
-				OBJ_163 /* UIColor+FIRIAMHexString.m */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		OBJ_164 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_165 /* FirebaseInAppMessaging */,
-				OBJ_169 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_165 /* FirebaseInAppMessaging */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_166 /* FirebaseInAppMessaging.h */,
-				OBJ_167 /* FIRInAppMessagingRendering.h */,
-				OBJ_168 /* FIRInAppMessaging.h */,
-			);
-			path = FirebaseInAppMessaging;
-			sourceTree = "<group>";
-		};
-		OBJ_17 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_18 /* InAppDefaultModalMessageHandler.swift */,
-				OBJ_19 /* InAppDefaultModalMessageViewController.swift */,
-			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
-		OBJ_170 /* FirebaseInAppMessagingTarget */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_171 /* dummy.m */,
-				OBJ_172 /* include */,
-			);
-			name = FirebaseInAppMessagingTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseInAppMessagingWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_172 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_173 /* dummy.h */,
-				OBJ_174 /* module.modulemap */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		OBJ_175 /* FirebaseInstallations */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_176 /* Errors */,
-				OBJ_179 /* FIRInstallations.m */,
-				OBJ_180 /* FIRInstallationsAuthTokenResult.m */,
-				OBJ_181 /* FIRInstallationsItem.m */,
-				OBJ_182 /* FIRInstallationsLogger.m */,
-				OBJ_183 /* IIDMigration */,
-				OBJ_186 /* InstallationsAPI */,
-				OBJ_189 /* InstallationsIDController */,
-				OBJ_194 /* InstallationsStore */,
-				OBJ_198 /* Public */,
-			);
-			name = FirebaseInstallations;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_176 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_177 /* FIRInstallationsErrorUtil.m */,
-				OBJ_178 /* FIRInstallationsHTTPError.m */,
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
-		OBJ_183 /* IIDMigration */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_184 /* FIRInstallationsIIDStore.m */,
-				OBJ_185 /* FIRInstallationsIIDTokenStore.m */,
-			);
-			path = IIDMigration;
-			sourceTree = "<group>";
-		};
-		OBJ_186 /* InstallationsAPI */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_187 /* FIRInstallationsAPIService.m */,
-				OBJ_188 /* FIRInstallationsItem+RegisterInstallationAPI.m */,
-			);
-			path = InstallationsAPI;
-			sourceTree = "<group>";
-		};
-		OBJ_189 /* InstallationsIDController */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_190 /* FIRCurrentDateProvider.m */,
-				OBJ_191 /* FIRInstallationsBackoffController.m */,
-				OBJ_192 /* FIRInstallationsIDController.m */,
-				OBJ_193 /* FIRInstallationsSingleOperationPromiseCache.m */,
-			);
-			path = InstallationsIDController;
-			sourceTree = "<group>";
-		};
-		OBJ_194 /* InstallationsStore */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_195 /* FIRInstallationsStore.m */,
-				OBJ_196 /* FIRInstallationsStoredAuthToken.m */,
-				OBJ_197 /* FIRInstallationsStoredItem.m */,
-			);
-			path = InstallationsStore;
-			sourceTree = "<group>";
-		};
-		OBJ_198 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_199 /* FirebaseInstallations */,
-				OBJ_204 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_199 /* FirebaseInstallations */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_200 /* FIRInstallationsErrors.h */,
-				OBJ_201 /* FirebaseInstallations.h */,
-				OBJ_202 /* FIRInstallations.h */,
-				OBJ_203 /* FIRInstallationsAuthTokenResult.h */,
-			);
-			path = FirebaseInstallations;
-			sourceTree = "<group>";
-		};
-		OBJ_205 /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseInstanceID;
-			path = ".build/checkouts/firebase-ios-sdk/Firebase/InstanceID";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_206 /* FirebaseMessaging */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseMessaging;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseMessaging/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_207 /* FirebaseRemoteConfig */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseRemoteConfig;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseRemoteConfig/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_208 /* FirebaseRemoteConfigTarget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseRemoteConfigTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseRemoteConfigWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_209 /* FirebaseStorage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseStorage;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseStorage/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_210 /* FirebaseStorageSwift */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseStorageSwift;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseStorageSwift/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_211 /* GoogleAppMeasurement */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GoogleAppMeasurement;
-			path = .build/artifacts/Firebase/GoogleAppMeasurement.xcframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_212 /* GoogleDataTransport */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_213 /* GDTCCTLibrary */,
-				OBJ_221 /* GDTCORLibrary */,
-			);
-			name = GoogleDataTransport;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleDataTransport";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_213 /* GDTCCTLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_214 /* GDTCCTCompressionHelper.m */,
-				OBJ_215 /* GDTCCTNanopbHelpers.m */,
-				OBJ_216 /* GDTCCTUploader.m */,
-				OBJ_217 /* GDTCOREvent+GDTCCTSupport.m */,
-				OBJ_218 /* Protogen */,
-			);
-			path = GDTCCTLibrary;
-			sourceTree = "<group>";
-		};
-		OBJ_218 /* Protogen */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_219 /* nanopb */,
-			);
-			path = Protogen;
-			sourceTree = "<group>";
-		};
-		OBJ_219 /* nanopb */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_220 /* cct.nanopb.c */,
-			);
-			path = nanopb;
-			sourceTree = "<group>";
-		};
-		OBJ_221 /* GDTCORLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_222 /* GDTCORAssert.m */,
-				OBJ_223 /* GDTCORClock.m */,
-				OBJ_224 /* GDTCORConsoleLogger.m */,
-				OBJ_225 /* GDTCORDirectorySizeTracker.m */,
-				OBJ_226 /* GDTCOREvent.m */,
-				OBJ_227 /* GDTCORFlatFileStorage.m */,
-				OBJ_228 /* GDTCORLifecycle.m */,
-				OBJ_229 /* GDTCORPlatform.m */,
-				OBJ_230 /* GDTCORReachability.m */,
-				OBJ_231 /* GDTCORRegistrar.m */,
-				OBJ_232 /* GDTCORStorageEventSelector.m */,
-				OBJ_233 /* GDTCORTransformer.m */,
-				OBJ_234 /* GDTCORTransport.m */,
-				OBJ_235 /* GDTCORUploadCoordinator.m */,
-				OBJ_236 /* Public */,
-			);
-			path = GDTCORLibrary;
-			sourceTree = "<group>";
-		};
-		OBJ_236 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_237 /* GoogleDataTransport */,
-				OBJ_246 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_237 /* GoogleDataTransport */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_238 /* GDTCORClock.h */,
-				OBJ_239 /* GDTCORTransport.h */,
-				OBJ_240 /* GDTCORConsoleLogger.h */,
-				OBJ_241 /* GDTCOREventTransformer.h */,
-				OBJ_242 /* GoogleDataTransport.h */,
-				OBJ_243 /* GDTCORTargets.h */,
-				OBJ_244 /* GDTCOREvent.h */,
-				OBJ_245 /* GDTCOREventDataObject.h */,
-			);
-			path = GoogleDataTransport;
-			sourceTree = "<group>";
-		};
-		OBJ_247 /* GoogleUtilities_AppDelegateSwizzler */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GoogleUtilities_AppDelegateSwizzler;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_248 /* GoogleUtilities_Environment */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_249 /* GULHeartbeatDateStorage.m */,
-				OBJ_250 /* GULSecureCoding.m */,
-				OBJ_251 /* SecureStorage */,
-				OBJ_254 /* URLSessionPromiseWrapper */,
-				OBJ_257 /* third_party */,
-				OBJ_259 /* Public */,
-			);
-			name = GoogleUtilities_Environment;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/Environment";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_25 /* Uitilities */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_26 /* InAppMessagingActionButton+Extensions.swift */,
-				OBJ_27 /* Log.swift */,
-				OBJ_28 /* UIApplication+Extensions.swift */,
-				OBJ_29 /* UIColor+Extensions.swift */,
-				OBJ_30 /* UIImage+Extensions.swift */,
+				0A5129F425C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift */,
+				0A5129F525C78E5800BD5E7B /* Log.swift */,
+				0A5129F625C78E5800BD5E7B /* UIColor+Extensions.swift */,
+				0A5129F725C78E5800BD5E7B /* UIImage+Extensions.swift */,
+				0A5129F825C78E5800BD5E7B /* UIApplication+Extensions.swift */,
 			);
 			path = Uitilities;
 			sourceTree = "<group>";
 		};
-		OBJ_251 /* SecureStorage */ = {
+		0A5129F925C78E5800BD5E7B /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_252 /* GULKeychainStorage.m */,
-				OBJ_253 /* GULKeychainUtils.m */,
-			);
-			path = SecureStorage;
-			sourceTree = "<group>";
-		};
-		OBJ_254 /* URLSessionPromiseWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_255 /* GULURLSessionDataResponse.m */,
-				OBJ_256 /* NSURLSession+GULPromises.m */,
-			);
-			path = URLSessionPromiseWrapper;
-			sourceTree = "<group>";
-		};
-		OBJ_257 /* third_party */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_258 /* GULAppEnvironmentUtil.m */,
-			);
-			path = third_party;
-			sourceTree = "<group>";
-		};
-		OBJ_259 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_260 /* GoogleUtilities */,
-				OBJ_266 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_260 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_261 /* GULAppEnvironmentUtil.h */,
-				OBJ_262 /* GULHeartbeatDateStorage.h */,
-				OBJ_263 /* GULKeychainStorage.h */,
-				OBJ_264 /* GULSecureCoding.h */,
-				OBJ_265 /* GULKeychainUtils.h */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		OBJ_267 /* GoogleUtilities_Logger */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_268 /* GULLogger.m */,
-				OBJ_269 /* Public */,
-			);
-			name = GoogleUtilities_Logger;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/Logger";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_269 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_270 /* GoogleUtilities */,
-				OBJ_273 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_270 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_271 /* GULLoggerLevel.h */,
-				OBJ_272 /* GULLogger.h */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		OBJ_274 /* GoogleUtilities_MethodSwizzler */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GoogleUtilities_MethodSwizzler;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/MethodSwizzler";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_275 /* GoogleUtilities_NSData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GoogleUtilities_NSData;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/NSData+zlib";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_276 /* GoogleUtilities_Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GoogleUtilities_Network;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/Network";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_277 /* GoogleUtilities_Reachability */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = GoogleUtilities_Reachability;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/Reachability";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_278 /* GoogleUtilities_UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_279 /* GULUserDefaults.m */,
-				OBJ_280 /* Public */,
-			);
-			name = GoogleUtilities_UserDefaults;
-			path = ".build/checkouts/firebase-ios-sdk/GoogleUtilities/UserDefaults";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_280 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_281 /* GoogleUtilities */,
-				OBJ_283 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_281 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_282 /* GULUserDefaults.h */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		OBJ_285 /* nanopb 2.30906.0 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_286 /* nanopb */,
-				OBJ_301 /* Package.swift */,
-			);
-			name = "nanopb 2.30906.0";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_286 /* nanopb */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_287 /* pb_common.c */,
-				OBJ_288 /* pb_decode.c */,
-				OBJ_289 /* pb_encode.c */,
-				OBJ_290 /* spm_headers */,
-			);
-			name = nanopb;
-			path = .build/checkouts/nanopb;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_290 /* spm_headers */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_291 /* pb_common.h */,
-				OBJ_292 /* pb.h */,
-				OBJ_293 /* pb_encode.h */,
-				OBJ_294 /* pb_decode.h */,
-				OBJ_295 /* nanopb */,
-				OBJ_300 /* module.modulemap */,
-			);
-			path = spm_headers;
-			sourceTree = "<group>";
-		};
-		OBJ_295 /* nanopb */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_296 /* pb_common.h */,
-				OBJ_297 /* pb.h */,
-				OBJ_298 /* pb_encode.h */,
-				OBJ_299 /* pb_decode.h */,
-			);
-			path = nanopb;
-			sourceTree = "<group>";
-		};
-		OBJ_302 /* Promises 1.2.12 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_303 /* FBLPromises */,
-				OBJ_346 /* FBLPromisesTestHelpers */,
-				OBJ_347 /* Promises */,
-				OBJ_348 /* PromisesTestHelpers */,
-				OBJ_349 /* Package.swift */,
-			);
-			name = "Promises 1.2.12";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_303 /* FBLPromises */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_304 /* FBLPromise+All.m */,
-				OBJ_305 /* FBLPromise+Always.m */,
-				OBJ_306 /* FBLPromise+Any.m */,
-				OBJ_307 /* FBLPromise+Async.m */,
-				OBJ_308 /* FBLPromise+Await.m */,
-				OBJ_309 /* FBLPromise+Catch.m */,
-				OBJ_310 /* FBLPromise+Delay.m */,
-				OBJ_311 /* FBLPromise+Do.m */,
-				OBJ_312 /* FBLPromise+Race.m */,
-				OBJ_313 /* FBLPromise+Recover.m */,
-				OBJ_314 /* FBLPromise+Reduce.m */,
-				OBJ_315 /* FBLPromise+Retry.m */,
-				OBJ_316 /* FBLPromise+Testing.m */,
-				OBJ_317 /* FBLPromise+Then.m */,
-				OBJ_318 /* FBLPromise+Timeout.m */,
-				OBJ_319 /* FBLPromise+Validate.m */,
-				OBJ_320 /* FBLPromise+Wrap.m */,
-				OBJ_321 /* FBLPromise.m */,
-				OBJ_322 /* FBLPromiseError.m */,
-				OBJ_323 /* include */,
-			);
-			name = FBLPromises;
-			path = .build/checkouts/promises/Sources/FBLPromises;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_31 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_32 /* SwiftyInAppMessagingTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_32 /* SwiftyInAppMessagingTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_33 /* SwiftyInAppMessagingTests.swift */,
-				OBJ_34 /* XCTestManifests.swift */,
-			);
-			name = SwiftyInAppMessagingTests;
-			path = Tests/SwiftyInAppMessagingTests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_323 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_324 /* FBLPromise+Testing.h */,
-				OBJ_325 /* FBLPromise+Reduce.h */,
-				OBJ_326 /* FBLPromise+Catch.h */,
-				OBJ_327 /* FBLPromise+Recover.h */,
-				OBJ_328 /* FBLPromise+Validate.h */,
-				OBJ_329 /* FBLPromise+All.h */,
-				OBJ_330 /* FBLPromise+Race.h */,
-				OBJ_331 /* FBLPromise+Wrap.h */,
-				OBJ_332 /* FBLPromise.h */,
-				OBJ_333 /* FBLPromises.h */,
-				OBJ_334 /* FBLPromisePrivate.h */,
-				OBJ_335 /* FBLPromise+Retry.h */,
-				OBJ_336 /* FBLPromise+Await.h */,
-				OBJ_337 /* FBLPromise+Delay.h */,
-				OBJ_338 /* FBLPromise+Do.h */,
-				OBJ_339 /* FBLPromise+Timeout.h */,
-				OBJ_340 /* FBLPromiseError.h */,
-				OBJ_341 /* FBLPromise+Then.h */,
-				OBJ_342 /* FBLPromise+Async.h */,
-				OBJ_343 /* FBLPromise+Always.h */,
-				OBJ_344 /* FBLPromise+Any.h */,
-				OBJ_345 /* module.modulemap */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		OBJ_346 /* FBLPromisesTestHelpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FBLPromisesTestHelpers;
-			path = .build/checkouts/promises/Sources/FBLPromisesTestHelpers;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_347 /* Promises */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Promises;
-			path = .build/checkouts/promises/Sources/Promises;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_348 /* PromisesTestHelpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PromisesTestHelpers;
-			path = .build/checkouts/promises/Sources/PromisesTestHelpers;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_35 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_36 /* Firebase 7.3.1 */,
-				OBJ_285 /* nanopb 2.30906.0 */,
-				OBJ_302 /* Promises 1.2.12 */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		OBJ_350 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				"SwiftyInAppMessaging::SwiftyInAppMessaging::Product" /* SwiftyInAppMessaging.framework */,
-				"SwiftyInAppMessaging::SwiftyInAppMessagingTests::Product" /* SwiftyInAppMessagingTests.xctest */,
-			);
-			name = Products;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		OBJ_36 /* Firebase 7.3.1 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_37 /* Firebase */,
-				OBJ_41 /* FirebaseABTesting */,
-				OBJ_52 /* FirebaseAnalytics */,
-				OBJ_53 /* FirebaseAnalyticsTarget */,
-				OBJ_54 /* FirebaseAnalyticsWrapper */,
-				OBJ_55 /* FirebaseAppDistribution */,
-				OBJ_56 /* FirebaseAppDistributionTarget */,
-				OBJ_57 /* FirebaseAuth */,
-				OBJ_58 /* FirebaseCore */,
-				OBJ_84 /* FirebaseCoreDiagnostics */,
-				OBJ_93 /* FirebaseCrashlytics */,
-				OBJ_94 /* FirebaseDatabase */,
-				OBJ_95 /* FirebaseDatabaseTarget */,
-				OBJ_96 /* FirebaseDynamicLinks */,
-				OBJ_97 /* FirebaseDynamicLinksTarget */,
-				OBJ_98 /* FirebaseFirestore */,
-				OBJ_99 /* FirebaseFirestoreSwift */,
-				OBJ_100 /* FirebaseFirestoreSwiftTarget */,
-				OBJ_101 /* FirebaseFirestoreTarget */,
-				OBJ_102 /* FirebaseFunctions */,
-				OBJ_103 /* FirebaseFunctionsTarget */,
-				OBJ_104 /* FirebaseInAppMessaging */,
-				OBJ_170 /* FirebaseInAppMessagingTarget */,
-				OBJ_175 /* FirebaseInstallations */,
-				OBJ_205 /* FirebaseInstanceID */,
-				OBJ_206 /* FirebaseMessaging */,
-				OBJ_207 /* FirebaseRemoteConfig */,
-				OBJ_208 /* FirebaseRemoteConfigTarget */,
-				OBJ_209 /* FirebaseStorage */,
-				OBJ_210 /* FirebaseStorageSwift */,
-				OBJ_211 /* GoogleAppMeasurement */,
-				OBJ_212 /* GoogleDataTransport */,
-				OBJ_247 /* GoogleUtilities_AppDelegateSwizzler */,
-				OBJ_248 /* GoogleUtilities_Environment */,
-				OBJ_267 /* GoogleUtilities_Logger */,
-				OBJ_274 /* GoogleUtilities_MethodSwizzler */,
-				OBJ_275 /* GoogleUtilities_NSData */,
-				OBJ_276 /* GoogleUtilities_Network */,
-				OBJ_277 /* GoogleUtilities_Reachability */,
-				OBJ_278 /* GoogleUtilities_UserDefaults */,
-				OBJ_284 /* Package.swift */,
-			);
-			name = "Firebase 7.3.1";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_37 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_38 /* dummy.m */,
-				OBJ_39 /* Firebase.h */,
-				OBJ_40 /* module.modulemap */,
-			);
-			name = Firebase;
-			path = ".build/checkouts/firebase-ios-sdk/CoreOnly/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_41 /* FirebaseABTesting */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_42 /* ABTConditionalUserPropertyController.m */,
-				OBJ_43 /* ABTExperimentPayload.m */,
-				OBJ_44 /* FIRExperimentController.m */,
-				OBJ_45 /* FIRLifecycleEvents.m */,
-				OBJ_46 /* Public */,
-			);
-			name = FirebaseABTesting;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseABTesting/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_46 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_47 /* FirebaseABTesting */,
-				OBJ_51 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_47 /* FirebaseABTesting */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_48 /* FIRExperimentController.h */,
-				OBJ_49 /* FIRLifecycleEvents.h */,
-				OBJ_50 /* FirebaseABTesting.h */,
-			);
-			path = FirebaseABTesting;
-			sourceTree = "<group>";
-		};
-		OBJ_5 = {
-			isa = PBXGroup;
-			children = (
-				OBJ_6 /* Package.swift */,
-				OBJ_7 /* Sources */,
-				OBJ_31 /* Tests */,
-				OBJ_35 /* Dependencies */,
-				OBJ_350 /* Products */,
-				OBJ_366 /* README.md */,
-				0A3830B925AD80A000BBEA44 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		OBJ_52 /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseAnalytics;
-			path = .build/artifacts/Firebase/FirebaseAnalytics.xcframework;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_53 /* FirebaseAnalyticsTarget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseAnalyticsTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseAnalyticsWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_54 /* FirebaseAnalyticsWrapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseAnalyticsWrapper;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseAnalyticsWrapper";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_55 /* FirebaseAppDistribution */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseAppDistribution;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseAppDistribution/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_56 /* FirebaseAppDistributionTarget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseAppDistributionTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseAppDistributionWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_57 /* FirebaseAuth */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseAuth;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseAuth/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_58 /* FirebaseCore */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_59 /* FIRAnalyticsConfiguration.m */,
-				OBJ_60 /* FIRApp.m */,
-				OBJ_61 /* FIRAppAssociationRegistration.m */,
-				OBJ_62 /* FIRBundleUtil.m */,
-				OBJ_63 /* FIRComponent.m */,
-				OBJ_64 /* FIRComponentContainer.m */,
-				OBJ_65 /* FIRComponentType.m */,
-				OBJ_66 /* FIRConfiguration.m */,
-				OBJ_67 /* FIRCoreDiagnosticsConnector.m */,
-				OBJ_68 /* FIRDependency.m */,
-				OBJ_69 /* FIRDiagnosticsData.m */,
-				OBJ_70 /* FIRFirebaseUserAgent.m */,
-				OBJ_71 /* FIRHeartbeatInfo.m */,
-				OBJ_72 /* FIRLogger.m */,
-				OBJ_73 /* FIROptions.m */,
-				OBJ_74 /* FIRVersion.m */,
-				OBJ_75 /* Public */,
-			);
-			name = FirebaseCore;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseCore/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_7 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_8 /* SwiftyInAppMessaging */,
-			);
-			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_75 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_76 /* FirebaseCore */,
-				OBJ_83 /* module.modulemap */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		OBJ_76 /* FirebaseCore */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_77 /* FIRConfiguration.h */,
-				OBJ_78 /* FIROptions.h */,
-				OBJ_79 /* FIRApp.h */,
-				OBJ_80 /* FIRLoggerLevel.h */,
-				OBJ_81 /* FirebaseCore.h */,
-				OBJ_82 /* FIRVersion.h */,
-			);
-			path = FirebaseCore;
-			sourceTree = "<group>";
-		};
-		OBJ_8 /* SwiftyInAppMessaging */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_9 /* Default */,
-				OBJ_20 /* InAppMessageComponent.swift */,
-				OBJ_21 /* InAppMessageHandler.swift */,
-				OBJ_22 /* SwiftyInAppMessaging.swift */,
-				OBJ_23 /* SwiftyInAppMessagingConfiguration.swift */,
-				OBJ_24 /* SwiftyInAppMessagingError.swift */,
-				OBJ_25 /* Uitilities */,
-			);
-			name = SwiftyInAppMessaging;
-			path = Sources/SwiftyInAppMessaging;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_84 /* FirebaseCoreDiagnostics */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_85 /* FIRCoreDiagnostics.m */,
-				OBJ_86 /* Protogen */,
-				OBJ_90 /* Public */,
-				OBJ_92 /* module.modulemap */,
-			);
-			name = FirebaseCoreDiagnostics;
-			path = ".build/checkouts/firebase-ios-sdk/Firebase/CoreDiagnostics/FIRCDLibrary";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_86 /* Protogen */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_87 /* nanopb */,
-			);
-			path = Protogen;
-			sourceTree = "<group>";
-		};
-		OBJ_87 /* nanopb */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_88 /* firebasecore.nanopb.c */,
-				OBJ_89 /* firebasecore.nanopb.h */,
-			);
-			path = nanopb;
-			sourceTree = "<group>";
-		};
-		OBJ_9 /* Default */ = {
-			isa = PBXGroup;
-			children = (
-				0A65623125B67C1D007FE6F2 /* Banner */,
-				OBJ_10 /* Card */,
-				OBJ_13 /* DefaultInAppMessagingConfiguration.swift */,
-				OBJ_14 /* ImageOnly */,
-				OBJ_17 /* Modal */,
+				0A5129FA25C78E5800BD5E7B /* Card */,
+				0A5129FD25C78E5800BD5E7B /* DefaultInAppMessagingConfiguration.swift */,
+				0A5129FE25C78E5800BD5E7B /* ImageOnly */,
+				0A512A0125C78E5800BD5E7B /* Modal */,
+				0A512A0425C78E5800BD5E7B /* Banner */,
 			);
 			path = Default;
 			sourceTree = "<group>";
 		};
-		OBJ_90 /* Public */ = {
+		0A5129FA25C78E5800BD5E7B /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_91 /* FIRCoreDiagnostics.h */,
+				0A5129FB25C78E5800BD5E7B /* InAppDefaultCardMessageViewController.swift */,
+				0A5129FC25C78E5800BD5E7B /* InAppDefaultCardMessageHandler.swift */,
 			);
-			path = Public;
+			path = Card;
 			sourceTree = "<group>";
 		};
-		OBJ_93 /* FirebaseCrashlytics */ = {
+		0A5129FE25C78E5800BD5E7B /* ImageOnly */ = {
 			isa = PBXGroup;
 			children = (
+				0A5129FF25C78E5800BD5E7B /* InAppDefaultImageOnlyMessageHandler.swift */,
+				0A512A0025C78E5800BD5E7B /* InAppDefaultImageOnlyMessageViewController.swift */,
 			);
-			name = FirebaseCrashlytics;
-			path = ".build/checkouts/firebase-ios-sdk/Crashlytics";
-			sourceTree = SOURCE_ROOT;
+			path = ImageOnly;
+			sourceTree = "<group>";
 		};
-		OBJ_94 /* FirebaseDatabase */ = {
+		0A512A0125C78E5800BD5E7B /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				0A512A0225C78E5800BD5E7B /* InAppDefaultModalMessageHandler.swift */,
+				0A512A0325C78E5800BD5E7B /* InAppDefaultModalMessageViewController.swift */,
 			);
-			name = FirebaseDatabase;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseDatabase/Sources";
-			sourceTree = SOURCE_ROOT;
+			path = Modal;
+			sourceTree = "<group>";
 		};
-		OBJ_95 /* FirebaseDatabaseTarget */ = {
+		0A512A0425C78E5800BD5E7B /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				0A512A0525C78E5800BD5E7B /* InAppDefaultBannerMessageHandler.swift */,
+				0A512A0625C78E5800BD5E7B /* InAppDefaultBannerMessageView.swift */,
 			);
-			name = FirebaseDatabaseTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseDatabaseWrap";
-			sourceTree = SOURCE_ROOT;
+			path = Banner;
+			sourceTree = "<group>";
 		};
-		OBJ_96 /* FirebaseDynamicLinks */ = {
+		0A512A2725C78F6900BD5E7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A91499525C7B021004AB4F5 /* libc++.tbd */,
+				0A91499125C7B011004AB4F5 /* libsqlite3.tbd */,
+				0A512A2B25C78F6900BD5E7B /* FIRAnalyticsConnector.framework */,
+				0A512A3025C78F6900BD5E7B /* Firebase.framework */,
+				0A512A2925C78F6900BD5E7B /* FirebaseABTesting.framework */,
+				0A512A3425C78F6900BD5E7B /* FirebaseAnalytics.framework */,
+				0A512A2C25C78F6900BD5E7B /* FirebaseCore.framework */,
+				0A512A2A25C78F6900BD5E7B /* FirebaseCoreDiagnostics.framework */,
+				0A512A3525C78F6900BD5E7B /* FirebaseInAppMessaging.framework */,
+				0A512A2E25C78F6900BD5E7B /* FirebaseInstallations.framework */,
+				0A512A3225C78F6900BD5E7B /* GoogleAppMeasurement.framework */,
+				0A512A3325C78F6900BD5E7B /* GoogleDataTransport.framework */,
+				0A512A2825C78F6900BD5E7B /* GoogleUtilities.framework */,
+				0A512A3125C78F6900BD5E7B /* nanopb.framework */,
+				0A512A2D25C78F6900BD5E7B /* PromisesObjC.framework */,
+				0A512A2F25C78F6900BD5E7B /* Protobuf.framework */,
 			);
-			name = FirebaseDynamicLinks;
-			path = ".build/checkouts/firebase-ios-sdk/FirebaseDynamicLinks/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_97 /* FirebaseDynamicLinksTarget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseDynamicLinksTarget;
-			path = ".build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseDynamicLinksWrap";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_98 /* FirebaseFirestore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseFirestore;
-			path = ".build/checkouts/firebase-ios-sdk/Firestore";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_99 /* FirebaseFirestoreSwift */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FirebaseFirestoreSwift;
-			path = ".build/checkouts/firebase-ios-sdk/Firestore";
-			sourceTree = SOURCE_ROOT;
+			name = Frameworks;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		"SwiftyInAppMessaging::SwiftPMPackageDescription" /* SwiftyInAppMessagingPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_758 /* Build configuration list for PBXNativeTarget "SwiftyInAppMessagingPackageDescription" */;
-			buildPhases = (
-				OBJ_761 /* Sources */,
+/* Begin PBXHeadersBuildPhase section */
+		0A5129BF25C78D7B00BD5E7B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5129D525C78D7B00BD5E7B /* SwiftyInAppMessaging.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwiftyInAppMessagingPackageDescription;
-			productName = SwiftyInAppMessagingPackageDescription;
-			productType = "com.apple.product-type.framework";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		"SwiftyInAppMessaging::SwiftyInAppMessaging" /* SwiftyInAppMessaging */ = {
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0A5129C325C78D7B00BD5E7B /* SwiftyInAppMessaging */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_709 /* Build configuration list for PBXNativeTarget "SwiftyInAppMessaging" */;
+			buildConfigurationList = 0A5129D825C78D7B00BD5E7B /* Build configuration list for PBXNativeTarget "SwiftyInAppMessaging" */;
 			buildPhases = (
-				OBJ_712 /* Sources */,
-				OBJ_730 /* Frameworks */,
+				0A5129BF25C78D7B00BD5E7B /* Headers */,
+				0A5129C025C78D7B00BD5E7B /* Sources */,
+				0A5129C125C78D7B00BD5E7B /* Frameworks */,
+				0A5129C225C78D7B00BD5E7B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1588,465 +313,393 @@
 			);
 			name = SwiftyInAppMessaging;
 			productName = SwiftyInAppMessaging;
-			productReference = "SwiftyInAppMessaging::SwiftyInAppMessaging::Product" /* SwiftyInAppMessaging.framework */;
+			productReference = 0A5129C425C78D7B00BD5E7B /* SwiftyInAppMessaging.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"SwiftyInAppMessaging::SwiftyInAppMessagingTests" /* SwiftyInAppMessagingTests */ = {
+		0A5129CC25C78D7B00BD5E7B /* SwiftyInAppMessagingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_769 /* Build configuration list for PBXNativeTarget "SwiftyInAppMessagingTests" */;
+			buildConfigurationList = 0A5129DB25C78D7B00BD5E7B /* Build configuration list for PBXNativeTarget "SwiftyInAppMessagingTests" */;
 			buildPhases = (
-				OBJ_772 /* Sources */,
-				OBJ_775 /* Frameworks */,
+				0A5129C925C78D7B00BD5E7B /* Sources */,
+				0A5129CA25C78D7B00BD5E7B /* Frameworks */,
+				0A5129CB25C78D7B00BD5E7B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_790 /* PBXTargetDependency */,
+				0A5129D025C78D7B00BD5E7B /* PBXTargetDependency */,
 			);
 			name = SwiftyInAppMessagingTests;
 			productName = SwiftyInAppMessagingTests;
-			productReference = "SwiftyInAppMessaging::SwiftyInAppMessagingTests::Product" /* SwiftyInAppMessagingTests.xctest */;
+			productReference = 0A5129CD25C78D7B00BD5E7B /* SwiftyInAppMessagingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		OBJ_1 /* Project object */ = {
+		0A5129BB25C78D7B00BD5E7B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 9999;
-				LastUpgradeCheck = 9999;
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					0A5129C325C78D7B00BD5E7B = {
+						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
+					};
+					0A5129CC25C78D7B00BD5E7B = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "SwiftyInAppMessaging" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 0A5129BE25C78D7B00BD5E7B /* Build configuration list for PBXProject "SwiftyInAppMessaging" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_350 /* Products */;
+			mainGroup = 0A5129BA25C78D7B00BD5E7B;
+			productRefGroup = 0A5129C525C78D7B00BD5E7B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"SwiftyInAppMessaging::SwiftyInAppMessaging" /* SwiftyInAppMessaging */,
-				"SwiftyInAppMessaging::SwiftPMPackageDescription" /* SwiftyInAppMessagingPackageDescription */,
-				"SwiftyInAppMessaging::SwiftyInAppMessagingPackageTests::ProductTarget" /* SwiftyInAppMessagingPackageTests */,
-				"SwiftyInAppMessaging::SwiftyInAppMessagingTests" /* SwiftyInAppMessagingTests */,
+				0A5129C325C78D7B00BD5E7B /* SwiftyInAppMessaging */,
+				0A5129CC25C78D7B00BD5E7B /* SwiftyInAppMessagingTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0A5129C225C78D7B00BD5E7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A5129CB25C78D7B00BD5E7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_712 /* Sources */ = {
+		0A5129C025C78D7B00BD5E7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
+			buildActionMask = 2147483647;
 			files = (
-				OBJ_713 /* InAppDefaultCardMessageHandler.swift in Sources */,
-				OBJ_714 /* InAppDefaultCardMessageViewController.swift in Sources */,
-				OBJ_715 /* DefaultInAppMessagingConfiguration.swift in Sources */,
-				OBJ_716 /* InAppDefaultImageOnlyMessageHandler.swift in Sources */,
-				OBJ_717 /* InAppDefaultImageOnlyMessageViewController.swift in Sources */,
-				OBJ_718 /* InAppDefaultModalMessageHandler.swift in Sources */,
-				OBJ_719 /* InAppDefaultModalMessageViewController.swift in Sources */,
-				OBJ_720 /* InAppMessageComponent.swift in Sources */,
-				OBJ_721 /* InAppMessageHandler.swift in Sources */,
-				0A65623D25B67CF0007FE6F2 /* InAppDefaultBannerMessageView.swift in Sources */,
-				OBJ_722 /* SwiftyInAppMessaging.swift in Sources */,
-				OBJ_723 /* SwiftyInAppMessagingConfiguration.swift in Sources */,
-				OBJ_724 /* SwiftyInAppMessagingError.swift in Sources */,
-				OBJ_725 /* InAppMessagingActionButton+Extensions.swift in Sources */,
-				OBJ_726 /* Log.swift in Sources */,
-				OBJ_727 /* UIApplication+Extensions.swift in Sources */,
-				OBJ_728 /* UIColor+Extensions.swift in Sources */,
-				OBJ_729 /* UIImage+Extensions.swift in Sources */,
-				0A65623725B67C5A007FE6F2 /* InAppDefaultBannerMessageHandler.swift in Sources */,
+				0A512A1A25C78E5800BD5E7B /* SwiftyInAppMessagingError.swift in Sources */,
+				0A512A1125C78E5800BD5E7B /* InAppDefaultCardMessageViewController.swift in Sources */,
+				0A512A1625C78E5800BD5E7B /* InAppDefaultModalMessageHandler.swift in Sources */,
+				0A512A1325C78E5800BD5E7B /* DefaultInAppMessagingConfiguration.swift in Sources */,
+				0A512A0B25C78E5800BD5E7B /* SwiftyInAppMessaging.swift in Sources */,
+				0A512A0E25C78E5800BD5E7B /* UIColor+Extensions.swift in Sources */,
+				0A512A0C25C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift in Sources */,
+				0A512A0F25C78E5800BD5E7B /* UIImage+Extensions.swift in Sources */,
+				0A512A1825C78E5800BD5E7B /* InAppDefaultBannerMessageHandler.swift in Sources */,
+				0A512A1B25C78E5800BD5E7B /* InAppMessageHandler.swift in Sources */,
+				0A512A1525C78E5800BD5E7B /* InAppDefaultImageOnlyMessageViewController.swift in Sources */,
+				0A512A0D25C78E5800BD5E7B /* Log.swift in Sources */,
+				0A512A0A25C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift in Sources */,
+				0A512A1725C78E5800BD5E7B /* InAppDefaultModalMessageViewController.swift in Sources */,
+				0A512A1225C78E5800BD5E7B /* InAppDefaultCardMessageHandler.swift in Sources */,
+				0A512A1425C78E5800BD5E7B /* InAppDefaultImageOnlyMessageHandler.swift in Sources */,
+				0A512A1025C78E5800BD5E7B /* UIApplication+Extensions.swift in Sources */,
+				0A512A1C25C78E5800BD5E7B /* InAppMessageComponent.swift in Sources */,
+				0A512A1925C78E5800BD5E7B /* InAppDefaultBannerMessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_761 /* Sources */ = {
+		0A5129C925C78D7B00BD5E7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
+			buildActionMask = 2147483647;
 			files = (
-				OBJ_762 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_772 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_773 /* SwiftyInAppMessagingTests.swift in Sources */,
-				OBJ_774 /* XCTestManifests.swift in Sources */,
+				0A5129D325C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift in Sources */,
+				0A512A2125C78F4D00BD5E7B /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_767 /* PBXTargetDependency */ = {
+		0A5129D025C78D7B00BD5E7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "SwiftyInAppMessaging::SwiftyInAppMessagingTests" /* SwiftyInAppMessagingTests */;
-			targetProxy = 0A3894A625AD6AE40033FDAE /* PBXContainerItemProxy */;
-		};
-		OBJ_790 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "SwiftyInAppMessaging::SwiftyInAppMessaging" /* SwiftyInAppMessaging */;
-			targetProxy = 0A38948625AD6AE20033FDAE /* PBXContainerItemProxy */;
+			target = 0A5129C325C78D7B00BD5E7B /* SwiftyInAppMessaging */;
+			targetProxy = 0A5129CF25C78D7B00BD5E7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_3 /* Debug */ = {
+		0A5129D625C78D7B00BD5E7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
+					"$(inherited)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				USE_HEADERMAP = NO;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		OBJ_4 /* Release */ = {
+		0A5129D725C78D7B00BD5E7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0A5129D925C78D7B00BD5E7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K489QY5CFD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = (
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"SWIFT_PACKAGE=1",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyInAppMessaging";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A5129DA25C78D7B00BD5E7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K489QY5CFD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyInAppMessaging";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0A5129DC25C78D7B00BD5E7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K489QY5CFD;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyInAppMessagingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				USE_HEADERMAP = NO;
-			};
-			name = Release;
-		};
-		OBJ_710 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseInAppMessagingWrap/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInAppMessaging/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseABTesting/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/UserDefaults/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/Firebase/CoreDiagnostics/FIRCDLibrary",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Logger/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Environment/Public",
-					"$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleDataTransport/GDTCORLibrary/Public",
-					"$(SRCROOT)/.build/checkouts/nanopb/spm_headers",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb",
-				);
-				INFOPLIST_FILE = SwiftyInAppMessaging.xcodeproj/SwiftyInAppMessaging_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"$(OTHER_LDFLAGS)",
-				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = SwiftyInAppMessaging;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = SwiftyInAppMessaging;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		OBJ_711 /* Release */ = {
+		0A5129DD25C78D7B00BD5E7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K489QY5CFD;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseInAppMessagingWrap/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInAppMessaging/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseABTesting/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/UserDefaults/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/Firebase/CoreDiagnostics/FIRCDLibrary",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Logger/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Environment/Public",
-					"$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleDataTransport/GDTCORLibrary/Public",
-					"$(SRCROOT)/.build/checkouts/nanopb/spm_headers",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb",
-				);
-				INFOPLIST_FILE = SwiftyInAppMessaging.xcodeproj/SwiftyInAppMessaging_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"$(OTHER_LDFLAGS)",
-				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources/module.modulemap";
-				PRODUCT_BUNDLE_IDENTIFIER = SwiftyInAppMessaging;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyInAppMessagingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = SwiftyInAppMessaging;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		OBJ_759 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12_2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -package-description-version 5.2.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_760 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12_2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -package-description-version 5.2.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		OBJ_765 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_766 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		OBJ_770 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseInAppMessagingWrap/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInAppMessaging/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseABTesting/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/UserDefaults/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/Firebase/CoreDiagnostics/FIRCDLibrary",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Logger/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Environment/Public",
-					"$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleDataTransport/GDTCORLibrary/Public",
-					"$(SRCROOT)/.build/checkouts/nanopb/spm_headers",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb",
-				);
-				INFOPLIST_FILE = SwiftyInAppMessaging.xcodeproj/SwiftyInAppMessagingTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources/module.modulemap";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = SwiftyInAppMessagingTests;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		OBJ_771 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/SwiftPM-PlatformExclude/FirebaseInAppMessagingWrap/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInAppMessaging/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseABTesting/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseInstallations/Source/Library/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/UserDefaults/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/FirebaseCore/Sources/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/Firebase/CoreDiagnostics/FIRCDLibrary",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Logger/Public",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleUtilities/Environment/Public",
-					"$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/GoogleDataTransport/GDTCORLibrary/Public",
-					"$(SRCROOT)/.build/checkouts/nanopb/spm_headers",
-					"$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport",
-					"$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb",
-				);
-				INFOPLIST_FILE = SwiftyInAppMessaging.xcodeproj/SwiftyInAppMessagingTests_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessagingTarget/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInAppMessaging/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseABTesting/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseInstallations/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_UserDefaults/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCore/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/FirebaseCoreDiagnostics/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Logger/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleUtilities_Environment/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/promises/Sources/FBLPromises/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/GoogleDataTransport/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/SwiftyInAppMessaging.xcodeproj/GeneratedModuleMap/nanopb/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/.build/checkouts/firebase-ios-sdk/CoreOnly/Sources/module.modulemap";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = SwiftyInAppMessagingTests;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_2 /* Build configuration list for PBXProject "SwiftyInAppMessaging" */ = {
+		0A5129BE25C78D7B00BD5E7B /* Build configuration list for PBXProject "SwiftyInAppMessaging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_3 /* Debug */,
-				OBJ_4 /* Release */,
+				0A5129D625C78D7B00BD5E7B /* Debug */,
+				0A5129D725C78D7B00BD5E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_709 /* Build configuration list for PBXNativeTarget "SwiftyInAppMessaging" */ = {
+		0A5129D825C78D7B00BD5E7B /* Build configuration list for PBXNativeTarget "SwiftyInAppMessaging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_710 /* Debug */,
-				OBJ_711 /* Release */,
+				0A5129D925C78D7B00BD5E7B /* Debug */,
+				0A5129DA25C78D7B00BD5E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_758 /* Build configuration list for PBXNativeTarget "SwiftyInAppMessagingPackageDescription" */ = {
+		0A5129DB25C78D7B00BD5E7B /* Build configuration list for PBXNativeTarget "SwiftyInAppMessagingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_759 /* Debug */,
-				OBJ_760 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_764 /* Build configuration list for PBXAggregateTarget "SwiftyInAppMessagingPackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_765 /* Debug */,
-				OBJ_766 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_769 /* Build configuration list for PBXNativeTarget "SwiftyInAppMessagingTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_770 /* Debug */,
-				OBJ_771 /* Release */,
+				0A5129DC25C78D7B00BD5E7B /* Debug */,
+				0A5129DD25C78D7B00BD5E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = OBJ_1 /* Project object */;
+	rootObject = 0A5129BB25C78D7B00BD5E7B /* Project object */;
 }

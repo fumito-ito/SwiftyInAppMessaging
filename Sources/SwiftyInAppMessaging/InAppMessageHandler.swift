@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseInAppMessaging
 
 public protocol InAppMessageHandler: MessageDisplayable & MessageEventDetectable {
     var displayDelegate: InAppMessagingDisplayDelegate { get }

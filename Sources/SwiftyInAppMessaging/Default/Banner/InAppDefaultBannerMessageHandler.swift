@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseInAppMessaging
 import UIKit
 
 struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
