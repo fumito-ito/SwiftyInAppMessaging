@@ -82,7 +82,7 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 Just add your `Cartfile`
 
 ```
-github "fumito-ito/SwiftyInAppMessaging" ~> 0.0.1
+github "fumito-ito/SwiftyInAppMessaging" ~> 0.1.0
 ```
 
 and run `carthage update`
@@ -98,7 +98,7 @@ let package = Package(
     name: "MyPackage",
     products: [...],
     dependencies: [
-        .package(url: "https://github.com/fumito-ito/SwiftyInAppMessaging.git", .upToNextMajor(from: "0.0.1"))
+        .package(url: "https://github.com/fumito-ito/SwiftyInAppMessaging.git", .upToNextMajor(from: "0.1.0"))
     ]
 )
 ```

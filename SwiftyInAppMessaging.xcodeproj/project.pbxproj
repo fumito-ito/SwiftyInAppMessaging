@@ -585,6 +585,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyInAppMessaging";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -619,6 +620,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyInAppMessaging";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
