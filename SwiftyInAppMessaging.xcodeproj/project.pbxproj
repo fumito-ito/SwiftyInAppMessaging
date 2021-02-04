@@ -10,10 +10,6 @@
 		0A5129CE25C78D7B00BD5E7B /* SwiftyInAppMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5129C425C78D7B00BD5E7B /* SwiftyInAppMessaging.framework */; };
 		0A5129D325C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129D225C78D7B00BD5E7B /* SwiftyInAppMessagingTests.swift */; };
 		0A5129D525C78D7B00BD5E7B /* SwiftyInAppMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A5129C725C78D7B00BD5E7B /* SwiftyInAppMessaging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A5129E825C78E4100BD5E7B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0A5129E325C78E4100BD5E7B /* LICENSE */; };
-		0A5129E925C78E4100BD5E7B /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 0A5129E425C78E4100BD5E7B /* Cartfile.resolved */; };
-		0A5129EA25C78E4100BD5E7B /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 0A5129E525C78E4100BD5E7B /* Cartfile */; };
-		0A5129EB25C78E4100BD5E7B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A5129E625C78E4100BD5E7B /* README.md */; };
 		0A512A0A25C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F125C78E5800BD5E7B /* SwiftyInAppMessagingConfiguration.swift */; };
 		0A512A0B25C78E5800BD5E7B /* SwiftyInAppMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F225C78E5800BD5E7B /* SwiftyInAppMessaging.swift */; };
 		0A512A0C25C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5129F425C78E5800BD5E7B /* InAppMessagingActionButton+Extensions.swift */; };
@@ -47,8 +43,6 @@
 		0A512A4C25C78F6A00BD5E7B /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3325C78F6900BD5E7B /* GoogleDataTransport.framework */; };
 		0A512A4E25C78F6A00BD5E7B /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3425C78F6900BD5E7B /* FirebaseAnalytics.framework */; };
 		0A512A5025C78F6A00BD5E7B /* FirebaseInAppMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A512A3525C78F6900BD5E7B /* FirebaseInAppMessaging.framework */; };
-		0A91499225C7B011004AB4F5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A91499125C7B011004AB4F5 /* libsqlite3.tbd */; };
-		0A91499625C7B021004AB4F5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A91499525C7B021004AB4F5 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,8 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A91499625C7B021004AB4F5 /* libc++.tbd in Frameworks */,
-				0A91499225C7B011004AB4F5 /* libsqlite3.tbd in Frameworks */,
 				0A512A3A25C78F6900BD5E7B /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				0A512A4A25C78F6A00BD5E7B /* GoogleAppMeasurement.framework in Frameworks */,
 				0A512A4825C78F6A00BD5E7B /* nanopb.framework in Frameworks */,
@@ -384,10 +376,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A5129EA25C78E4100BD5E7B /* Cartfile in Resources */,
-				0A5129E825C78E4100BD5E7B /* LICENSE in Resources */,
-				0A5129EB25C78E4100BD5E7B /* README.md in Resources */,
-				0A5129E925C78E4100BD5E7B /* Cartfile.resolved in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
