@@ -85,7 +85,9 @@ Just add your `Cartfile`
 github "fumito-ito/SwiftyInAppMessaging" ~> 0.0.1
 ```
 
-:bangbang: firebase ios sdk [announces to discontinue carthage support](https://github.com/firebase/firebase-ios-sdk/discussions/7129). if firebase-ios-sdk stops supporting carthage, this library will follow.
+and run `carthage update`
+
+:warning: firebase ios sdk [announces to discontinue carthage support](https://github.com/firebase/firebase-ios-sdk/discussions/7129). if firebase-ios-sdk stops supporting carthage, this library will follow.
 
 ### Swift Package Manager
 
@@ -102,6 +104,31 @@ let package = Package(
 ```
 
 firebase ios sdk supports Swift Package Manager in **Beta**. If you have some issues caused in Swift Package Manager, Please check firebase issues.
+
+### Cocoapods
+
+Just add to your `Podfile`
+
+```
+pod 'SwiftyInAppMessaging'
+```
+
+and run `pod install`
+
+If you have errors about `Double-quoted include "*.h" in framework header, expected angle-bracketed instead`, you can avoid these errors with following steps.
+
+#### Recommended
+
+1. update your cocoapods `1.10` or later
+1. run `pod install` again
+
+### If you cannot update Cocoapods
+
+1. Click `Pods` project
+1. Click Project's `Build Settings`
+1. Change `Quoted include in Framework Header` to `No`
+
+For more information, see [a firebase-ios-sdk issue](https://github.com/firebase/firebase-ios-sdk/issues/5987).
 
 ### License
 
