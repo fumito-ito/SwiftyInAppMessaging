@@ -5,13 +5,13 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import Foundation
 import FirebaseInAppMessaging
+import Foundation
 import UIKit
 
 struct InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
     let messageForDisplay: InAppMessagingImageOnlyDisplay
-    let displayDelegate: InAppMessagingDisplayDelegate
+    weak var displayDelegate: InAppMessagingDisplayDelegate?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingImageOnlyDisplay else {

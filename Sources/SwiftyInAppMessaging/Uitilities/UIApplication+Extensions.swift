@@ -10,16 +10,14 @@ import UIKit
 
 extension UIApplication {
     var topViewController: UIViewController? {
-        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
-        var topViewController: UIViewController = rootViewController
-
-            while let presentedViewController = topViewController.presentedViewController {
-                topViewController = presentedViewController
-            }
-
-            return topViewController
-        } else {
+        guard var topViewController = self.delegate?.window??.rootViewController else {
             return nil
         }
+
+        while let presentedViewController = topViewController.presentedViewController {
+            topViewController = presentedViewController
+        }
+
+        return topViewController
     }
 }

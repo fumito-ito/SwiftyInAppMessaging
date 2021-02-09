@@ -5,8 +5,8 @@
 //  Created by 伊藤史 on 2021/01/08.
 //
 
-import Foundation
 import FirebaseInAppMessaging
+import Foundation
 
 public struct ActionButton {
     let buttonText: String

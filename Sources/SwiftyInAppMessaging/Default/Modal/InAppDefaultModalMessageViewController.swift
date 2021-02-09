@@ -5,11 +5,11 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
+import FirebaseInAppMessaging
 import Foundation
 import UIKit
-import FirebaseInAppMessaging
 
-public protocol InAppDefaultModalViewDelegate {
+public protocol InAppDefaultModalViewDelegate: class {
     func actionButtonDidTap()
 }
 
@@ -52,7 +52,7 @@ final class InAppDefaultModalView: UIView {
         return view
     }()
 
-    var delegate: InAppDefaultModalViewDelegate?
+    weak var delegate: InAppDefaultModalViewDelegate?
 
     private var bodyLabelPadding: CGFloat {
         if self.bodyLabel.text == nil || self.bodyLabel.text?.isEmpty == true {

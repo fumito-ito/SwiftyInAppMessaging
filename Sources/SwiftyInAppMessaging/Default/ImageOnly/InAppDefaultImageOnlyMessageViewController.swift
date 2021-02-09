@@ -5,11 +5,11 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
+import FirebaseInAppMessaging
 import Foundation
 import UIKit
-import FirebaseInAppMessaging
 
-public protocol InAppDefaultImageOnlyViewDelegate {
+public protocol InAppDefaultImageOnlyViewDelegate: class {
     func imageDidTap()
 }
 
@@ -27,7 +27,7 @@ final class InAppDefaultImageOnlyView: UIView {
         return view
     }()
 
-    var delegate: InAppDefaultImageOnlyViewDelegate?
+    weak var delegate: InAppDefaultImageOnlyViewDelegate?
 
     init(image: UIImage?) {
 
