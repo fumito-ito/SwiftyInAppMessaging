@@ -29,15 +29,15 @@ struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
     func displayMessage() {
         let bannerImage = try? UIImage(imageData: self.messageForDisplay.imageData)
 
-        let bannerView = InAppDefaultBannerMessageView(title: self.messageForDisplay.title,
-                                                       image: bannerImage,
-                                                       bodyText: self.messageForDisplay.bodyText,
-                                                       backgroundColor: self.messageForDisplay.displayBackgroundColor,
-                                                       textColor: self.messageForDisplay.textColor,
-                                                       actionURL: self.messageForDisplay.actionURL,
-                                                       eventDetector: self)
-
         DispatchQueue.main.async {
+            let bannerView = InAppDefaultBannerMessageView(title: self.messageForDisplay.title,
+                                                           image: bannerImage,
+                                                           bodyText: self.messageForDisplay.bodyText,
+                                                           backgroundColor: self.messageForDisplay.displayBackgroundColor,
+                                                           textColor: self.messageForDisplay.textColor,
+                                                           actionURL: self.messageForDisplay.actionURL,
+                                                           eventDetector: self)
+
             UIApplication.shared.topViewController?.view.addSubview(bannerView)
         }
     }

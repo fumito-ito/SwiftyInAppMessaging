@@ -120,12 +120,18 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
         self.modalTransitionStyle = .crossDissolve
 
         self.view.addSubview(self.backgroundView)
+
+        self.view.addSubview(imageView)
+
+        self.imageView.delegate = self
+    }
+
+    public func setupConstraints() {
         self.backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.backgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.backgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 
-        self.view.addSubview(imageView)
         self.imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         self.imageView.topAnchor.constraint(lessThanOrEqualTo: self.view.topAnchor, constant: 32).isActive = true
@@ -133,8 +139,6 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
         self.imageView.rightAnchor.constraint(lessThanOrEqualTo: self.view.rightAnchor, constant: -32).isActive = true
         self.imageView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor, constant: -32).isActive = true
         self.imageView.applyLayout(for: self.traitCollection.horizontalSizeClass)
-
-        self.imageView.delegate = self
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

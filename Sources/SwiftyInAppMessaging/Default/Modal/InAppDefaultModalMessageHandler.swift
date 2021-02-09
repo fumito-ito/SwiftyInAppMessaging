@@ -39,6 +39,7 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
                                                                         eventDetector: self)
 
             DispatchQueue.main.async {
+                viewController.setupConstraints()
                 UIApplication.shared.topViewController?.present(viewController, animated: true, completion: nil)
             }
         } catch let error {

@@ -229,19 +229,22 @@ final class InAppDefaultModalMessageViewController: UIViewController {
         self.modalTransitionStyle = .crossDissolve
 
         self.view.addSubview(self.backgroundView)
+        self.view.addSubview(modalView)
+
+        self.modalView.delegate = self
+    }
+
+    public func setupConstraints() {
         self.backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.backgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.backgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 
-        self.view.addSubview(modalView)
         self.modalView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.modalView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         self.modalView.leftAnchor.constraint(lessThanOrEqualTo: self.view.leftAnchor, constant: 32).isActive = true
         self.modalView.rightAnchor.constraint(lessThanOrEqualTo: self.view.rightAnchor, constant: -32).isActive = true
         self.modalView.applyLayout(for: self.traitCollection.horizontalSizeClass)
-
-        self.modalView.delegate = self
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

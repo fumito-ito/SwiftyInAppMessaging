@@ -258,19 +258,22 @@ final class InAppDefaultCardMessageViewController: UIViewController {
         self.modalTransitionStyle = .crossDissolve
 
         self.view.addSubview(self.backgroundView)
+        self.view.addSubview(cardView)
+
+        self.cardView.delegate = self
+    }
+
+    public func setupConstraints() {
         self.backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.backgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.backgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 
-        self.view.addSubview(cardView)
         self.cardView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.cardView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         self.cardView.leftAnchor.constraint(lessThanOrEqualTo: self.view.leftAnchor, constant: 32).isActive = true
         self.cardView.rightAnchor.constraint(lessThanOrEqualTo: self.view.rightAnchor, constant: -32).isActive = true
         self.cardView.applyLayout(for: self.traitCollection.horizontalSizeClass)
-
-        self.cardView.delegate = self
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
