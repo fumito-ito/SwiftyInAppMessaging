@@ -5,8 +5,8 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import Foundation
 import FirebaseInAppMessaging
+import Foundation
 import UIKit
 
 struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {

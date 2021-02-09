@@ -5,8 +5,8 @@
 //  Created by 伊藤史 on 2021/02/01.
 //
 
-import XCTest
 @testable import SwiftyInAppMessaging
+import XCTest
 
 class SwiftyInAppMessagingTests: XCTestCase {
 
