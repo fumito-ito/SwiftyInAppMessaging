@@ -11,7 +11,7 @@ import UIKit
 
 struct InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
     let messageForDisplay: InAppMessagingImageOnlyDisplay
-    let displayDelegate: InAppMessagingDisplayDelegate
+    weak var displayDelegate: InAppMessagingDisplayDelegate?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingImageOnlyDisplay else {

@@ -11,7 +11,7 @@ import UIKit
 
 struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
     let messageForDisplay: InAppMessagingModalDisplay
-    let displayDelegate: InAppMessagingDisplayDelegate
+    weak var displayDelegate: InAppMessagingDisplayDelegate?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {

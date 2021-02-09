@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "SwiftyInAppMessaging",
-            targets: ["SwiftyInAppMessaging"]),
+            targets: ["SwiftyInAppMessaging"])
     ],
     dependencies: [
         .package(name: "Firebase",
@@ -27,7 +27,7 @@ let package = Package(
             ]),
         .testTarget(
             name: "SwiftyInAppMessagingTests",
-            dependencies: ["SwiftyInAppMessaging"]),
+            dependencies: ["SwiftyInAppMessaging"])
     ],
     swiftLanguageVersions: [.v5]
 )

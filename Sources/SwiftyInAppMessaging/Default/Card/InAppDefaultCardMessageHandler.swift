@@ -11,7 +11,7 @@ import UIKit
 
 struct InAppDefaultCardMessageHandler: InAppCardMessageHandler {
     let messageForDisplay: InAppMessagingCardDisplay
-    let displayDelegate: InAppMessagingDisplayDelegate
+    weak var displayDelegate: InAppMessagingDisplayDelegate?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingCardDisplay else {

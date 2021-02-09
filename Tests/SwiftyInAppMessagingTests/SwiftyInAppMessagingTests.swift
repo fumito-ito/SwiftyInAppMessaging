@@ -19,7 +19,7 @@ class SwiftyInAppMessagingTests: XCTestCase {
     }
 
     static var allTests = [
-            ("testExample", testExample),
+            ("testExample", testExample)
     ]
 
     func testExample() throws {

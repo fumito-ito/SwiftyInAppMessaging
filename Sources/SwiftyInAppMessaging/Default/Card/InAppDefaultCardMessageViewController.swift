@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import FirebaseInAppMessaging
 
-public protocol InAppDefaultCardViewDelegate {
+public protocol InAppDefaultCardViewDelegate: class {
     func primaryActionButtonDidTap()
     func secondaryActionButtonDidTap()
 }
@@ -87,7 +87,7 @@ final class InAppDefaultCardView: UIView {
         return view
     }()
 
-    var delegate: InAppDefaultCardViewDelegate?
+    weak var delegate: InAppDefaultCardViewDelegate?
 
     init(title: String,
          portraitImage: UIImage,

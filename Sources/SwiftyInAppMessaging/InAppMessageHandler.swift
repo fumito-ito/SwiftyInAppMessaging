@@ -9,7 +9,7 @@ import Foundation
 import FirebaseInAppMessaging
 
 public protocol InAppMessageHandler: MessageDisplayable & MessageEventDetectable {
-    var displayDelegate: InAppMessagingDisplayDelegate { get }
+    var displayDelegate: InAppMessagingDisplayDelegate? { get }
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate)
 
@@ -33,15 +33,15 @@ public protocol InAppModalMessageHandler: InAppMessageHandler {
 
 extension InAppModalMessageHandler {
     public func impressionDetected() {
-        self.displayDelegate.impressionDetected?(for: self.messageForDisplay)
+        self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
     }
 
     public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
-        self.displayDelegate.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
+        self.displayDelegate?.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
     }
 
     public func messageClicked(with action: InAppMessagingAction) {
-        self.displayDelegate.messageClicked?(self.messageForDisplay, with: action)
+        self.displayDelegate?.messageClicked?(self.messageForDisplay, with: action)
     }
 }
 
@@ -51,15 +51,15 @@ public protocol InAppCardMessageHandler: InAppMessageHandler {
 
 extension InAppCardMessageHandler {
     public func impressionDetected() {
-        self.displayDelegate.impressionDetected?(for: self.messageForDisplay)
+        self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
     }
 
     public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
-        self.displayDelegate.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
+        self.displayDelegate?.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
     }
 
     public func messageClicked(with action: InAppMessagingAction) {
-        self.displayDelegate.messageClicked?(self.messageForDisplay, with: action)
+        self.displayDelegate?.messageClicked?(self.messageForDisplay, with: action)
     }
 }
 
@@ -69,15 +69,15 @@ public protocol InAppBannerMessageHandler: InAppMessageHandler {
 
 extension InAppBannerMessageHandler {
     public func impressionDetected() {
-        self.displayDelegate.impressionDetected?(for: self.messageForDisplay)
+        self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
     }
 
     public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
-        self.displayDelegate.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
+        self.displayDelegate?.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
     }
 
     public func messageClicked(with action: InAppMessagingAction) {
-        self.displayDelegate.messageClicked?(self.messageForDisplay, with: action)
+        self.displayDelegate?.messageClicked?(self.messageForDisplay, with: action)
     }
 }
 
@@ -87,14 +87,14 @@ public protocol InAppImageOnlyMessageHandler: InAppMessageHandler {
 
 extension InAppImageOnlyMessageHandler {
     public func impressionDetected() {
-        self.displayDelegate.impressionDetected?(for: self.messageForDisplay)
+        self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
     }
 
     public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
-        self.displayDelegate.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
+        self.displayDelegate?.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
     }
 
     public func messageClicked(with action: InAppMessagingAction) {
-        self.displayDelegate.messageClicked?(self.messageForDisplay, with: action)
+        self.displayDelegate?.messageClicked?(self.messageForDisplay, with: action)
     }
 }

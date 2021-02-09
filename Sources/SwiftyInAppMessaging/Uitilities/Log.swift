@@ -15,8 +15,8 @@ func debugLog(_ obj: Any?,
     let fileName = URL(string: file)?.lastPathComponent ?? "unknown"
 
     #if DEBUG
-        if let o = obj {
-            print("[\(fileName):\(function) Line:\(line)] : \(o)")
+        if let obj = obj {
+            print("[\(fileName):\(function) Line:\(line)] : \(obj)")
         } else {
             print("[\(fileName):\(function) Line:\(line)]")
         }
