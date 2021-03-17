@@ -31,8 +31,10 @@ extension SwiftyInAppMessaging {
             return
         }
 
-        handlerType.init(message: messageForDisplay,
-                         displayDelegate: displayDelegate)?
-            .displayMessage()
+        DispatchQueue.main.async {
+            handlerType.init(message: messageForDisplay,
+                             displayDelegate: displayDelegate)?
+                .displayMessage()
+        }
     }
 }
