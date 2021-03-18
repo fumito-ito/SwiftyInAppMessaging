@@ -5,13 +5,15 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 import UIKit
 
 struct InAppDefaultCardMessageHandler: InAppCardMessageHandler {
     let messageForDisplay: InAppMessagingCardDisplay
     weak var displayDelegate: InAppMessagingDisplayDelegate?
+
+    private static var window: UIWindow?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingCardDisplay else {
@@ -23,7 +25,7 @@ struct InAppDefaultCardMessageHandler: InAppCardMessageHandler {
     }
 
     static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingCardDisplay
+        return messageForDisplay.type == .card
     }
 
     func displayMessage() {
@@ -45,9 +47,10 @@ struct InAppDefaultCardMessageHandler: InAppCardMessageHandler {
                                                                        backgroundColor: self.messageForDisplay.displayBackgroundColor,
                                                                        textColor: self.messageForDisplay.textColor,
                                                                        eventDetector: self)
-            DispatchQueue.main.async {
-                UIApplication.shared.topViewController?.present(viewController, animated: true, completion: nil)
-            }
+
+            InAppDefaultCardMessageHandler.window = UIApplication.windowForMessage
+            InAppDefaultCardMessageHandler.window?.rootViewController = viewController
+            InAppDefaultCardMessageHandler.window?.isHidden = false
         } catch let error {
             self.displayError(error)
         }

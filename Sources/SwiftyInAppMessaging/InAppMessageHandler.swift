@@ -5,7 +5,7 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 
 public protocol InAppMessageHandler: MessageDisplayable & MessageEventDetectable {

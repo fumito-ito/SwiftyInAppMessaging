@@ -5,7 +5,7 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 import UIKit
 
@@ -289,7 +289,7 @@ final class InAppDefaultCardMessageViewController: UIViewController {
 
     @objc func backgroundViewDidTap() {
         self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
-        self.dismiss(animated: true, completion: nil)
+        self.dismissView()
     }
 }
 
@@ -304,7 +304,7 @@ extension InAppDefaultCardMessageViewController: InAppDefaultCardViewDelegate {
             self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
         }
 
-        self.dismiss(animated: false, completion: nil)
+        self.dismissView()
     }
 
     public func secondaryActionButtonDidTap() {
@@ -317,6 +317,6 @@ extension InAppDefaultCardMessageViewController: InAppDefaultCardViewDelegate {
             self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
         }
 
-        self.dismiss(animated: false, completion: nil)
+        self.dismissView()
     }
 }

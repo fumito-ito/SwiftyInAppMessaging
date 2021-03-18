@@ -5,7 +5,7 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 import UIKit
 
@@ -260,7 +260,7 @@ final class InAppDefaultModalMessageViewController: UIViewController {
 
     @objc func backgroundViewDidTap() {
         self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
-        self.dismiss(animated: true, completion: nil)
+        self.dismissView()
     }
 }
 
@@ -273,6 +273,6 @@ extension InAppDefaultModalMessageViewController: InAppDefaultModalViewDelegate 
             UIApplication.shared.open(actionURL, options: [:], completionHandler: nil)
         }
 
-        self.dismiss(animated: false, completion: nil)
+        self.dismissView()
     }
 }

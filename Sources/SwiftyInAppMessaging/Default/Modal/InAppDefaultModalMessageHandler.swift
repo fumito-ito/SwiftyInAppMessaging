@@ -5,13 +5,15 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 import UIKit
 
 struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
     let messageForDisplay: InAppMessagingModalDisplay
     weak var displayDelegate: InAppMessagingDisplayDelegate?
+
+    private static var window: UIWindow?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {
@@ -23,7 +25,7 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
     }
 
     static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingModalDisplay
+        return messageForDisplay.type == .modal
     }
 
     func displayMessage() {
@@ -38,9 +40,9 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
                                                                         textColor: self.messageForDisplay.textColor,
                                                                         eventDetector: self)
 
-            DispatchQueue.main.async {
-                UIApplication.shared.topViewController?.present(viewController, animated: true, completion: nil)
-            }
+            InAppDefaultModalMessageHandler.window = UIApplication.windowForMessage
+            InAppDefaultModalMessageHandler.window?.rootViewController = viewController
+            InAppDefaultModalMessageHandler.window?.isHidden = false
         } catch let error {
             self.displayError(error)
         }

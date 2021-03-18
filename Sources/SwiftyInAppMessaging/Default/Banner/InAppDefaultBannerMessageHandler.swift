@@ -5,7 +5,7 @@
 //  Created by 伊藤史 on 2021/01/19.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 import UIKit
 
@@ -23,7 +23,7 @@ struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
     }
 
     static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingBannerDisplay
+        return messageForDisplay.type == .banner
     }
 
     func displayMessage() {
@@ -37,9 +37,7 @@ struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
                                                        actionURL: self.messageForDisplay.actionURL,
                                                        eventDetector: self)
 
-        DispatchQueue.main.async {
-            UIApplication.shared.topViewController?.view.addSubview(bannerView)
-        }
+        UIApplication.rootWindow?.addSubview(bannerView)
     }
 
     func displayError(_ error: Error) {

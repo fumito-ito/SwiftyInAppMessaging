@@ -58,3 +58,5 @@ DerivedData/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/iOS,Xcode,Carthage,Cocoapods
+
+GoogleService-Info.plist

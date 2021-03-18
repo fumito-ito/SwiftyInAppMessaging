@@ -5,13 +5,15 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+import Firebase
 import Foundation
 import UIKit
 
 struct InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
     let messageForDisplay: InAppMessagingImageOnlyDisplay
     weak var displayDelegate: InAppMessagingDisplayDelegate?
+
+    private static var window: UIWindow?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingImageOnlyDisplay else {
@@ -23,7 +25,7 @@ struct InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
     }
 
     static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingImageOnlyDisplay
+        return messageForDisplay.type == .imageOnly
     }
 
     func displayMessage() {
@@ -33,9 +35,9 @@ struct InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
                                                                             actionURL: self.messageForDisplay.actionURL,
                                                                             eventDetector: self)
 
-            DispatchQueue.main.async {
-                UIApplication.shared.topViewController?.present(viewController, animated: true, completion: nil)
-            }
+            InAppDefaultImageOnlyMessageHandler.window = UIApplication.windowForMessage
+            InAppDefaultImageOnlyMessageHandler.window?.rootViewController = viewController
+            InAppDefaultImageOnlyMessageHandler.window?.isHidden = false
         } catch let error {
             self.displayError(error)
         }

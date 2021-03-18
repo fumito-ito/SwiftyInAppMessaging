@@ -5,7 +5,7 @@
 //  Created by 伊藤史 on 2021/02/01.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 //! Project version number for SwiftyInAppMessaging.
 FOUNDATION_EXPORT double SwiftyInAppMessagingVersionNumber;
