@@ -77,18 +77,6 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 
 ## Installation
 
-### Carthage
-
-Just add your `Cartfile`
-
-```
-github "fumito-ito/SwiftyInAppMessaging" ~> 0.1.0
-```
-
-and run `carthage update`
-
-:warning: firebase ios sdk [announces to discontinue carthage support](https://github.com/firebase/firebase-ios-sdk/discussions/7129). if firebase-ios-sdk stops supporting carthage, this library will follow.
-
 ### Swift Package Manager
 
 Just add to your `Package.swift` under dependencies

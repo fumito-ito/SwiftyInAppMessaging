@@ -1,3 +1,0 @@
-binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json" == 7.3.0
-binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseInAppMessagingBinary.json" == 7.3.0
-binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseProtobufBinary.json" == 7.3.0
