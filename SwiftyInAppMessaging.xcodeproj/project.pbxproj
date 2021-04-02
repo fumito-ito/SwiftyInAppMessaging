@@ -50,9 +50,7 @@
 		0A838ED9260C5EFF0098E8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A838ED7260C5EFF0098E8FF /* Main.storyboard */; };
 		0A838EDB260C5EFF0098E8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A838EDA260C5EFF0098E8FF /* Assets.xcassets */; };
 		0A838EDE260C5EFF0098E8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A838EDC260C5EFF0098E8FF /* LaunchScreen.storyboard */; };
-		0A8E11A7260DA79600B36F89 /* SwiftyInAppMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8E11A6260DA79600B36F89 /* SwiftyInAppMessaging */; };
 		0A8E11B2260DA7FD00B36F89 /* SwiftyInAppMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8E11B1260DA7FD00B36F89 /* SwiftyInAppMessaging */; };
-		0ADE135D260C73AC0037B2A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE135C260C73AC0037B2A0 /* GoogleService-Info.plist */; };
 		0AFD26912607763100A6650B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD26902607763100A6650B /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +123,6 @@
 		0ADE1346260C5F770037B2A0 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Carthage/Build/iOS/FirebaseMessaging.framework; sourceTree = "<group>"; };
 		0ADE1347260C5F770037B2A0 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Carthage/Build/iOS/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		0ADE1348260C5F770037B2A0 /* FirebaseRemoteConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseRemoteConfig.framework; path = Carthage/Build/iOS/FirebaseRemoteConfig.framework; sourceTree = "<group>"; };
-		0ADE135C260C73AC0037B2A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AFD26902607763100A6650B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +144,6 @@
 				0A16D525260D973C00D90ED4 /* FirebaseInAppMessaging.framework in Frameworks */,
 				0A16D51D260D973C00D90ED4 /* FirebaseABTesting.framework in Frameworks */,
 				0A16D52F260D973C00D90ED4 /* nanopb.framework in Frameworks */,
-				0A8E11A7260DA79600B36F89 /* SwiftyInAppMessaging in Frameworks */,
 				0A16D52D260D973C00D90ED4 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,7 +179,6 @@
 		0A5129BA25C78D7B00BD5E7B = {
 			isa = PBXGroup;
 			children = (
-				0ADE135C260C73AC0037B2A0 /* GoogleService-Info.plist */,
 				0A5129E525C78E4100BD5E7B /* Cartfile */,
 				0A5129E425C78E4100BD5E7B /* Cartfile.resolved */,
 				0A5129E325C78E4100BD5E7B /* LICENSE */,
@@ -371,7 +366,6 @@
 			);
 			name = SwiftyInAppMessaging;
 			packageProductDependencies = (
-				0A8E11A6260DA79600B36F89 /* SwiftyInAppMessaging */,
 			);
 			productName = SwiftyInAppMessaging;
 			productReference = 0A5129C425C78D7B00BD5E7B /* SwiftyInAppMessaging.framework */;
@@ -479,7 +473,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A838EDE260C5EFF0098E8FF /* LaunchScreen.storyboard in Resources */,
-				0ADE135D260C73AC0037B2A0 /* GoogleService-Info.plist in Resources */,
 				0A838EDB260C5EFF0098E8FF /* Assets.xcassets in Resources */,
 				0A838ED9260C5EFF0098E8FF /* Main.storyboard in Resources */,
 			);
@@ -924,11 +917,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0A8E11A6260DA79600B36F89 /* SwiftyInAppMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0A8E11A5260DA79600B36F89 /* XCRemoteSwiftPackageReference "SwiftyInAppMessaging" */;
-			productName = SwiftyInAppMessaging;
-		};
 		0A8E11B1260DA7FD00B36F89 /* SwiftyInAppMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0A8E11A5260DA79600B36F89 /* XCRemoteSwiftPackageReference "SwiftyInAppMessaging" */;
