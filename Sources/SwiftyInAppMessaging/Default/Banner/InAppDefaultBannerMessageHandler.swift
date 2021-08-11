@@ -5,13 +5,17 @@
 //  Created by 伊藤史 on 2021/01/19.
 //
 
-import FirebaseInAppMessaging
+// swiftlint:disable unused_import
+import Firebase
+// swiftlint:enable unused_import
 import Foundation
 import UIKit
 
 struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
     let messageForDisplay: InAppMessagingBannerDisplay
-    weak var displayDelegate: InAppMessagingDisplayDelegate?
+    weak private(set) var displayDelegate: InAppMessagingDisplayDelegate?
+
+    private static var window: UIWindow?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingBannerDisplay else {
@@ -23,26 +27,41 @@ struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
     }
 
     static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingBannerDisplay
+        return messageForDisplay.type == .banner
     }
 
     func displayMessage() {
         let bannerImage = try? UIImage(imageData: self.messageForDisplay.imageData)
 
-        let bannerView = InAppDefaultBannerMessageView(title: self.messageForDisplay.title,
-                                                       image: bannerImage,
-                                                       bodyText: self.messageForDisplay.bodyText,
-                                                       backgroundColor: self.messageForDisplay.displayBackgroundColor,
-                                                       textColor: self.messageForDisplay.textColor,
-                                                       actionURL: self.messageForDisplay.actionURL,
-                                                       eventDetector: self)
+        let viewController = InAppDefaultBannerMessageViewController(title: self.messageForDisplay.title,
+                                                                     image: bannerImage,
+                                                                     bodyText: self.messageForDisplay.bodyText,
+                                                                     backgroundColor: self.messageForDisplay.displayBackgroundColor,
+                                                                     textColor: self.messageForDisplay.textColor,
+                                                                     actionURL: self.messageForDisplay.actionURL,
+                                                                     eventDetector: self)
 
-        DispatchQueue.main.async {
-            UIApplication.shared.topViewController?.view.addSubview(bannerView)
-        }
+        InAppDefaultBannerMessageHandler.window = UIApplication.windowForBanner
+        InAppDefaultBannerMessageHandler.window?.rootViewController = viewController
+        InAppDefaultBannerMessageHandler.window?.isHidden = false
     }
 
     func displayError(_ error: Error) {
         debugLog(error)
+    }
+
+    func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        self.displayDelegate?.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
+        self.dismissView()
+    }
+
+    func messageClicked(with action: InAppMessagingAction) {
+        self.displayDelegate?.messageClicked?(self.messageForDisplay, with: action)
+        self.dismissView()
+    }
+
+    private func dismissView() {
+        InAppDefaultBannerMessageHandler.window?.rootViewController?.dismissView()
+        InAppDefaultBannerMessageHandler.window = nil
     }
 }

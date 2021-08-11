@@ -5,13 +5,17 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+// swiftlint:disable unused_import
+import Firebase
+// swiftlint:enable unused_import
 import Foundation
 import UIKit
 
 struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
     let messageForDisplay: InAppMessagingModalDisplay
-    weak var displayDelegate: InAppMessagingDisplayDelegate?
+    weak private(set) var displayDelegate: InAppMessagingDisplayDelegate?
+
+    private static var window: UIWindow?
 
     init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
         guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {
@@ -23,7 +27,7 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
     }
 
     static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingModalDisplay
+        return messageForDisplay.type == .modal
     }
 
     func displayMessage() {
@@ -38,9 +42,9 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
                                                                         textColor: self.messageForDisplay.textColor,
                                                                         eventDetector: self)
 
-            DispatchQueue.main.async {
-                UIApplication.shared.topViewController?.present(viewController, animated: true, completion: nil)
-            }
+            InAppDefaultModalMessageHandler.window = UIApplication.windowForMessage
+            InAppDefaultModalMessageHandler.window?.rootViewController = viewController
+            InAppDefaultModalMessageHandler.window?.isHidden = false
         } catch let error {
             self.displayError(error)
         }
@@ -48,5 +52,20 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
 
     func displayError(_ error: Error) {
         debugLog(error)
+    }
+
+    public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        self.displayDelegate?.messageDismissed?(self.messageForDisplay, dismissType: dismissType)
+        self.dismissView()
+    }
+
+    public func messageClicked(with action: InAppMessagingAction) {
+        self.displayDelegate?.messageClicked?(self.messageForDisplay, with: action)
+        self.dismissView()
+    }
+
+    private func dismissView() {
+        InAppDefaultModalMessageHandler.window?.rootViewController?.dismissView()
+        InAppDefaultModalMessageHandler.window = nil
     }
 }

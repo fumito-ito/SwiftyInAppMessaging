@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftyInAppMessaging",
-    platforms: [.iOS("11.0")],
+    platforms: [.iOS("12.0")],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         .package(name: "Firebase",
                  url: "https://github.com/firebase/firebase-ios-sdk.git",
-                 .exact("7.3.0"))
+                 .exact("8.4.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
