@@ -4,9 +4,7 @@
 //
 //  Created by 伊藤史 on 2021/01/05.
 //
-// swiftlint:disable unused_import
-import Firebase
-// swiftlint:enable unused_import
+import FirebaseInAppMessaging
 import Foundation
 import UIKit
 
