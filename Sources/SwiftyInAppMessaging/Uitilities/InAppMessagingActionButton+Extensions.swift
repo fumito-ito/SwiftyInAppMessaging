@@ -5,7 +5,9 @@
 //  Created by 伊藤史 on 2021/01/08.
 //
 
-import FirebaseInAppMessaging
+// swiftlint:disable unused_import
+import Firebase
+// swiftlint:enable unused_import
 import Foundation
 
 public struct ActionButton {

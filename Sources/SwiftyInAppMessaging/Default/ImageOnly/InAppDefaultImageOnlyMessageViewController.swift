@@ -5,11 +5,13 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
-import FirebaseInAppMessaging
+// swiftlint:disable unused_import
+import Firebase
+// swiftlint:enable unused_import
 import Foundation
 import UIKit
 
-public protocol InAppDefaultImageOnlyViewDelegate: class {
+protocol InAppDefaultImageOnlyViewDelegate: class {
     func imageDidTap()
 }
 
@@ -18,16 +20,16 @@ final class InAppDefaultImageOnlyView: UIView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 8
-        view.clipsToBounds = true
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageDidTap))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageDidTap))
         view.addGestureRecognizer(tapGesture)
 
         return view
     }()
 
     weak var delegate: InAppDefaultImageOnlyViewDelegate?
+
+    private var currentConstraints: [NSLayoutConstraint] = []
 
     init(image: UIImage?) {
 
@@ -36,9 +38,11 @@ final class InAppDefaultImageOnlyView: UIView {
         self.imageView.image = image
         self.addSubview(self.imageView)
 
-        self.backgroundColor = backgroundColor
+        self.backgroundColor = .white
         self.translatesAutoresizingMaskIntoConstraints = false
         self.isUserInteractionEnabled = false
+        self.layer.cornerRadius = 8
+        self.clipsToBounds = true
     }
 
     @objc func imageDidTap() {
@@ -59,26 +63,34 @@ final class InAppDefaultImageOnlyView: UIView {
     private func applyReguarLayout() {
         self.clearConstraints()
 
-        self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        self.imageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.currentConstraints.append(contentsOf: [
+            self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.imageView.rightAnchor.constraint(equalTo: self.rightAnchor),
 
-        self.imageView.widthAnchor.constraint(equalTo: self.imageView.heightAnchor).isActive = true
+            self.imageView.widthAnchor.constraint(equalTo: self.imageView.heightAnchor),
+        ])
+
+        NSLayoutConstraint.activate(self.currentConstraints)
     }
 
     private func applyCompactLayout() {
         self.clearConstraints()
 
-        self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        self.imageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.currentConstraints.append(contentsOf: [
+            self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.imageView.rightAnchor.constraint(equalTo: self.rightAnchor),
 
-        self.imageView.widthAnchor.constraint(equalTo: self.imageView.heightAnchor).isActive = true
+            self.imageView.widthAnchor.constraint(equalTo: self.imageView.heightAnchor),
+        ])
+
+        NSLayoutConstraint.activate(self.currentConstraints)
     }
 
     private func clearConstraints() {
-        self.removeConstraints(self.constraints)
-        self.imageView.removeConstraints(self.imageView.constraints)
+        NSLayoutConstraint.deactivate(self.currentConstraints)
+        self.currentConstraints = []
     }
 
     required init?(coder: NSCoder) {
@@ -120,18 +132,21 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
         self.modalTransitionStyle = .crossDissolve
 
         self.view.addSubview(self.backgroundView)
-        self.backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.backgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.backgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.backgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            self.backgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        ])
 
-        self.view.addSubview(imageView)
-        self.imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        self.imageView.topAnchor.constraint(lessThanOrEqualTo: self.view.topAnchor, constant: 32).isActive = true
-        self.imageView.leftAnchor.constraint(lessThanOrEqualTo: self.view.leftAnchor, constant: 32).isActive = true
-        self.imageView.rightAnchor.constraint(lessThanOrEqualTo: self.view.rightAnchor, constant: -32).isActive = true
-        self.imageView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor, constant: -32).isActive = true
+        self.view.addSubview(self.imageView)
+        NSLayoutConstraint.activate([
+            self.imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.imageView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
+            self.imageView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
+            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor),
+        ])
         self.imageView.applyLayout(for: self.traitCollection.horizontalSizeClass)
 
         self.imageView.delegate = self
@@ -139,6 +154,11 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+
+        guard self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass else {
+            return
+        }
+
         self.imageView.applyLayout(for: self.traitCollection.horizontalSizeClass)
     }
 
@@ -153,19 +173,16 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
 
     @objc func backgroundViewDidTap() {
         self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
-        self.dismiss(animated: true, completion: nil)
     }
 }
 
 extension InAppDefaultImageOnlyMessageViewController: InAppDefaultImageOnlyViewDelegate {
     public func imageDidTap() {
-        let action = InAppMessagingAction(actionText: nil, actionURL: self.actionURL)
-        eventDetector.messageClicked(with: action)
-
         if let actionURL = self.actionURL, UIApplication.shared.canOpenURL(actionURL) {
             UIApplication.shared.open(actionURL, options: [:], completionHandler: nil)
         }
 
-        self.dismiss(animated: false, completion: nil)
+        let action = InAppMessagingAction(actionText: nil, actionURL: self.actionURL)
+        eventDetector.messageClicked(with: action)
     }
 }

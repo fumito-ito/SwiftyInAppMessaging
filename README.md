@@ -73,7 +73,7 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 
 ## Dependencies
 
-- Firebase iOS SDK == `7.3.0`
+- Firebase iOS SDK == `8.4.0`
 
 ## Installation
 
