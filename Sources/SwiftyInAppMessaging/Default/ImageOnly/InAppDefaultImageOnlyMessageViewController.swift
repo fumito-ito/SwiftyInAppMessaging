@@ -17,6 +17,9 @@ final class InAppDefaultImageOnlyView: UIView {
     lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
         view.isUserInteractionEnabled = true
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageDidTap))
@@ -36,11 +39,8 @@ final class InAppDefaultImageOnlyView: UIView {
         self.imageView.image = image
         self.addSubview(self.imageView)
 
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.isUserInteractionEnabled = false
-        self.layer.cornerRadius = 8
-        self.clipsToBounds = true
     }
 
     @objc func imageDidTap() {
@@ -98,7 +98,7 @@ final class InAppDefaultImageOnlyView: UIView {
 
 final class InAppDefaultImageOnlyMessageViewController: UIViewController {
 
-    let imageView: InAppDefaultImageOnlyView
+    let imageOnlyView: InAppDefaultImageOnlyView
 
     lazy var backgroundView: UIView = {
         let view = UIView()
@@ -120,7 +120,7 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
          actionURL: URL?,
          eventDetector: MessageEventDetectable) {
 
-        self.imageView = InAppDefaultImageOnlyView(image: image)
+        self.imageOnlyView = InAppDefaultImageOnlyView(image: image)
         self.eventDetector = eventDetector
         self.actionURL = actionURL
 
@@ -128,6 +128,10 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
 
         self.modalPresentationStyle = .overFullScreen
         self.modalTransitionStyle = .crossDissolve
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         self.view.addSubview(self.backgroundView)
         NSLayoutConstraint.activate([
@@ -137,17 +141,17 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
             self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
 
-        self.view.addSubview(self.imageView)
+        self.view.addSubview(self.imageOnlyView)
         NSLayoutConstraint.activate([
-            self.imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.imageView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
-            self.imageView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
-            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor),
+            self.imageOnlyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.imageOnlyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.imageOnlyView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
+            self.imageOnlyView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
+            self.imageOnlyView.heightAnchor.constraint(equalTo: self.imageOnlyView.widthAnchor),
         ])
-        self.imageView.applyLayout(for: self.traitCollection.horizontalSizeClass)
+        self.imageOnlyView.applyLayout(for: self.traitCollection.horizontalSizeClass)
 
-        self.imageView.delegate = self
+        self.imageOnlyView.delegate = self
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -157,7 +161,7 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
             return
         }
 
-        self.imageView.applyLayout(for: self.traitCollection.horizontalSizeClass)
+        self.imageOnlyView.applyLayout(for: self.traitCollection.horizontalSizeClass)
     }
 
     required init?(coder: NSCoder) {

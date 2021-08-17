@@ -148,7 +148,7 @@ final class InAppDefaultCardView: UIView {
             self.imageView.topAnchor.constraint(equalTo: self.topAnchor),
             self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
             self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.imageView.widthAnchor.constraint(equalTo: self.heightAnchor),
+            self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor, multiplier: 1.0),
             self.imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/2),
 
             self.titleLabel.topAnchor.constraint(equalTo: self.imageView.topAnchor, constant: 16),

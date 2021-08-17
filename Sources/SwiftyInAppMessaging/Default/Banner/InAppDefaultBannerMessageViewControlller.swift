@@ -47,6 +47,8 @@ final class InAppDefaultBannerMessageView: UIView {
     lazy var bannerImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
 
         return view
     }()
@@ -99,7 +101,7 @@ final class InAppDefaultBannerMessageView: UIView {
         if let image = image {
             self.bannerImage.image = image
 
-            self.bannerImage.heightAnchor.constraint(equalTo: self.bannerImage.widthAnchor).isActive = true
+            self.bannerImage.heightAnchor.constraint(equalTo: self.bannerImage.widthAnchor, multiplier: 1.0).isActive = true
         } else {
             self.bannerImage.widthAnchor.constraint(equalToConstant: 0).isActive = true
         }
@@ -222,11 +224,15 @@ final class InAppDefaultBannerMessageViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         self.modalPresentationStyle = .overFullScreen
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
         self.view.addSubview(self.bannerView)
-        self.bannerView.delegate = self
-
         self.applyLayout()
+
+        self.bannerView.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
