@@ -98,7 +98,7 @@ let package = Package(
     name: "MyPackage",
     products: [...],
     dependencies: [
-        .package(url: "https://github.com/fumito-ito/SwiftyInAppMessaging.git", .upToNextMajor(from: "0.1.0"))
+        .package(url: "https://github.com/fumito-ito/SwiftyInAppMessaging.git", .upToNextMajor(from: "0.2.1"))
     ]
 )
 ```
