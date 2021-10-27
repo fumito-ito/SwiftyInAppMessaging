@@ -6,7 +6,7 @@
 //
 
 import FirebaseInAppMessaging
-import Foundation
+import UIKit
 
 extension UIImage {
     public convenience init?(imageData: InAppMessagingImageData?) throws {

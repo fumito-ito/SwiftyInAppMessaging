@@ -6,7 +6,7 @@
 //
 
 import FirebaseInAppMessaging
-import Foundation
+import UIKit
 
 public struct ActionButton {
     let buttonText: String
