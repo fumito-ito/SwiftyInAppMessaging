@@ -2,6 +2,7 @@
 /.build
 /Packages
 xcuserdata/
+/.vscode
 
 # Created by https://www.toptal.com/developers/gitignore/api/iOS,Xcode,Carthage,Cocoapods
 # Edit at https://www.toptal.com/developers/gitignore?templates=iOS,Xcode,Carthage,Cocoapods
