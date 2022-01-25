@@ -4,7 +4,7 @@
 //
 //  Created by 伊藤史 on 2022/01/25.
 //
-
+#if os(iOS) || os(tvOS)
 import Foundation
 import UIKit
 
@@ -33,3 +33,4 @@ struct FontSize {
         #endif
     }
 }
+#endif

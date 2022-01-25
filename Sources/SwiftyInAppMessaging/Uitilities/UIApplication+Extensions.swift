@@ -5,6 +5,7 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
+#if os(iOS) || os(tvOS)
 import Foundation
 import UIKit
 
@@ -75,3 +76,4 @@ final class UIWindowForBanner: UIWindow {
         return viewController.bannerView.frame.contains(point)
     }
 }
+#endif
