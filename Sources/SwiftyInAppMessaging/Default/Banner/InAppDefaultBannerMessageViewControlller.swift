@@ -4,7 +4,7 @@
 //
 //  Created by 伊藤史 on 2021/01/19.
 //
-
+#if os(iOS) || os(tvOS)
 import FirebaseInAppMessaging
 import Foundation
 import UIKit
@@ -27,7 +27,7 @@ final class InAppDefaultBannerMessageView: UIView {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 1
-        view.font = .boldSystemFont(ofSize: UIFont.labelFontSize)
+        view.font = .boldSystemFont(ofSize: FontSize.label)
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -37,7 +37,7 @@ final class InAppDefaultBannerMessageView: UIView {
     lazy var bodyLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        view.font = UIFont.systemFont(ofSize: FontSize.body)
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -159,8 +159,15 @@ final class InAppDefaultBannerMessageView: UIView {
     }
 
     func showBanner(for view: UIView, completion: ((Bool) -> Void)? = nil) {
+        let statusBarHeight: CGFloat
+        #if os(tvOS)
+        statusBarHeight = 0
+        #else
+        statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        #endif
+
         let bannerCenter = CGPoint(x: view.center.x,
-                                   y: self.frame.height / 2 + UIApplication.shared.statusBarFrame.size.height)
+                                   y: self.frame.height / 2 + statusBarHeight)
 
         UIView.animate(
             withDuration: 0.3,
@@ -173,8 +180,15 @@ final class InAppDefaultBannerMessageView: UIView {
     }
 
     func hideBanner(for view: UIView, completion: ((Bool) -> Void)? = nil) {
+        let statusBarHeight: CGFloat
+        #if os(tvOS)
+        statusBarHeight = 0
+        #else
+        statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        #endif
+
         let bannerCenter = CGPoint(x: view.center.x,
-                                   y: -1 * (self.frame.height / 2 + UIApplication.shared.statusBarFrame.size.height))
+                                   y: -1 * (self.frame.height / 2 + statusBarHeight))
 
         UIView.animate(
             withDuration: 0.5,
@@ -254,7 +268,14 @@ final class InAppDefaultBannerMessageViewController: UIViewController {
         let hideBannerConstraint = self.bannerView.bottomAnchor.constraint(equalTo: self.view.topAnchor)
         self.hideBannerConstraint = hideBannerConstraint
 
-        self.showBannerConstraint = self.bannerView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: UIApplication.shared.statusBarFrame.size.height)
+        let statusBarHeight: CGFloat
+        #if os(tvOS)
+        statusBarHeight = 0
+        #else
+        statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+        #endif
+
+        self.showBannerConstraint = self.bannerView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: statusBarHeight)
 
         NSLayoutConstraint.activate([
             self.bannerView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16),
@@ -308,3 +329,4 @@ extension InAppDefaultBannerMessageViewController: InAppDefaultBannerMessageView
         })
     }
 }
+#endif

@@ -4,7 +4,7 @@
 //
 //  Created by 伊藤史 on 2021/01/07.
 //
-
+#if os(iOS) || os(tvOS)
 import Foundation
 
 public enum SwiftyInAppMessagingError: Error {
@@ -17,3 +17,4 @@ public enum SwiftyInAppMessagingError: Error {
         }
     }
 }
+#endif

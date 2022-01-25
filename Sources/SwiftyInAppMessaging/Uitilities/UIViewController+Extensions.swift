@@ -4,7 +4,7 @@
 //
 //  Created by 伊藤史 on 2021/03/21.
 //
-
+#if os(iOS) || os(tvOS)
 import Foundation
 import UIKit
 
@@ -14,3 +14,4 @@ extension UIViewController {
         self.view.window?.rootViewController = nil
     }
 }
+#endif

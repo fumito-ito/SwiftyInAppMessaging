@@ -4,7 +4,7 @@
 //
 //  Created by 伊藤史 on 2021/01/07.
 //
-
+#if os(iOS) || os(tvOS)
 import Foundation
 
 func debugLog(_ obj: Any?,
@@ -22,3 +22,4 @@ func debugLog(_ obj: Any?,
         }
     #endif
 }
+#endif

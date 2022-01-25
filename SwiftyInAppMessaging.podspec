@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SwiftyInAppMessaging"
-  spec.version      = "0.2.1"
+  spec.version      = "0.3.0"
   spec.summary      = "The easiest way to coexist your customized view and InAppMessaging default view."
 
   # This description is used to generate tags and improve search results.
@@ -26,7 +26,8 @@ Pod::Spec.new do |spec|
   spec.author             = { "Fumito Ito" => "weathercook@gmail.com" }
   spec.social_media_url   = "https://twitter.com/fumito_ito"
 
-  spec.platform     = :ios, "12.0"
+  spec.ios.deployment_target    = "12.0"
+  spec.tvos.deployment_target   = "12.0"
 
   spec.source       = { :git => "https://github.com/fumito-ito/SwiftyInAppMessaging.git", :tag => "#{spec.version}" }
 
@@ -36,6 +37,6 @@ Pod::Spec.new do |spec|
 
   spec.static_framework = true
   spec.swift_version = '5.3'
-  spec.dependency "Firebase/InAppMessaging", "8.4.0"
+  spec.dependency "Firebase/InAppMessaging", "8.11.0"
 
 end

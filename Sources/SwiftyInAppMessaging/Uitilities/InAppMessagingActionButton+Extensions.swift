@@ -4,7 +4,7 @@
 //
 //  Created by 伊藤史 on 2021/01/08.
 //
-
+#if os(iOS) || os(tvOS)
 import FirebaseInAppMessaging
 import UIKit
 
@@ -21,3 +21,4 @@ extension InAppMessagingActionButton {
                             buttonBackgroundColor: self.buttonBackgroundColor)
     }
 }
+#endif

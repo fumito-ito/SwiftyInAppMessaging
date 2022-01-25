@@ -5,6 +5,7 @@
 //  Created by 伊藤史 on 2021/01/19.
 //
 
+#if os(iOS) || os(tvOS)
 import FirebaseInAppMessaging
 import Foundation
 import UIKit
@@ -63,3 +64,4 @@ struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
         InAppDefaultBannerMessageHandler.window = nil
     }
 }
+#endif

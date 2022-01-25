@@ -5,12 +5,13 @@
 //  Created by 伊藤史 on 2021/01/05.
 //
 
+#if os(iOS) || os(tvOS)
 import Foundation
 import UIKit
 
 extension UIApplication {
     static var rootWindow: UIWindow? {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, tvOS 13.0, *) {
             return UIApplication.foregroundScene?.windows.first ?? UIApplication.shared.delegate?.window ?? UIApplication.shared.keyWindow
         }
 
@@ -18,7 +19,7 @@ extension UIApplication {
     }
 
     static var windowForMessage: UIWindow? {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, tvOS 13.0, *) {
             guard let scene = UIApplication.foregroundScene else {
                 return nil
             }
@@ -36,7 +37,7 @@ extension UIApplication {
     }
 
     static var windowForBanner: UIWindow? {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 13.0, tvOS 13.0, *) {
             guard let scene = UIApplication.foregroundScene else {
                 return nil
             }
@@ -53,7 +54,7 @@ extension UIApplication {
         }
     }
 
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, tvOS 13.0, *)
     static var foregroundScene: UIWindowScene? {
         guard let scene = UIApplication.shared
                 .connectedScenes
@@ -75,3 +76,4 @@ final class UIWindowForBanner: UIWindow {
         return viewController.bannerView.frame.contains(point)
     }
 }
+#endif
