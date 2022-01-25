@@ -82,7 +82,7 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 Just add your `Cartfile`
 
 ```
-github "fumito-ito/SwiftyInAppMessaging" ~> 0.2.1
+github "fumito-ito/SwiftyInAppMessaging" ~> 0.3.0
 ```
 
 and run `carthage update`
