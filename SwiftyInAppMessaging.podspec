@@ -26,7 +26,8 @@ Pod::Spec.new do |spec|
   spec.author             = { "Fumito Ito" => "weathercook@gmail.com" }
   spec.social_media_url   = "https://twitter.com/fumito_ito"
 
-  spec.platform     = :ios, "12.0"
+  spec.ios.deployment_target    = "12.0"
+  spec.tvos.deployment_target   = "12.0"
 
   spec.source       = { :git => "https://github.com/fumito-ito/SwiftyInAppMessaging.git", :tag => "#{spec.version}" }
 

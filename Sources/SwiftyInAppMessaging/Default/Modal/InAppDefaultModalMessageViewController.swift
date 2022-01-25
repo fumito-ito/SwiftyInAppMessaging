@@ -17,7 +17,7 @@ final class InAppDefaultModalView: UIView {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = .boldSystemFont(ofSize: UIFont.labelFontSize)
+        view.font = .boldSystemFont(ofSize: FontSize.label)
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -36,7 +36,7 @@ final class InAppDefaultModalView: UIView {
     lazy var bodyLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        view.font = UIFont.systemFont(ofSize: FontSize.body)
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -49,7 +49,7 @@ final class InAppDefaultModalView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 4
         view.clipsToBounds = true
-        view.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+        view.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.button)
         view.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
 
         return view

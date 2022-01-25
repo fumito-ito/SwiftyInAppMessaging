@@ -29,7 +29,7 @@ final class InAppDefaultCardView: UIView {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 1
-        view.font = .boldSystemFont(ofSize: UIFont.labelFontSize)
+        view.font = .boldSystemFont(ofSize: FontSize.label)
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -39,7 +39,7 @@ final class InAppDefaultCardView: UIView {
     lazy var bodyLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        view.font = UIFont.systemFont(ofSize: FontSize.body)
         view.textAlignment = .left
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -50,7 +50,7 @@ final class InAppDefaultCardView: UIView {
         let view = UIButton()
         view.isUserInteractionEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        view.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.button)
         view.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
 
         return view
@@ -60,7 +60,7 @@ final class InAppDefaultCardView: UIView {
         let view = UIButton()
         view.isUserInteractionEnabled = false
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        view.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.button)
         view.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
 
         return view
