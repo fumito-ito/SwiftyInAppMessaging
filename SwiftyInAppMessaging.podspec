@@ -36,6 +36,6 @@ Pod::Spec.new do |spec|
 
   spec.static_framework = true
   spec.swift_version = '5.3'
-  spec.dependency "Firebase/InAppMessaging", "8.4.0"
+  spec.dependency "Firebase/InAppMessaging", "8.11.0"
 
 end
