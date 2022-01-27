@@ -75,4 +75,14 @@ struct InAppDefaultCardMessageHandler: InAppCardMessageHandler {
         InAppDefaultCardMessageHandler.window = nil
     }
 }
+
+extension InAppDefaultCardMessageHandler {
+    init?(message messageForDisplay: InAppMessagingDisplayMessage) {
+        guard let messageForDisplay = messageForDisplay as? InAppMessagingCardDisplay else {
+            return nil
+        }
+
+        self.messageForDisplay = messageForDisplay
+    }
+}
 #endif
