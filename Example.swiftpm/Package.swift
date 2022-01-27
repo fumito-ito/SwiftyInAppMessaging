@@ -40,6 +40,9 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "AppModule",
+            dependencies: [
+                .productItem(name: "SwiftyInAppMessaging", package: "SwiftyInAppMessaging", condition: nil)
+            ],
             path: "."
         )
     ]
