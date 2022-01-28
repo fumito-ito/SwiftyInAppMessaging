@@ -11,7 +11,7 @@ private struct Message {
     private let body = "The future has several names. For the weak, it is impossible; for the fainthearted, it is unknown; but for the valiant, it is ideal."
     private let textColor = UIColor.black
     private let backgroundColor = UIColor.white
-    private let imageData = InAppMessagingImageData(imageURL: "https://live.staticflickr.com/4676/25690386427_8c2b3eaf76_m.jpg", imageData: Data())
+    private let imageData = InAppMessagingImageData(imageURL: "https://live.staticflickr.com/4676/25690386427_8c2b3eaf76_m.jpg", imageData: UIImage(named: "Cat")!.jpegData(compressionQuality: 1.0)!)
     private let actionURL = URL(string: "https://google.com")
     private let appData: [AnyHashable: Any]? = nil
     private let button = InAppMessagingActionButton(buttonText: "button",
