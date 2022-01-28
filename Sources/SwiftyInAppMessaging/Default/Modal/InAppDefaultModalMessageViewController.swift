@@ -9,7 +9,7 @@ import FirebaseInAppMessaging
 import Foundation
 import UIKit
 
-protocol InAppDefaultModalViewDelegate: class {
+protocol InAppDefaultModalViewDelegate: AnyObject {
     func actionButtonDidTap()
 }
 

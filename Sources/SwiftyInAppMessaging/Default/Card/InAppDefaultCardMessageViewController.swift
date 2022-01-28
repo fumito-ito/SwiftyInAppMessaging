@@ -9,7 +9,7 @@ import FirebaseInAppMessaging
 import Foundation
 import UIKit
 
-protocol InAppDefaultCardViewDelegate: class {
+protocol InAppDefaultCardViewDelegate: AnyObject {
     func primaryActionButtonDidTap()
     func secondaryActionButtonDidTap()
 }

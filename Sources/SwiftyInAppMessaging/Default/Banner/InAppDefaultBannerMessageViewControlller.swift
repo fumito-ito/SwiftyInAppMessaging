@@ -9,7 +9,7 @@ import FirebaseInAppMessaging
 import Foundation
 import UIKit
 
-protocol InAppDefaultBannerMessageViewDelegate: class {
+protocol InAppDefaultBannerMessageViewDelegate: AnyObject {
     func bannerDidTapped(_: InAppDefaultBannerMessageView)
     func bannerDidPanned(_: InAppDefaultBannerMessageView)
 }
