@@ -9,7 +9,7 @@ import FirebaseInAppMessaging
 import Foundation
 import UIKit
 
-protocol InAppDefaultImageOnlyViewDelegate: class {
+protocol InAppDefaultImageOnlyViewDelegate: AnyObject {
     func imageDidTap()
 }
 
