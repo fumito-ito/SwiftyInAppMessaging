@@ -46,4 +46,22 @@ extension SwiftyInAppMessaging {
         }
     }
 }
+
+extension SwiftyInAppMessaging {
+    public func displayDefaultBannerMessage(for messageForDisplay: InAppMessagingDisplayMessage) {
+        InAppDefaultBannerMessageHandler(message: messageForDisplay)?.displayMessage()
+    }
+
+    public func displayDefaultCardMessage(for messageForDisplay: InAppMessagingDisplayMessage) {
+        InAppDefaultCardMessageHandler(message: messageForDisplay)?.displayMessage()
+    }
+
+    public func displayDefaultImageOnlyMessage(for messageForDisplay: InAppMessagingDisplayMessage) {
+        InAppDefaultImageOnlyMessageHandler(message: messageForDisplay)?.displayMessage()
+    }
+
+    public func displayDefaultModalMessage(for messageForDisplay: InAppMessagingDisplayMessage) {
+        InAppDefaultModalMessageHandler(message: messageForDisplay)?.displayMessage()
+    }
+}
 #endif

@@ -67,4 +67,14 @@ struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
         InAppDefaultModalMessageHandler.window = nil
     }
 }
+
+extension InAppDefaultModalMessageHandler {
+    init?(message messageForDisplay: InAppMessagingDisplayMessage) {
+        guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {
+            return nil
+        }
+
+        self.messageForDisplay = messageForDisplay
+    }
+}
 #endif

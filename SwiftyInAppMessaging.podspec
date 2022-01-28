@@ -27,7 +27,6 @@ Pod::Spec.new do |spec|
   spec.social_media_url   = "https://twitter.com/fumito_ito"
 
   spec.ios.deployment_target    = "12.0"
-  spec.tvos.deployment_target   = "12.0"
 
   spec.source       = { :git => "https://github.com/fumito-ito/SwiftyInAppMessaging.git", :tag => "#{spec.version}" }
 
@@ -37,6 +36,6 @@ Pod::Spec.new do |spec|
 
   spec.static_framework = true
   spec.swift_version = '5.3'
-  spec.dependency "Firebase/InAppMessaging", "8.11.0"
+  spec.dependency "Firebase/InAppMessaging", "~> 8.11.0-beta"
 
 end
