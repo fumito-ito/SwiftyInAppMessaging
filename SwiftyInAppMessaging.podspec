@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "SwiftyInAppMessaging"
   spec.version      = "0.4.0"
-  spec.summary      = "The easiest way to coexist your customized view and InAppMessaging default view."
+  spec.summary      = "The easiest way to use your customized view and In-App Messaging's default view."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-  The easiest way to coexist your customized view and InAppMessaging default view.
+  SwiftyInAppMessaging makes Firebase In-App Messaging easy to use with your customized view and In-App Messaging's default view.
                    DESC
 
   spec.homepage     = "https://github.com/fumito-ito/SwiftyInAppMessaging"
