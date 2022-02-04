@@ -81,8 +81,8 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 
 Just add your `Cartfile`
 
-```
-github "fumito-ito/SwiftyInAppMessaging" ~> 0.4.2
+```ruby
+github "fumito-ito/SwiftyInAppMessaging" ~> 0.5.0
 ```
 
 and run `carthage update`
@@ -98,7 +98,7 @@ let package = Package(
     name: "MyPackage",
     products: [...],
     dependencies: [
-        .package(url: "https://github.com/fumito-ito/SwiftyInAppMessaging.git", .upToNextMajor(from: "0.2.1"))
+        .package(url: "https://github.com/fumito-ito/SwiftyInAppMessaging.git", .upToNextMajor(from: "0.5.0"))
     ]
 )
 ```
@@ -109,7 +109,7 @@ firebase ios sdk supports Swift Package Manager in **Beta**. If you have some is
 
 Just add to your `Podfile`
 
-```
+```ruby
 pod 'SwiftyInAppMessaging'
 ```
 
