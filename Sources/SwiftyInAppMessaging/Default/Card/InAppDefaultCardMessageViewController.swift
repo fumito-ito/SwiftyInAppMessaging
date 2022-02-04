@@ -327,6 +327,8 @@ final class InAppDefaultCardMessageViewController: UIViewController {
 
     let secondaryActionURL: URL?
 
+    private var currentConstraints: [NSLayoutConstraint] = []
+
     init(title: String,
          portraitImage: UIImage,
          landscapeImage: UIImage?,
@@ -371,27 +373,16 @@ final class InAppDefaultCardMessageViewController: UIViewController {
         ])
 
         self.view.addSubview(self.cardView)
-        NSLayoutConstraint.activate([
-            self.cardView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.cardView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.cardView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
-            self.cardView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor)
-        ])
-        self.cardView.applyLayout(for: self.traitCollection.horizontalSizeClass)
+        applyLayout(for: UIApplication.interfaceOrientation, with: traitCollection.horizontalSizeClass)
 
         self.cardView.delegate = self
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        guard self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass else {
-            return
-        }
-
-        self.cardView.applyLayout(for: self.traitCollection.horizontalSizeClass)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        applyLayout(for: UIApplication.interfaceOrientation, with: traitCollection.horizontalSizeClass)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -404,6 +395,57 @@ final class InAppDefaultCardMessageViewController: UIViewController {
     @objc func backgroundViewDidTap() {
         self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
         self.dismissView()
+    }
+    
+    private func applyLayout(for orientation: UIInterfaceOrientation, with horizontalSizeClass: UIUserInterfaceSizeClass) {
+        clearLayout()
+
+        switch (orientation.isPortrait, horizontalSizeClass) {
+        case (true, _):
+            applyPortraitLayout()
+            cardView.applyLayout(for: horizontalSizeClass)
+        case (false, .compact):
+            applyLandscapeLayout(for: horizontalSizeClass)
+            cardView.applyLayout(for: .regular)
+        case (false, _):
+            applyLandscapeLayout(for: horizontalSizeClass)
+            cardView.applyLayout(for: horizontalSizeClass)
+        }
+    }
+    
+    private func applyLandscapeLayout(for horizontalSizeClass: UIUserInterfaceSizeClass) {
+        let readableContentGuidePriority: UILayoutPriority = horizontalSizeClass == .regular ? .required : .defaultHigh
+        let leftAnchor = self.cardView.leftAnchor.constraint(lessThanOrEqualTo: self.view.readableContentGuide.leftAnchor)
+        leftAnchor.priority = readableContentGuidePriority
+
+        let rightAnchor = self.cardView.rightAnchor.constraint(lessThanOrEqualTo: self.view.readableContentGuide.rightAnchor)
+        rightAnchor.priority = readableContentGuidePriority
+
+        currentConstraints.append(contentsOf: [
+            self.cardView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.cardView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            self.cardView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            leftAnchor,
+            rightAnchor
+        ])
+
+        NSLayoutConstraint.activate(currentConstraints)
+    }
+    
+    private func applyPortraitLayout() {
+        currentConstraints.append(contentsOf: [
+            self.cardView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.cardView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.cardView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
+            self.cardView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor)
+        ])
+
+        NSLayoutConstraint.activate(currentConstraints)
+    }
+
+    private func clearLayout() {
+        NSLayoutConstraint.deactivate(currentConstraints)
+        currentConstraints = []
     }
 }
 
