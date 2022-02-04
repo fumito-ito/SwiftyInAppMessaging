@@ -295,6 +295,8 @@ final class InAppDefaultModalMessageViewController: UIViewController {
 
     let actionURL: URL?
 
+    private var currentConstraints: [NSLayoutConstraint] = []
+
     init(title: String,
          image: UIImage?,
          bodyText: String?,
@@ -332,25 +334,13 @@ final class InAppDefaultModalMessageViewController: UIViewController {
         ])
 
         self.view.addSubview(modalView)
-        NSLayoutConstraint.activate([
-            self.modalView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.modalView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.modalView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
-            self.modalView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
-        ])
-        self.modalView.applyLayout(for: self.traitCollection.horizontalSizeClass)
-
+        applyLayout(for: UIApplication.interfaceOrientation, with: self.traitCollection.horizontalSizeClass)
         self.modalView.delegate = self
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        guard self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass else {
-            return
-        }
-
-        self.modalView.applyLayout(for: self.traitCollection.horizontalSizeClass)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        applyLayout(for: UIApplication.interfaceOrientation, with: traitCollection.horizontalSizeClass)
     }
 
     required init?(coder: NSCoder) {
@@ -364,6 +354,49 @@ final class InAppDefaultModalMessageViewController: UIViewController {
 
     @objc func backgroundViewDidTap() {
         self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
+    }
+
+    private func applyLayout(for orientation: UIInterfaceOrientation, with horizontalSizeClass: UIUserInterfaceSizeClass) {
+        clearLayout()
+
+        switch (orientation.isPortrait, horizontalSizeClass) {
+        case (true, _):
+            applyPortraitLayout()
+            modalView.applyLayout(for: horizontalSizeClass)
+        case (false, .compact):
+            applyLandscapeLayout()
+            modalView.applyLayout(for: .regular)
+        case (false, _):
+            applyLandscapeLayout()
+            modalView.applyLayout(for: horizontalSizeClass)
+        }
+    }
+
+    private func applyPortraitLayout() {
+        currentConstraints.append(contentsOf: [
+            self.modalView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.modalView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.modalView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
+            self.modalView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
+        ])
+
+        NSLayoutConstraint.activate(currentConstraints)
+    }
+
+    private func applyLandscapeLayout() {
+        currentConstraints.append(contentsOf: [
+            self.modalView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.modalView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.modalView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
+            self.modalView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
+        ])
+
+        NSLayoutConstraint.activate(currentConstraints)
+    }
+
+    private func clearLayout() {
+        NSLayoutConstraint.deactivate(currentConstraints)
+        currentConstraints = []
     }
 }
 
