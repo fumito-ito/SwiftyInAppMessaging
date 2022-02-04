@@ -116,6 +116,8 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
 
     let actionURL: URL?
 
+    private var currentConstraints: [NSLayoutConstraint] = []
+
     init(image: UIImage?,
          actionURL: URL?,
          eventDetector: MessageEventDetectable) {
@@ -142,26 +144,13 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
         ])
 
         self.view.addSubview(self.imageOnlyView)
-        NSLayoutConstraint.activate([
-            self.imageOnlyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.imageOnlyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.imageOnlyView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
-            self.imageOnlyView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
-            self.imageOnlyView.heightAnchor.constraint(equalTo: self.imageOnlyView.widthAnchor),
-        ])
-        self.imageOnlyView.applyLayout(for: self.traitCollection.horizontalSizeClass)
-
+        applyLayout(for: UIApplication.interfaceOrientation, with: self.traitCollection.horizontalSizeClass)
         self.imageOnlyView.delegate = self
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        guard self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass else {
-            return
-        }
-
-        self.imageOnlyView.applyLayout(for: self.traitCollection.horizontalSizeClass)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        applyLayout(for: UIApplication.interfaceOrientation, with: self.traitCollection.horizontalSizeClass)
     }
 
     required init?(coder: NSCoder) {
@@ -175,6 +164,50 @@ final class InAppDefaultImageOnlyMessageViewController: UIViewController {
 
     @objc func backgroundViewDidTap() {
         self.eventDetector.messageDismissed(dismissType: .typeUserTapClose)
+    }
+
+    private func applyLayout(for orientation: UIInterfaceOrientation, with horizontalSizeClass: UIUserInterfaceSizeClass) {
+        clearLayout()
+
+        switch (orientation.isPortrait, horizontalSizeClass) {
+        case (true, _):
+            applyPortraitLayout()
+            imageOnlyView.applyLayout(for: horizontalSizeClass)
+        case (false, .compact):
+            applyLandscapeLayout()
+            imageOnlyView.applyLayout(for: .regular)
+        case (false, _):
+            applyLandscapeLayout()
+            imageOnlyView.applyLayout(for: horizontalSizeClass)
+        }
+    }
+
+    private func applyPortraitLayout() {
+        currentConstraints.append(contentsOf: [
+            self.imageOnlyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.imageOnlyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.imageOnlyView.leftAnchor.constraint(equalTo: self.view.readableContentGuide.leftAnchor),
+            self.imageOnlyView.rightAnchor.constraint(equalTo: self.view.readableContentGuide.rightAnchor),
+            self.imageOnlyView.heightAnchor.constraint(equalTo: self.imageOnlyView.widthAnchor),
+        ])
+
+        NSLayoutConstraint.activate(currentConstraints)
+    }
+
+    private func applyLandscapeLayout() {
+        currentConstraints.append(contentsOf: [
+            self.imageOnlyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.imageOnlyView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            self.imageOnlyView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            self.imageOnlyView.heightAnchor.constraint(equalTo: self.imageOnlyView.widthAnchor),
+        ])
+
+        NSLayoutConstraint.activate(currentConstraints)
+    }
+
+    private func clearLayout() {
+        NSLayoutConstraint.deactivate(currentConstraints)
+        currentConstraints = []
     }
 }
 
