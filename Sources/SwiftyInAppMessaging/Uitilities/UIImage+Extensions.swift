@@ -1,41 +1,41 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by 伊藤史 on 2021/01/05.
 //
 #if os(iOS) || os(tvOS)
-import FirebaseInAppMessaging
-import UIKit
+    import FirebaseInAppMessaging
+    import UIKit
 
-extension UIImage {
-    public convenience init?(imageData: InAppMessagingImageData?) throws {
-        guard let imageData = imageData else {
-            return nil
+    extension UIImage {
+        public convenience init?(imageData: InAppMessagingImageData?) throws {
+            guard let imageData = imageData else {
+                return nil
+            }
+
+            if let imageRawData = imageData.imageRawData {
+                self.init(data: imageRawData)
+            }
+
+            guard let url = URL(string: imageData.imageURL) else {
+                return nil
+            }
+
+            let data = try Data(contentsOf: url)
+            self.init(data: data)
         }
 
-        if let imageRawData = imageData.imageRawData {
-            self.init(data: imageRawData)
+        static func image(with color: UIColor, rect: CGRect) -> UIImage? {
+            UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+            guard let context = UIGraphicsGetCurrentContext() else {
+                return nil
+            }
+            context.setFillColor(color.cgColor)
+            context.fill(rect)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
         }
-
-        guard let url = URL(string: imageData.imageURL) else {
-            return nil
-        }
-
-        let data = try Data(contentsOf: url)
-        self.init(data: data)
     }
-
-    static func image(with color: UIColor, rect: CGRect) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        context.setFillColor(color.cgColor)
-        context.fill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
 #endif

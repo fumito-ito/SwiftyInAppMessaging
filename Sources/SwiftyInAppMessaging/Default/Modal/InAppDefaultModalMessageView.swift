@@ -1,275 +1,311 @@
 //
 //  InAppDefaultModalMessageView.swift
-//  
+//
 //
 //  Created by 伊藤史 on 2022/02/19.
 //
 #if os(iOS) || os(tvOS)
-import FirebaseInAppMessaging
-import Foundation
-import UIKit
+    import FirebaseInAppMessaging
+    import Foundation
+    import UIKit
 
-protocol InAppDefaultModalViewDelegate: AnyObject {
-    func actionButtonDidTap()
-}
-
-final class InAppDefaultModalView: UIView {
-    lazy var titleLabel: UILabel = {
-        let view = UILabel()
-        view.numberOfLines = 0
-        view.font = .boldSystemFont(ofSize: FontSize.label)
-        view.textAlignment = .center
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        return view
-    }()
-
-    lazy var imageView: UIImageView = {
-        let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-
-        return view
-    }()
-
-    lazy var bodyLabel: UILabel = {
-        let view = UILabel()
-        view.numberOfLines = 0
-        view.font = UIFont.systemFont(ofSize: FontSize.body)
-        view.textAlignment = .center
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        return view
-    }()
-
-    lazy var actionButton: UIButton = {
-        let view = UIButton()
-        view.isUserInteractionEnabled = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 4
-        view.clipsToBounds = true
-        view.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.button)
-        view.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
-
-        return view
-    }()
-
-    weak var delegate: InAppDefaultModalViewDelegate?
-
-    private var currentConstrains: [NSLayoutConstraint] = []
-
-    private var bodyLabelPadding: CGFloat {
-        if self.bodyLabel.text == nil || self.bodyLabel.text?.isEmpty == true {
-            return 0
-        } else {
-            return 16
-        }
+    protocol InAppDefaultModalViewDelegate: AnyObject {
+        func actionButtonDidTap()
     }
 
-    private var actionButtonPadding: CGFloat {
-        if self.actionButton.titleLabel?.text == nil || self.actionButton.titleLabel?.text?.isEmpty == true {
-            return 0
-        } else {
-            return 16
+    final class InAppDefaultModalView: UIView {
+        lazy var titleLabel: UILabel = {
+            let view = UILabel()
+            view.numberOfLines = 0
+            view.font = .boldSystemFont(ofSize: FontSize.label)
+            view.textAlignment = .center
+            view.translatesAutoresizingMaskIntoConstraints = false
+
+            return view
+        }()
+
+        lazy var imageView: UIImageView = {
+            let view = UIImageView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.contentMode = .scaleAspectFill
+            view.clipsToBounds = true
+
+            return view
+        }()
+
+        lazy var bodyLabel: UILabel = {
+            let view = UILabel()
+            view.numberOfLines = 0
+            view.font = UIFont.systemFont(ofSize: FontSize.body)
+            view.textAlignment = .center
+            view.translatesAutoresizingMaskIntoConstraints = false
+
+            return view
+        }()
+
+        lazy var actionButton: UIButton = {
+            let view = UIButton()
+            view.isUserInteractionEnabled = false
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.layer.cornerRadius = 4
+            view.clipsToBounds = true
+            view.titleLabel?.font = UIFont.systemFont(ofSize: FontSize.button)
+            view.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+
+            return view
+        }()
+
+        weak var delegate: InAppDefaultModalViewDelegate?
+
+        private var currentConstrains: [NSLayoutConstraint] = []
+
+        private var bodyLabelPadding: CGFloat {
+            if self.bodyLabel.text == nil || self.bodyLabel.text?.isEmpty == true {
+                return 0
+            } else {
+                return 16
+            }
         }
-    }
 
-    init(title: String,
-         image: UIImage?,
-         bodyText: String?,
-         actionButton: ActionButton?,
-         backgroundColor: UIColor,
-         textColor: UIColor) {
+        private var actionButtonPadding: CGFloat {
+            if self.actionButton.titleLabel?.text == nil
+                || self.actionButton.titleLabel?.text?.isEmpty == true
+            {
+                return 0
+            } else {
+                return 16
+            }
+        }
 
-        super.init(frame: .zero)
+        init(
+            title: String,
+            image: UIImage?,
+            bodyText: String?,
+            actionButton: ActionButton?,
+            backgroundColor: UIColor,
+            textColor: UIColor
+        ) {
 
-        self.titleLabel.text = title
-        self.titleLabel.textColor = textColor
-        self.addSubview(self.titleLabel)
+            super.init(frame: .zero)
 
-        self.imageView.image = image
-        self.addSubview(self.imageView)
+            self.titleLabel.text = title
+            self.titleLabel.textColor = textColor
+            self.addSubview(self.titleLabel)
 
-        self.bodyLabel.text = bodyText
-        self.bodyLabel.textColor = textColor
-        self.addSubview(self.bodyLabel)
+            self.imageView.image = image
+            self.addSubview(self.imageView)
 
-        if let buttonText = actionButton?.buttonText {
-            self.actionButton.setTitle(buttonText, for: .normal)
+            self.bodyLabel.text = bodyText
+            self.bodyLabel.textColor = textColor
+            self.addSubview(self.bodyLabel)
 
-            if let buttonTextColor = actionButton?.buttonTextColor {
-                self.actionButton.setTitleColor(buttonTextColor, for: .normal)
+            if let buttonText = actionButton?.buttonText {
+                self.actionButton.setTitle(buttonText, for: .normal)
+
+                if let buttonTextColor = actionButton?.buttonTextColor {
+                    self.actionButton.setTitleColor(buttonTextColor, for: .normal)
+                }
+
+                if let buttonBackgroundColor = actionButton?.buttonBackgroundColor {
+                    self.actionButton.setBackgroundImage(
+                        buttonBackgroundColor.image(), for: .normal)
+                }
+
+                self.actionButton.addTarget(
+                    self, action: #selector(buttonDidTap), for: .touchUpInside)
+                self.actionButton.isUserInteractionEnabled = true
+            }
+            self.addSubview(self.actionButton)
+
+            self.backgroundColor = backgroundColor
+            self.layer.cornerRadius = 8
+            self.translatesAutoresizingMaskIntoConstraints = false
+        }
+
+        @objc func buttonDidTap() {
+            self.delegate?.actionButtonDidTap()
+        }
+
+        func applyLayout(for horizontalSizeClass: UIUserInterfaceSizeClass) {
+            switch horizontalSizeClass {
+            case .compact, .unspecified:
+                self.applyCompactLayout()
+            case .regular:
+                self.applyReguarLayout()
+            @unknown default:
+                self.applyCompactLayout()
+            }
+        }
+
+        private func applyReguarLayout() {
+            self.clearConstraints()
+
+            self.currentConstrains.append(contentsOf: [
+                self.imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+                self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+                self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+
+                self.titleLabel.topAnchor.constraint(equalTo: self.imageView.topAnchor),
+                self.titleLabel.leftAnchor.constraint(
+                    equalTo: self.imageView.rightAnchor, constant: 16),
+                self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
+
+                self.bodyLabel.topAnchor.constraint(
+                    equalTo: self.titleLabel.bottomAnchor, constant: 16),
+                self.bodyLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
+                self.bodyLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
+
+                self.actionButton.topAnchor.constraint(
+                    greaterThanOrEqualTo: self.bodyLabel.bottomAnchor, constant: 16),
+                self.actionButton.centerXAnchor.constraint(equalTo: self.bodyLabel.centerXAnchor),
+                self.actionButton.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor),
+                self.actionButton.heightAnchor.constraint(equalToConstant: 30),
+                self.actionButton.leftAnchor.constraint(
+                    greaterThanOrEqualTo: self.imageView.rightAnchor, constant: 16),
+                self.actionButton.rightAnchor.constraint(
+                    greaterThanOrEqualTo: self.rightAnchor, constant: -16),
+            ])
+
+            if self.imageView.image != nil {
+                self.currentConstrains.append(contentsOf: [
+                    self.imageView.widthAnchor.constraint(
+                        equalTo: self.widthAnchor, multiplier: 1 / 3),
+                    self.imageView.heightAnchor.constraint(
+                        equalTo: self.imageView.widthAnchor, multiplier: 1.0),
+                ])
             }
 
-            if let buttonBackgroundColor = actionButton?.buttonBackgroundColor {
-                self.actionButton.setBackgroundImage(buttonBackgroundColor.image(), for: .normal)
+            if #available(iOS 13.0, *) {
+            } else {
+                let superViewWidth = self.superview?.frame.width ?? 0
+                let widthToLayoutView = self.calculateReadableContentGuideMargin(
+                    for: superViewWidth)
+                let imageWidth =
+                    (superViewWidth - widthToLayoutView.left - widthToLayoutView.right) / 3 + 16
+                let labelInsets = UIEdgeInsets(top: 0, left: imageWidth + 16, bottom: 0, right: 16)
+
+                self.currentConstrains.append(contentsOf: [
+                    self.titleLabel.heightAnchor.constraint(
+                        equalToConstant: self.calculateLabelHeight(
+                            for: self.titleLabel, of: self.superview, with: labelInsets)),
+                    self.bodyLabel.heightAnchor.constraint(
+                        equalToConstant: self.calculateLabelHeight(
+                            for: self.bodyLabel, of: self.superview, with: labelInsets)),
+                ])
             }
 
-            self.actionButton.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
-            self.actionButton.isUserInteractionEnabled = true
-        }
-        self.addSubview(self.actionButton)
-
-        self.backgroundColor = backgroundColor
-        self.layer.cornerRadius = 8
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    @objc func buttonDidTap() {
-        self.delegate?.actionButtonDidTap()
-    }
-
-    func applyLayout(for horizontalSizeClass: UIUserInterfaceSizeClass) {
-        switch horizontalSizeClass {
-        case .compact, .unspecified:
-            self.applyCompactLayout()
-        case .regular:
-            self.applyReguarLayout()
-        @unknown default:
-            self.applyCompactLayout()
-        }
-    }
-
-    private func applyReguarLayout() {
-        self.clearConstraints()
-
-        self.currentConstrains.append(contentsOf: [
-            self.imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-            self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            self.imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-
-            self.titleLabel.topAnchor.constraint(equalTo: self.imageView.topAnchor),
-            self.titleLabel.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 16),
-            self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-
-            self.bodyLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
-            self.bodyLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
-            self.bodyLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
-
-            self.actionButton.topAnchor.constraint(greaterThanOrEqualTo: self.bodyLabel.bottomAnchor, constant: 16),
-            self.actionButton.centerXAnchor.constraint(equalTo: self.bodyLabel.centerXAnchor),
-            self.actionButton.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor),
-            self.actionButton.heightAnchor.constraint(equalToConstant: 30),
-            self.actionButton.leftAnchor.constraint(greaterThanOrEqualTo: self.imageView.rightAnchor, constant: 16),
-            self.actionButton.rightAnchor.constraint(greaterThanOrEqualTo: self.rightAnchor, constant: -16)
-        ])
-
-        if self.imageView.image != nil {
-            self.currentConstrains.append(contentsOf: [
-                self.imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/3),
-                self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor, multiplier: 1.0),
-            ])
+            NSLayoutConstraint.activate(self.currentConstrains)
         }
 
-        if #available(iOS 13.0, *) {} else {
-            let superViewWidth = self.superview?.frame.width ?? 0
-            let widthToLayoutView = self.calculateReadableContentGuideMargin(for: superViewWidth)
-            let imageWidth = (superViewWidth - widthToLayoutView.left - widthToLayoutView.right) / 3 + 16
-            let labelInsets = UIEdgeInsets(top: 0, left: imageWidth + 16, bottom: 0, right: 16)
+        private func applyCompactLayout() {
+            self.clearConstraints()
 
             self.currentConstrains.append(contentsOf: [
-                self.titleLabel.heightAnchor.constraint(equalToConstant: self.calculateLabelHeight(for: self.titleLabel, of: self.superview, with: labelInsets)),
-                self.bodyLabel.heightAnchor.constraint(equalToConstant: self.calculateLabelHeight(for: self.bodyLabel, of: self.superview, with: labelInsets)),
+                self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+                self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+                self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
+
+                self.imageView.topAnchor.constraint(
+                    equalTo: self.titleLabel.bottomAnchor, constant: 16),
+                self.imageView.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
+                self.imageView.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
             ])
-        }
 
-        NSLayoutConstraint.activate(self.currentConstrains)
-    }
+            if self.imageView.image != nil {
+                self.currentConstrains.append(
+                    self.imageView.heightAnchor.constraint(
+                        equalTo: self.imageView.widthAnchor, multiplier: 1.0))
+            }
 
-    private func applyCompactLayout() {
-        self.clearConstraints()
-
-        self.currentConstrains.append(contentsOf: [
-            self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-            self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
-            self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-
-            self.imageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
-            self.imageView.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
-            self.imageView.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
-        ])
-
-        if self.imageView.image != nil {
-            self.currentConstrains.append(self.imageView.heightAnchor.constraint(equalTo: self.imageView.widthAnchor, multiplier: 1.0))
-        }
-
-        self.currentConstrains.append(contentsOf: [
-            self.bodyLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: self.bodyLabelPadding),
-            self.bodyLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
-            self.bodyLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
-
-            self.actionButton.topAnchor.constraint(equalTo: self.bodyLabel.bottomAnchor, constant: self.actionButtonPadding),
-            self.actionButton.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
-            self.actionButton.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
-            self.actionButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            self.actionButton.heightAnchor.constraint(equalToConstant: 30),
-        ])
-
-        // layout hack for iOS 12.
-        if #available(iOS 13.0, *) { } else {
-            let labelInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
             self.currentConstrains.append(contentsOf: [
-                self.titleLabel.heightAnchor.constraint(equalToConstant: self.calculateLabelHeight(for: self.titleLabel, of: self.superview, with: labelInsets)),
-                self.bodyLabel.heightAnchor.constraint(equalToConstant: self.calculateLabelHeight(for: self.bodyLabel, of: self.superview, with: labelInsets)),
+                self.bodyLabel.topAnchor.constraint(
+                    equalTo: self.imageView.bottomAnchor, constant: self.bodyLabelPadding),
+                self.bodyLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
+                self.bodyLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
+
+                self.actionButton.topAnchor.constraint(
+                    equalTo: self.bodyLabel.bottomAnchor, constant: self.actionButtonPadding),
+                self.actionButton.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
+                self.actionButton.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
+                self.actionButton.bottomAnchor.constraint(
+                    equalTo: self.bottomAnchor, constant: -16),
+                self.actionButton.heightAnchor.constraint(equalToConstant: 30),
             ])
+
+            // layout hack for iOS 12.
+            if #available(iOS 13.0, *) {
+            } else {
+                let labelInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+                self.currentConstrains.append(contentsOf: [
+                    self.titleLabel.heightAnchor.constraint(
+                        equalToConstant: self.calculateLabelHeight(
+                            for: self.titleLabel, of: self.superview, with: labelInsets)),
+                    self.bodyLabel.heightAnchor.constraint(
+                        equalToConstant: self.calculateLabelHeight(
+                            for: self.bodyLabel, of: self.superview, with: labelInsets)),
+                ])
+            }
+
+            NSLayoutConstraint.activate(self.currentConstrains)
         }
 
-        NSLayoutConstraint.activate(self.currentConstrains)
-    }
-
-    private func clearConstraints() {
-        NSLayoutConstraint.deactivate(self.currentConstrains)
-        self.currentConstrains = []
-    }
-
-    @available(iOS, introduced: 12.0, obsoleted: 13.0)
-    private func calculateLabelHeight(for label: UILabel, of view: UIView?, with insets: UIEdgeInsets) -> CGFloat {
-        guard let view = view else {
-            return 0
+        private func clearConstraints() {
+            NSLayoutConstraint.deactivate(self.currentConstrains)
+            self.currentConstrains = []
         }
 
-        let readableContentMargins = self.calculateReadableContentGuideMargin(for: view.frame.width)
-        let layoutWidth = view.frame.width - (readableContentMargins.left + readableContentMargins.right) - (insets.left + insets.right)
-        let size = CGSize(width: layoutWidth, height: CGFloat.greatestFiniteMagnitude)
+        @available(iOS, introduced: 12.0, obsoleted: 13.0)
+        private func calculateLabelHeight(
+            for label: UILabel, of view: UIView?, with insets: UIEdgeInsets
+        ) -> CGFloat {
+            guard let view = view else {
+                return 0
+            }
 
-        return label.sizeThatFits(size).height
-    }
+            let readableContentMargins = self.calculateReadableContentGuideMargin(
+                for: view.frame.width)
+            let layoutWidth =
+                view.frame.width - (readableContentMargins.left + readableContentMargins.right)
+                - (insets.left + insets.right)
+            let size = CGSize(width: layoutWidth, height: CGFloat.greatestFiniteMagnitude)
 
-    /// calculate layout marging for readable content guide.
-    ///
-    /// This function solves the problem that autolayout dose not calculate the width properly on iOS 12.
-    /// If screen with is
-    /// * 375>= ... left and right margins are 16
-    /// * 672>, >375... left and right margins are 20
-    /// * 672>= ... margins are calculated by (view width - 672). but if calculated margins are 20>, it returns 20.
-    ///
-    /// - Parameter width: screen width
-    /// - Returns: layout margin for readable content guide.
-    @available(iOS, introduced: 12.0, obsoleted: 13.0)
-    private func calculateReadableContentGuideMargin(for width: CGFloat) -> UIEdgeInsets {
-        let minMargin: CGFloat = 16
-        let normalMargin: CGFloat = 20
-
-        let minWidth: CGFloat = 375
-        let maxWidth: CGFloat = 672
-
-        if width <= minWidth {
-            return UIEdgeInsets(top: 0, left: minMargin, bottom: 0, right: minMargin)
+            return label.sizeThatFits(size).height
         }
 
-        if width >= maxWidth {
-            let maxMargin = (width - maxWidth)
-            let margin = max(maxMargin, normalMargin)
+        /// calculate layout marging for readable content guide.
+        ///
+        /// This function solves the problem that autolayout dose not calculate the width properly on iOS 12.
+        /// If screen with is
+        /// * 375>= ... left and right margins are 16
+        /// * 672>, >375... left and right margins are 20
+        /// * 672>= ... margins are calculated by (view width - 672). but if calculated margins are 20>, it returns 20.
+        ///
+        /// - Parameter width: screen width
+        /// - Returns: layout margin for readable content guide.
+        @available(iOS, introduced: 12.0, obsoleted: 13.0)
+        private func calculateReadableContentGuideMargin(for width: CGFloat) -> UIEdgeInsets {
+            let minMargin: CGFloat = 16
+            let normalMargin: CGFloat = 20
 
-            return UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin)
+            let minWidth: CGFloat = 375
+            let maxWidth: CGFloat = 672
+
+            if width <= minWidth {
+                return UIEdgeInsets(top: 0, left: minMargin, bottom: 0, right: minMargin)
+            }
+
+            if width >= maxWidth {
+                let maxMargin = (width - maxWidth)
+                let margin = max(maxMargin, normalMargin)
+
+                return UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin)
+            }
+
+            return UIEdgeInsets(top: 0, left: normalMargin, bottom: 0, right: normalMargin)
         }
 
-        return UIEdgeInsets(top: 0, left: normalMargin, bottom: 0, right: normalMargin)
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 #endif
