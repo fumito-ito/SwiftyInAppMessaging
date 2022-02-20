@@ -20,6 +20,10 @@ jobs:
         env:
           GOOGLE_SERVICE_INFO_PLIST: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}
 
+      - name: Lint
+        run: |
+          brew install swift-format && swift-format lint -s -r Sources -r Tests
+
       - name: Build
         run: swift build
 
