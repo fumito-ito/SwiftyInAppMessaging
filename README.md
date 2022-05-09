@@ -73,7 +73,7 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 
 ## Dependencies
 
-- Firebase iOS SDK == `8.12.1`
+- Firebase iOS SDK == `9.0.0`
 
 ## Installation
 
@@ -102,8 +102,6 @@ let package = Package(
     ]
 )
 ```
-
-firebase ios sdk supports Swift Package Manager in **Beta**. If you have some issues caused in Swift Package Manager, Please check firebase issues.
 
 ### Cocoapods
 

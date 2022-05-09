@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -18,10 +18,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(
-            name: "Firebase",
-            url: "https://github.com/firebase/firebase-ios-sdk.git",
-            .upToNextMajor(from: "8.12.1")
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", .upToNextMajor(from: .init(9, 0, 0))
         )
     ],
     targets: [
@@ -40,7 +37,7 @@ let package = Package(
         .target(
             name: "SwiftyInAppMessaging",
             dependencies: [
-                .product(name: "FirebaseInAppMessaging-Beta", package: "Firebase")
+                .product(name: "FirebaseInAppMessaging-Beta", package: "firebase-ios-sdk")
             ]),
         .testTarget(
             name: "SwiftyInAppMessagingTests",
