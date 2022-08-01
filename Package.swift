@@ -41,7 +41,8 @@ let package = Package(
             ]),
         .testTarget(
             name: "SwiftyInAppMessagingTests",
-            dependencies: ["SwiftyInAppMessaging"])
+            dependencies: ["SwiftyInAppMessaging"]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

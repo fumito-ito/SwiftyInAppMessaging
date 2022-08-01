@@ -16,26 +16,11 @@
 
         private static var window: UIWindow?
 
-        init?(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) {
-            guard let messageForDisplay = messageForDisplay as? InAppMessagingBannerDisplay else {
-                return nil
-            }
-
+        init(message messageForDisplay: InAppMessagingBannerDisplay) {
             self.messageForDisplay = messageForDisplay
-            self.displayDelegate = displayDelegate
         }
 
-        static func canHandleMessage(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) -> Bool {
-            return messageForDisplay.type == .banner
-        }
-
-        func displayMessage() {
+        func displayMessage(with delegate: InAppMessagingDisplayDelegate) {
             let bannerImage = try? UIImage(imageData: self.messageForDisplay.imageData)
 
             let viewController = InAppDefaultBannerMessageViewController(
@@ -50,10 +35,6 @@
             InAppDefaultBannerMessageHandler.window = UIApplication.windowForBanner
             InAppDefaultBannerMessageHandler.window?.rootViewController = viewController
             InAppDefaultBannerMessageHandler.window?.isHidden = false
-        }
-
-        func displayError(_ error: Error) {
-            debugLog(error)
         }
 
         func messageDismissed(dismissType: FIRInAppMessagingDismissType) {

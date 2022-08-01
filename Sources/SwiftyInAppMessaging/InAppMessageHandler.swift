@@ -11,20 +11,10 @@
 
     public protocol InAppMessageHandler: MessageDisplayable & MessageEventDetectable {
         var displayDelegate: InAppMessagingDisplayDelegate? { get }
-
-        init?(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate)
-
-        static func canHandleMessage(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) -> Bool
     }
 
     public protocol MessageDisplayable {
-        func displayMessage()
-        func displayError(_ error: Error)
+        func displayMessage(with delegate: InAppMessagingDisplayDelegate) throws
     }
 
     public protocol MessageEventDetectable {
