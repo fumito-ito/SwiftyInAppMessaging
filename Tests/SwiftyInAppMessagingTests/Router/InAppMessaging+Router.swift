@@ -36,5 +36,40 @@
             XCTAssert(imageOnlyHandler is InAppDefaultImageOnlyMessageHandler)
             XCTAssert(imageOnlyHandler is InAppImageOnlyMessageHandler)
         }
+
+        func testCustomRouterReturnsMessageHandlerAlongWithMessageTypeAndMessageID() {
+            let customModal = getDisplayMessage(messageID: "custom", messageType: .modal)
+            let customModalHandler = TestCustomRouter.match(for: customModal)?.messageHandler
+            XCTAssert(customModalHandler is CustomInAppMessageHandler)
+
+            let customBanner = getDisplayMessage(messageID: "custom", messageType: .banner)
+            let customBannerHandler = TestCustomRouter.match(for: customBanner)?.messageHandler
+            XCTAssert(customBannerHandler is CustomInAppMessageHandler)
+
+            let customCard = getDisplayMessage(messageID: "custom", messageType: .card)
+            let customCardHandler = TestCustomRouter.match(for: customCard)?.messageHandler
+            XCTAssert(customCardHandler is CustomInAppMessageHandler)
+
+            let customImageOnly = getDisplayMessage(messageID: "custom", messageType: .imageOnly)
+            let customImageOnlyHandler = TestCustomRouter.match(for: customImageOnly)?
+                .messageHandler
+            XCTAssert(customImageOnlyHandler is CustomInAppMessageHandler)
+
+            let modal = getDisplayMessage(messageType: .modal)
+            let modalHandler = TestCustomRouter.match(for: modal)?.messageHandler
+            XCTAssert(modalHandler is InAppDefaultModalMessageHandler)
+
+            let banner = getDisplayMessage(messageType: .banner)
+            let bannerHandler = TestCustomRouter.match(for: banner)?.messageHandler
+            XCTAssert(bannerHandler is InAppDefaultBannerMessageHandler)
+
+            let card = getDisplayMessage(messageType: .card)
+            let cardHandler = TestCustomRouter.match(for: card)?.messageHandler
+            XCTAssert(cardHandler is InAppDefaultCardMessageHandler)
+
+            let imageOnly = getDisplayMessage(messageType: .imageOnly)
+            let imageOnlyHandler = TestCustomRouter.match(for: imageOnly)?.messageHandler
+            XCTAssert(imageOnlyHandler is InAppDefaultImageOnlyMessageHandler)
+        }
     }
 #endif
