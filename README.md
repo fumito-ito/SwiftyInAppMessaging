@@ -19,24 +19,20 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 ```swift
 struct InAppMyModalMessageHandler: InAppModalMessageHandler {
     let messageForDisplay: InAppMessagingModalDisplay
-    let displayDelegate: InAppMessagingDisplayDelegate
 
-    init?(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) {
-        guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {
-            return nil
-        }
-
+    init(message messageForDisplay: InAppMessagingModalDisplay) {
         self.messageForDisplay = messageForDisplay
-        self.displayDelegate = displayDelegate
     }
 
-    static func canHandleMessage(message messageForDisplay: InAppMessagingDisplayMessage, displayDelegate: InAppMessagingDisplayDelegate) -> Bool {
-        return messageForDisplay is InAppMessagingModalDisplay
-    }
-
-    func displayMessage() {
+    func displayMessage(with delegate: InAppMessagingDisplayDelegate) throws {
         let alert = UIAlertController(title: self.messageForDisplay.title)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { _ in })
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            guard let messageForDisplay = self?.messageForDisplay else {
+                return
+            }
+            
+            delegate.messageClicked?(messageForDisplay, with: InAppMessagingAction(actionText: "OK", actionURL: nil)
+        })
 
         alert.addAction(ok)
 
@@ -51,14 +47,53 @@ struct InAppMyModalMessageHandler: InAppModalMessageHandler {
 }
 ```
 
-### Define your configuration
+### Define your message router
 
 ```swift
-struct MyInAppMessagingConfiguration: SwiftyInAppMessagingConfiguration {
-    let useDefaultHandlersIfNeeded: Bool = true
-    let messageHandlers: [InAppMessageHandler.Type] = [
-        InAppMyModalMessageHandler.self
-    ]
+enum YourOwnMessageRouter {
+    case banner(InAppMessagingBannerDisplay)
+    case card(InAppMessagingCardDisplay)
+    case customModal(InAppMessagingModalDisplay)
+    case imageOnly(InAppMessagingImageOnlyDisplay)
+
+    static func match(for message: InAppMessagingDisplayMessage) -> Self? {
+        switch message.type {
+        case .banner:
+            guard let message = message as? InAppMessagingBannerDisplay else {
+                return nil
+            }
+            return .banner(message: message)
+        case .card:
+            guard let message = message as? InAppMessagingCardDisplay else {
+                return nil
+            }
+            return .card(message: message)
+        case .imageOnly:
+            guard let message = message as? InAppMessagingImageOnlyDisplay else {
+                return nil
+            }
+            return .imageOnly(message: message)
+        case .modal:
+            guard let message = message as? InAppMessagingModalDisplay else {
+                return nil
+            }
+            return .customModal(message: message)
+        @unknown default:
+            return nil
+    }
+    
+    var messageHandler: InAppMessageHandler {
+        switch self {
+        case .banner(let message):
+            return InAppDefaultBannerMessageHandler(message: message)
+        case .card(let message):
+            return InAppDefaultCardMessageHandler(message: message)
+        case .imageOnly(let message):
+            return InAppDefaultImageOnlyMessageHandler(message: message)
+        case .customModal(let message):
+            return InAppMyModalMessageHandler(message: message)
+        }
+    }
 }
 ```
 
@@ -66,8 +101,7 @@ struct MyInAppMessagingConfiguration: SwiftyInAppMessagingConfiguration {
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  let config = MyInAppMessagingConfiguration()
-  InAppMessaging.inAppMessaging().messageDisplayComponent = SwiftyInAppMessaging(with: config)
+  InAppMessaging.inAppMessaging().messageDisplayComponent = SwiftyInAppMessaging<YourOwnMessageRouter>()
 }
 ```
 
