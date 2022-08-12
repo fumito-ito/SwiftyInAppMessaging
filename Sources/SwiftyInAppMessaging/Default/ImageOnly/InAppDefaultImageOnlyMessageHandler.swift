@@ -15,44 +15,20 @@
 
         private static var window: UIWindow?
 
-        init?(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) {
-            guard let messageForDisplay = messageForDisplay as? InAppMessagingImageOnlyDisplay
-            else {
-                return nil
-            }
-
+        init(message messageForDisplay: InAppMessagingImageOnlyDisplay) {
             self.messageForDisplay = messageForDisplay
-            self.displayDelegate = displayDelegate
         }
 
-        static func canHandleMessage(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) -> Bool {
-            return messageForDisplay.type == .imageOnly
-        }
+        func displayMessage(with delegate: InAppMessagingDisplayDelegate) throws {
+            let image = try UIImage(imageData: self.messageForDisplay.imageData)
+            let viewController = InAppDefaultImageOnlyMessageViewController(
+                image: image,
+                actionURL: self.messageForDisplay.actionURL,
+                eventDetector: self)
 
-        func displayMessage() {
-            do {
-                let image = try UIImage(imageData: self.messageForDisplay.imageData)
-                let viewController = InAppDefaultImageOnlyMessageViewController(
-                    image: image,
-                    actionURL: self.messageForDisplay.actionURL,
-                    eventDetector: self)
-
-                InAppDefaultImageOnlyMessageHandler.window = UIApplication.windowForMessage
-                InAppDefaultImageOnlyMessageHandler.window?.rootViewController = viewController
-                InAppDefaultImageOnlyMessageHandler.window?.isHidden = false
-            } catch let error {
-                self.displayError(error)
-            }
-        }
-
-        func displayError(_ error: Error) {
-            debugLog(error)
+            InAppDefaultImageOnlyMessageHandler.window = UIApplication.windowForMessage
+            InAppDefaultImageOnlyMessageHandler.window?.rootViewController = viewController
+            InAppDefaultImageOnlyMessageHandler.window?.isHidden = false
         }
 
         func messageDismissed(dismissType: FIRInAppMessagingDismissType) {

@@ -9,54 +9,33 @@
     import Foundation
     import UIKit
 
-    struct InAppDefaultModalMessageHandler: InAppModalMessageHandler {
+    class InAppDefaultModalMessageHandler: InAppModalMessageHandler {
         let messageForDisplay: InAppMessagingModalDisplay
         weak private(set) var displayDelegate: InAppMessagingDisplayDelegate?
 
         private static var window: UIWindow?
 
-        init?(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) {
-            guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {
-                return nil
-            }
-
+        init(message messageForDisplay: InAppMessagingModalDisplay) {
             self.messageForDisplay = messageForDisplay
-            self.displayDelegate = displayDelegate
         }
 
-        static func canHandleMessage(
-            message messageForDisplay: InAppMessagingDisplayMessage,
-            displayDelegate: InAppMessagingDisplayDelegate
-        ) -> Bool {
-            return messageForDisplay.type == .modal
-        }
+        func displayMessage(with delegate: InAppMessagingDisplayDelegate) throws {
+            self.displayDelegate = delegate
 
-        func displayMessage() {
-            do {
-                let image = try UIImage(imageData: self.messageForDisplay.imageData)
-                let viewController = InAppDefaultModalMessageViewController(
-                    title: self.messageForDisplay.title,
-                    image: image,
-                    bodyText: self.messageForDisplay.bodyText,
-                    actionButton: self.messageForDisplay.actionButton?.asActionButton,
-                    actionURL: self.messageForDisplay.actionURL,
-                    backgroundColor: self.messageForDisplay.displayBackgroundColor,
-                    textColor: self.messageForDisplay.textColor,
-                    eventDetector: self)
+            let image = try UIImage(imageData: self.messageForDisplay.imageData)
+            let viewController = InAppDefaultModalMessageViewController(
+                title: self.messageForDisplay.title,
+                image: image,
+                bodyText: self.messageForDisplay.bodyText,
+                actionButton: self.messageForDisplay.actionButton?.asActionButton,
+                actionURL: self.messageForDisplay.actionURL,
+                backgroundColor: self.messageForDisplay.displayBackgroundColor,
+                textColor: self.messageForDisplay.textColor,
+                eventDetector: self)
 
-                InAppDefaultModalMessageHandler.window = UIApplication.windowForMessage
-                InAppDefaultModalMessageHandler.window?.rootViewController = viewController
-                InAppDefaultModalMessageHandler.window?.isHidden = false
-            } catch let error {
-                self.displayError(error)
-            }
-        }
-
-        func displayError(_ error: Error) {
-            debugLog(error)
+            InAppDefaultModalMessageHandler.window = UIApplication.windowForMessage
+            InAppDefaultModalMessageHandler.window?.rootViewController = viewController
+            InAppDefaultModalMessageHandler.window?.isHidden = false
         }
 
         public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
@@ -73,16 +52,6 @@
         private func dismissView() {
             InAppDefaultModalMessageHandler.window?.rootViewController?.dismissView()
             InAppDefaultModalMessageHandler.window = nil
-        }
-    }
-
-    extension InAppDefaultModalMessageHandler {
-        init?(message messageForDisplay: InAppMessagingDisplayMessage) {
-            guard let messageForDisplay = messageForDisplay as? InAppMessagingModalDisplay else {
-                return nil
-            }
-
-            self.messageForDisplay = messageForDisplay
         }
     }
 #endif
