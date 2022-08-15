@@ -18,7 +18,7 @@
         var messageHandler: InAppMessageHandler {
             switch self {
             case .alwaysNil(let message):
-                return InAppDefaultImageOnlyMessageHandler(message: message)!
+                return InAppDefaultImageOnlyMessageHandler(message: message as! InAppMessagingImageOnlyDisplay)
             }
         }
 

@@ -19,31 +19,38 @@
             switch message.type {
             case .banner:
                 guard let message = message as? InAppMessagingBannerDisplay else {
-                    return unknown(message)
+                    self = .unknown(message)
+                    return
                 }
 
                 self = .banner(message)
 
             case .card:
                 guard let message = message as? InAppMessagingCardDisplay else {
-                    return unknown(message)
+                    self = .unknown(message)
+                    return
                 }
 
                 self = .card(message)
 
             case .imageOnly:
                 guard let message = message as? InAppMessagingImageOnlyDisplay else {
-                    return unknown(message)
+                    self = .unknown(message)
+                    return
                 }
 
                 self = .imageOnly(message)
 
             case .modal:
                 guard let message = message as? InAppMessagingModalDisplay else {
-                    return unknown(message)
+                    self = .unknown(message)
+                    return
                 }
 
                 self = .modal(message)
+
+            @unknown default:
+                self = .unknown(message)
             }
         }
     }
