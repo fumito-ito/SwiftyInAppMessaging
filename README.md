@@ -57,26 +57,14 @@ enum YourOwnMessageRouter {
     case imageOnly(InAppMessagingImageOnlyDisplay)
 
     static func match(for message: InAppMessagingDisplayMessage) -> Self? {
-        switch message.type {
-        case .banner:
-            guard let message = message as? InAppMessagingBannerDisplay else {
-                return nil
-            }
+        switch message.typeWithDisplayMessage {
+        case .banner(let message):
             return .banner(message: message)
-        case .card:
-            guard let message = message as? InAppMessagingCardDisplay else {
-                return nil
-            }
+        case .card(let message):
             return .card(message: message)
-        case .imageOnly:
-            guard let message = message as? InAppMessagingImageOnlyDisplay else {
-                return nil
-            }
+        case .imageOnly(let message):
             return .imageOnly(message: message)
-        case .modal:
-            guard let message = message as? InAppMessagingModalDisplay else {
-                return nil
-            }
+        case .modal(let message):
             return .customModal(message: message)
         @unknown default:
             return nil
@@ -85,11 +73,11 @@ enum YourOwnMessageRouter {
     var messageHandler: InAppMessageHandler {
         switch self {
         case .banner(let message):
-            return InAppDefaultBannerMessageHandler(message: message)
+            return message.defaultHandler
         case .card(let message):
-            return InAppDefaultCardMessageHandler(message: message)
+            return message.defaultHandler
         case .imageOnly(let message):
-            return InAppDefaultImageOnlyMessageHandler(message: message)
+            return message.defaultHandler
         case .customModal(let message):
             return InAppMyModalMessageHandler(message: message)
         }
