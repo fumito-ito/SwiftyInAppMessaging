@@ -47,15 +47,4 @@
             InAppDefaultImageOnlyMessageHandler.window = nil
         }
     }
-
-    extension InAppDefaultImageOnlyMessageHandler {
-        init?(message messageForDisplay: InAppMessagingDisplayMessage) {
-            guard let messageForDisplay = messageForDisplay as? InAppMessagingImageOnlyDisplay
-            else {
-                return nil
-            }
-
-            self.messageForDisplay = messageForDisplay
-        }
-    }
 #endif
