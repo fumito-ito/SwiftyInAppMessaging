@@ -28,7 +28,7 @@
                 return .imageOnly(message: message)
             case .modal(let message):
                 return .modal(message: message)
-            case .unknown:
+            case .unknown(_):
                 return nil
             }
         }
