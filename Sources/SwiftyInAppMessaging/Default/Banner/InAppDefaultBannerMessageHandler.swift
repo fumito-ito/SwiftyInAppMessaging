@@ -53,14 +53,4 @@
             InAppDefaultBannerMessageHandler.window = nil
         }
     }
-
-    extension InAppDefaultBannerMessageHandler {
-        init?(message messageForDisplay: InAppMessagingDisplayMessage) {
-            guard let messageForDisplay = messageForDisplay as? InAppMessagingBannerDisplay else {
-                return nil
-            }
-
-            self.messageForDisplay = messageForDisplay
-        }
-    }
 #endif
