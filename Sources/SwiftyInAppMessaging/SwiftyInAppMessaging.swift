@@ -22,5 +22,7 @@
                     .displayMessage(with: displayDelegate)
             }
         }
+
+        public init() {}
     }
 #endif
