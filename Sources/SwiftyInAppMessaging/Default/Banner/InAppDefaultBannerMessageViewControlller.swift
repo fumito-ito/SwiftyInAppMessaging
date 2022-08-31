@@ -63,7 +63,7 @@
                 }
 
                 self.autoDismissTimer = Timer.scheduledTimer(
-                    timeInterval: TimeInterval(3.0),
+                    timeInterval: TimeInterval(12.0),
                     target: self,
                     selector: #selector(self.dismissByTimer),
                     userInfo: nil,
