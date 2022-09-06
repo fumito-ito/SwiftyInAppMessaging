@@ -256,7 +256,7 @@ final class InAppDefaultBannerMessageViewController: UIViewController {
                 return
             }
 
-            self.autoDismissTimer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0),
+            self.autoDismissTimer = Timer.scheduledTimer(timeInterval: TimeInterval(12.0),
                                            target: self,
                                            selector: #selector(self.dismissByTimer),
                                            userInfo: nil,
