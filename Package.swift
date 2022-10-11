@@ -18,7 +18,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", .upToNextMajor(from: .init(9, 0, 0))
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", .upToNextMajor(from: .init(10, 0, 0))
         )
     ],
     targets: [
