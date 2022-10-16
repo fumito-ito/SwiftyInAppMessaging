@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SwiftyInAppMessaging"
-  spec.version      = "1.1.3"
+  spec.version      = "2.0.0"
   spec.summary      = "The easiest way to use your customized view and In-App Messaging's default view."
 
   # This description is used to generate tags and improve search results.
