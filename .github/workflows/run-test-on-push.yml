@@ -22,7 +22,7 @@ jobs:
 
       - name: Lint
         run: |
-          brew install swift-format && swift-format lint -s -r Sources -r Tests
+          brew update && brew install swift-format && swift-format lint -s -r Sources -r Tests
 
       - name: Build
         run: swift build
