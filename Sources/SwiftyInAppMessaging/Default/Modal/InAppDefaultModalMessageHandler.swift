@@ -38,7 +38,7 @@
             InAppDefaultModalMessageHandler.window?.isHidden = false
         }
 
-        public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        public func messageDismissed(dismissType: InAppMessagingDismissType) {
             self.displayDelegate?.messageDismissed?(
                 self.messageForDisplay, dismissType: dismissType)
             self.dismissView()
