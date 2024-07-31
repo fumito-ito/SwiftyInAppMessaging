@@ -19,7 +19,7 @@
 
     public protocol MessageEventDetectable {
         func impressionDetected()
-        func messageDismissed(dismissType: FIRInAppMessagingDismissType)
+        func messageDismissed(dismissType: InAppMessagingDismissType)
         func messageClicked(with action: InAppMessagingAction)
     }
 
@@ -32,7 +32,7 @@
             self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
         }
 
-        public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        public func messageDismissed(dismissType: InAppMessagingDismissType) {
             self.displayDelegate?.messageDismissed?(
                 self.messageForDisplay, dismissType: dismissType)
         }
@@ -51,7 +51,7 @@
             self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
         }
 
-        public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        public func messageDismissed(dismissType: InAppMessagingDismissType) {
             self.displayDelegate?.messageDismissed?(
                 self.messageForDisplay, dismissType: dismissType)
         }
@@ -70,7 +70,7 @@
             self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
         }
 
-        public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        public func messageDismissed(dismissType: InAppMessagingDismissType) {
             self.displayDelegate?.messageDismissed?(
                 self.messageForDisplay, dismissType: dismissType)
         }
@@ -89,7 +89,7 @@
             self.displayDelegate?.impressionDetected?(for: self.messageForDisplay)
         }
 
-        public func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        public func messageDismissed(dismissType: InAppMessagingDismissType) {
             self.displayDelegate?.messageDismissed?(
                 self.messageForDisplay, dismissType: dismissType)
         }

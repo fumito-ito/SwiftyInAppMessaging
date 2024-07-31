@@ -37,7 +37,7 @@
             InAppDefaultBannerMessageHandler.window?.isHidden = false
         }
 
-        func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        func messageDismissed(dismissType: InAppMessagingDismissType) {
             self.displayDelegate?.messageDismissed?(
                 self.messageForDisplay, dismissType: dismissType)
             self.dismissView()
