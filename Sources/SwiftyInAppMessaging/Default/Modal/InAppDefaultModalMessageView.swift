@@ -175,25 +175,6 @@
                 ])
             }
 
-            if #available(iOS 13.0, *) {
-            } else {
-                let superViewWidth = self.superview?.frame.width ?? 0
-                let widthToLayoutView = self.calculateReadableContentGuideMargin(
-                    for: superViewWidth)
-                let imageWidth =
-                    (superViewWidth - widthToLayoutView.left - widthToLayoutView.right) / 3 + 16
-                let labelInsets = UIEdgeInsets(top: 0, left: imageWidth + 16, bottom: 0, right: 16)
-
-                self.currentConstrains.append(contentsOf: [
-                    self.titleLabel.heightAnchor.constraint(
-                        equalToConstant: self.calculateLabelHeight(
-                            for: self.titleLabel, of: self.superview, with: labelInsets)),
-                    self.bodyLabel.heightAnchor.constraint(
-                        equalToConstant: self.calculateLabelHeight(
-                            for: self.bodyLabel, of: self.superview, with: labelInsets)),
-                ])
-            }
-
             NSLayoutConstraint.activate(self.currentConstrains)
         }
 
@@ -232,76 +213,12 @@
                 self.actionButton.heightAnchor.constraint(equalToConstant: 30),
             ])
 
-            // layout hack for iOS 12.
-            if #available(iOS 13.0, *) {
-            } else {
-                let labelInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-                self.currentConstrains.append(contentsOf: [
-                    self.titleLabel.heightAnchor.constraint(
-                        equalToConstant: self.calculateLabelHeight(
-                            for: self.titleLabel, of: self.superview, with: labelInsets)),
-                    self.bodyLabel.heightAnchor.constraint(
-                        equalToConstant: self.calculateLabelHeight(
-                            for: self.bodyLabel, of: self.superview, with: labelInsets)),
-                ])
-            }
-
             NSLayoutConstraint.activate(self.currentConstrains)
         }
 
         private func clearConstraints() {
             NSLayoutConstraint.deactivate(self.currentConstrains)
             self.currentConstrains = []
-        }
-
-        @available(iOS, introduced: 12.0, obsoleted: 13.0)
-        private func calculateLabelHeight(
-            for label: UILabel, of view: UIView?, with insets: UIEdgeInsets
-        ) -> CGFloat {
-            guard let view = view else {
-                return 0
-            }
-
-            let readableContentMargins = self.calculateReadableContentGuideMargin(
-                for: view.frame.width)
-            let layoutWidth =
-                view.frame.width - (readableContentMargins.left + readableContentMargins.right)
-                - (insets.left + insets.right)
-            let size = CGSize(width: layoutWidth, height: CGFloat.greatestFiniteMagnitude)
-
-            return label.sizeThatFits(size).height
-        }
-
-        /// calculate layout marging for readable content guide.
-        ///
-        /// This function solves the problem that autolayout dose not calculate the width properly on iOS 12.
-        /// If screen with is
-        /// * 375>= ... left and right margins are 16
-        /// * 672>, >375... left and right margins are 20
-        /// * 672>= ... margins are calculated by (view width - 672). but if calculated margins are 20>, it returns 20.
-        ///
-        /// - Parameter width: screen width
-        /// - Returns: layout margin for readable content guide.
-        @available(iOS, introduced: 12.0, obsoleted: 13.0)
-        private func calculateReadableContentGuideMargin(for width: CGFloat) -> UIEdgeInsets {
-            let minMargin: CGFloat = 16
-            let normalMargin: CGFloat = 20
-
-            let minWidth: CGFloat = 375
-            let maxWidth: CGFloat = 672
-
-            if width <= minWidth {
-                return UIEdgeInsets(top: 0, left: minMargin, bottom: 0, right: minMargin)
-            }
-
-            if width >= maxWidth {
-                let maxMargin = (width - maxWidth)
-                let margin = max(maxMargin, normalMargin)
-
-                return UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin)
-            }
-
-            return UIEdgeInsets(top: 0, left: normalMargin, bottom: 0, right: normalMargin)
         }
 
         required init?(coder: NSCoder) {

@@ -95,7 +95,7 @@ func application(_ application: UIApplication, didFinishLaunchWithOptions launch
 
 ## Dependencies
 
-- Firebase iOS SDK == `11.0.0`
+- Firebase iOS SDK == `12.0.0`
 
 ## Installation
 
