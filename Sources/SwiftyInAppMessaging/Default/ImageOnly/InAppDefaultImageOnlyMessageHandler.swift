@@ -9,7 +9,7 @@
     import Foundation
     import UIKit
 
-    struct InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
+    class InAppDefaultImageOnlyMessageHandler: InAppImageOnlyMessageHandler {
         let messageForDisplay: InAppMessagingImageOnlyDisplay
         weak private(set) var displayDelegate: InAppMessagingDisplayDelegate?
 
@@ -20,6 +20,8 @@
         }
 
         func displayMessage(with delegate: InAppMessagingDisplayDelegate) throws {
+            self.displayDelegate = delegate
+
             let image = try UIImage(imageData: self.messageForDisplay.imageData)
             let viewController = InAppDefaultImageOnlyMessageViewController(
                 image: image,
