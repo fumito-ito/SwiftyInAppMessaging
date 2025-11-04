@@ -10,7 +10,7 @@
     import Foundation
     import UIKit
 
-    struct InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
+    class InAppDefaultBannerMessageHandler: InAppBannerMessageHandler {
         let messageForDisplay: InAppMessagingBannerDisplay
         weak private(set) var displayDelegate: InAppMessagingDisplayDelegate?
 
@@ -21,6 +21,8 @@
         }
 
         func displayMessage(with delegate: InAppMessagingDisplayDelegate) {
+            self.displayDelegate = delegate
+
             let bannerImage = try? UIImage(imageData: self.messageForDisplay.imageData)
 
             let viewController = InAppDefaultBannerMessageViewController(
