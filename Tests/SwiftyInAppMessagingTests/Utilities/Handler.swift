@@ -16,7 +16,7 @@
         func displayMessage(with delegate: InAppMessagingDisplayDelegate) throws {
         }
 
-        func messageDismissed(dismissType: FIRInAppMessagingDismissType) {
+        func messageDismissed(dismissType: InAppMessagingDismissType) {
         }
 
         func messageClicked(with action: InAppMessagingAction) {

@@ -12,8 +12,8 @@
         messageID: String = "",
         campaignName: String = "",
         renderAsTestMessage: Bool = false,
-        messageType: FIRInAppMessagingDisplayMessageType,
-        triggerType: FIRInAppMessagingDisplayTriggerType = .onAppForeground
+        messageType: InAppMessagingDisplayMessageType,
+        triggerType: InAppMessagingDisplayTriggerType = .onAppForeground
     ) -> InAppMessagingDisplayMessage {
         switch messageType {
         case .modal:
