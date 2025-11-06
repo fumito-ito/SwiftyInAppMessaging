@@ -140,10 +140,6 @@
 
     extension InAppDefaultImageOnlyMessageViewController: InAppDefaultImageOnlyViewDelegate {
         public func imageDidTap() {
-            if let actionURL = self.actionURL, UIApplication.shared.canOpenURL(actionURL) {
-                UIApplication.shared.open(actionURL, options: [:], completionHandler: nil)
-            }
-
             let action = InAppMessagingAction(actionText: nil, actionURL: self.actionURL)
             eventDetector.messageClicked(with: action)
         }

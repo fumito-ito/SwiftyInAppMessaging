@@ -152,11 +152,6 @@
 
     extension InAppDefaultModalMessageViewController: InAppDefaultModalViewDelegate {
         public func actionButtonDidTap() {
-
-            if let actionURL = self.actionURL, UIApplication.shared.canOpenURL(actionURL) {
-                UIApplication.shared.open(actionURL, options: [:], completionHandler: nil)
-            }
-
             let action = InAppMessagingAction(
                 actionText: self.actionButtonText, actionURL: self.actionURL)
             eventDetector.messageClicked(with: action)

@@ -134,8 +134,6 @@
                         actionText: self?.title, actionURL: self?.actionURL)
                     self?.eventDetector.messageClicked(with: action)
                 })
-
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
 
