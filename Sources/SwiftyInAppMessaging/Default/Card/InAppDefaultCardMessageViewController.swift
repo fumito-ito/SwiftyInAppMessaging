@@ -175,22 +175,12 @@
 
     extension InAppDefaultCardMessageViewController: InAppDefaultCardMessageViewDelegate {
         public func primaryActionButtonDidTap() {
-
-            if let actionURL = self.primaryActionURL, UIApplication.shared.canOpenURL(actionURL) {
-                UIApplication.shared.open(actionURL, options: [:], completionHandler: nil)
-            }
-
             let action = InAppMessagingAction(
                 actionText: self.primaryActionButtonText, actionURL: self.primaryActionURL)
             eventDetector.messageClicked(with: action)
         }
 
         public func secondaryActionButtonDidTap() {
-
-            if let actionURL = self.secondaryActionURL, UIApplication.shared.canOpenURL(actionURL) {
-                UIApplication.shared.open(actionURL, options: [:], completionHandler: nil)
-            }
-
             let action = InAppMessagingAction(
                 actionText: self.secondaryActionButtonText, actionURL: self.secondaryActionURL)
             eventDetector.messageClicked(with: action)
