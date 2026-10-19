@@ -8,7 +8,7 @@ let package = Package(
     platforms: [
         .iOS(.v15),
         .tvOS(.v15),
-        .macOS(.v10_15),
+        .macOS(.v11),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
@@ -18,7 +18,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", .upToNextMajor(from: .init(12, 0, 0))
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", .upToNextMajor(from: .init(13, 0, 0))
         )
     ],
     targets: [
